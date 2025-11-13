@@ -14,7 +14,7 @@ export default function AboutPage() {
           </div>
         </Link>
         <div className="flex font-montserrat font-medium gap-10 items-center text-[#0c120c] text-lg uppercase">
-          <Link href="/case-studies" className="hover:opacity-70 transition-opacity">
+          <Link href="/#works" className="hover:opacity-70 transition-opacity">
             Works
           </Link>
           <Link href="/about" className="hover:opacity-70 transition-opacity">
