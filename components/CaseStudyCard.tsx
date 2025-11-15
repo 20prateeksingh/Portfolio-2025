@@ -13,10 +13,10 @@ export default function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
     >
       <div className="h-[505px] overflow-clip relative rounded-[inherit] w-full">
         <div className="flex flex-col gap-[13px] items-start left-[37px] top-8 w-[376px] absolute z-10">
-          <p className="font-helvetica leading-normal not-italic text-[32px] text-black/80 w-full">
+          <p className="font-helvetica leading-normal not-italic text-[32px] text-black/80 w-full break-words">
             {caseStudy.title}
           </p>
-          <p className="font-montserrat font-medium leading-[1.6] opacity-60 text-base text-black w-full">
+          <p className="font-montserrat font-medium leading-[1.6] opacity-60 text-base text-black w-full break-words">
             {caseStudy.description}
           </p>
         </div>

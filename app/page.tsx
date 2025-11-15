@@ -71,10 +71,19 @@ export default function Home() {
           const element = document.getElementById('works');
           if (element) {
             const header = document.querySelector('.fixed.backdrop-blur-sm') as HTMLElement;
+            const headerContainer = header?.parentElement as HTMLElement;
             const gap = 24;
-            const headerBottom = header ? header.getBoundingClientRect().bottom : (window.innerWidth >= 768 ? 130 : 106);
+            
+            // Calculate total header height including top offset
+            let headerTotalHeight = 106; // Default for mobile (top-4: 16px + h-90: 90px)
+            if (window.innerWidth >= 1024) {
+              headerTotalHeight = 130; // lg: top-10 (40px) + h-90 (90px)
+            } else if (window.innerWidth >= 640) {
+              headerTotalHeight = 114; // sm: top-6 (24px) + h-90 (90px)
+            }
+            
             const elementPosition = element.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerBottom - gap;
+            const offsetPosition = elementPosition + window.pageYOffset - headerTotalHeight - gap;
             window.scrollTo({
               top: Math.max(0, offsetPosition),
               behavior: 'smooth'
@@ -97,156 +106,179 @@ export default function Home() {
 
   return (
     <div className="bg-[#e1e1e1] relative min-h-screen flex flex-col">
-      {/* 12-Column Grid Container - Max width 1728px with responsive padding */}
-      <div className="max-w-[1728px] mx-auto w-full px-4 md:px-8 lg:px-[144px]">
-        {/* Header - Full width (12 columns) */}
-        <div className="fixed backdrop-blur-sm backdrop-filter bg-[rgba(255,255,255,0.5)] border border-[#f0f0f0] box-border flex h-[90px] items-center justify-between px-4 md:px-8 py-0 rounded-[4px] top-4 md:top-10 w-[calc(100%-32px)] md:w-full max-w-[1440px] z-50 left-1/2 -translate-x-1/2">
-          <Link href="/" className="overflow-clip relative shrink-0 w-[50px] h-[50px]">
-            <div className="absolute bg-[#e0e0e0] inset-0 rounded-[5px]" />
-            <div className="absolute inset-[24%]">
-              <img alt="Logo" className="block max-w-none w-full h-full" src={imgLogo} />
-            </div>
-          </Link>
-          
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex font-montserrat font-medium gap-10 items-center text-[#0c120c] text-lg uppercase">
-            <a 
-              href="#works" 
-              onClick={(e) => {
-                e.preventDefault();
-                const element = document.getElementById('works');
-                if (element) {
-                  const header = document.querySelector('.fixed.backdrop-blur-sm') as HTMLElement;
-                  const gap = 24;
-                  const headerBottom = header ? header.getBoundingClientRect().bottom : (window.innerWidth >= 768 ? 130 : 106);
-                  const elementPosition = element.getBoundingClientRect().top;
-                  const offsetPosition = elementPosition + window.pageYOffset - headerBottom - gap;
-                  window.scrollTo({
-                    top: Math.max(0, offsetPosition),
-                    behavior: 'smooth'
-                  });
-                }
-              }}
-              className="hover:opacity-70 transition-opacity cursor-pointer"
-            >
-              Works
-            </a>
-            <Link href="/about" className="hover:opacity-70 transition-opacity">
-              About
-            </Link>
-            <a href="/PrateekSingh_Resume.pdf" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
-              Resume
-            </a>
-          </div>
-
-          {/* Mobile Hamburger Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden flex flex-col gap-1.5 w-8 h-8 items-center justify-center"
-            aria-label="Toggle menu"
-          >
-            <span className={`block w-6 h-0.5 bg-[#0c120c] transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-            <span className={`block w-6 h-0.5 bg-[#0c120c] transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`} />
-            <span className={`block w-6 h-0.5 bg-[#0c120c] transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
-          </button>
-
-          {/* Mobile Menu */}
-          <div className={`fixed top-[106px] left-0 right-0 bg-[rgba(255,255,255,0.95)] backdrop-blur-sm border-b border-[#f0f0f0] z-40 transition-all duration-300 md:hidden ${mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
-            <div className="flex flex-col px-4 py-6 gap-4 font-montserrat font-medium text-[#0c120c] text-lg uppercase">
-              <a 
-                href="#works" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  setMobileMenuOpen(false);
-                  setTimeout(() => {
+      {/* Navbar - Fixed, using 12-column grid system */}
+      <div className="fixed top-4 sm:top-6 lg:top-10 left-0 right-0 z-50">
+        <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-12 gap-4 sm:gap-5 lg:gap-6 w-full">
+            <div className="col-span-12 backdrop-blur-sm backdrop-filter bg-[rgba(255,255,255,0.5)] border border-[#f0f0f0] box-border flex h-[90px] items-center justify-between px-4 sm:px-6 lg:px-8 py-0 rounded-[4px]">
+              <Link href="/" className="overflow-clip relative shrink-0 w-[50px] h-[50px]">
+                <div className="absolute bg-[#e0e0e0] inset-0 rounded-[5px]" />
+                <div className="absolute inset-[24%]">
+                  <img alt="Logo" className="block max-w-none w-full h-full" src={imgLogo} />
+                </div>
+              </Link>
+              
+              {/* Desktop Navigation */}
+              <div className="hidden sm:flex font-montserrat font-medium gap-8 lg:gap-10 items-center text-[#0c120c] text-base sm:text-lg uppercase">
+                <a 
+                  href="#works" 
+                  onClick={(e) => {
+                    e.preventDefault();
                     const element = document.getElementById('works');
                     if (element) {
-                      const header = document.querySelector('.fixed.backdrop-blur-sm') as HTMLElement;
                       const gap = 24;
-                      const headerBottom = header ? header.getBoundingClientRect().bottom : (window.innerWidth >= 768 ? 130 : 106);
+                      
+                      // Calculate total header height including top offset
+                      let headerTotalHeight = 106; // Default for mobile (top-4: 16px + h-90: 90px)
+                      if (window.innerWidth >= 1024) {
+                        headerTotalHeight = 130; // lg: top-10 (40px) + h-90 (90px)
+                      } else if (window.innerWidth >= 640) {
+                        headerTotalHeight = 114; // sm: top-6 (24px) + h-90 (90px)
+                      }
+                      
                       const elementPosition = element.getBoundingClientRect().top;
-                      const offsetPosition = elementPosition + window.pageYOffset - headerBottom - gap;
+                      const offsetPosition = elementPosition + window.pageYOffset - headerTotalHeight - gap;
                       window.scrollTo({
                         top: Math.max(0, offsetPosition),
                         behavior: 'smooth'
                       });
                     }
-                  }, 100);
-                }}
-                className="hover:opacity-70 transition-opacity py-2 cursor-pointer"
+                  }}
+                  className="hover:opacity-70 transition-opacity cursor-pointer"
+                >
+                  Works
+                </a>
+                <Link href="/about" className="hover:opacity-70 transition-opacity">
+                  About
+                </Link>
+                <a href="/PrateekSingh_Resume.pdf" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
+                  Resume
+                </a>
+              </div>
+
+              {/* Mobile Hamburger Button */}
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="sm:hidden flex flex-col gap-1.5 w-8 h-8 items-center justify-center"
+                aria-label="Toggle menu"
               >
-                Works
-              </a>
-              <Link href="/about" className="hover:opacity-70 transition-opacity py-2" onClick={() => setMobileMenuOpen(false)}>
-                About
-              </Link>
-              <a href="/PrateekSingh_Resume.pdf" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity py-2" onClick={() => setMobileMenuOpen(false)}>
-                Resume
-              </a>
+                <span className={`block w-6 h-0.5 bg-[#0c120c] transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+                <span className={`block w-6 h-0.5 bg-[#0c120c] transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`} />
+                <span className={`block w-6 h-0.5 bg-[#0c120c] transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+              </button>
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="flex-grow pb-10 pt-32 md:pt-48">
+      {/* Mobile Menu */}
+      <div className={`fixed top-[106px] left-0 right-0 bg-[rgba(255,255,255,0.95)] backdrop-blur-sm border-b border-[#f0f0f0] z-40 transition-all duration-300 sm:hidden ${mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
+        <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col py-6 gap-4 font-montserrat font-medium text-[#0c120c] text-base sm:text-lg uppercase">
+            <a 
+              href="#works" 
+              onClick={(e) => {
+                e.preventDefault();
+                setMobileMenuOpen(false);
+                setTimeout(() => {
+                  const element = document.getElementById('works');
+                  if (element) {
+                    const gap = 24;
+                    
+                    // Calculate total header height including top offset
+                    let headerTotalHeight = 106; // Default for mobile (top-4: 16px + h-90: 90px)
+                    if (window.innerWidth >= 1024) {
+                      headerTotalHeight = 130; // lg: top-10 (40px) + h-90 (90px)
+                    } else if (window.innerWidth >= 640) {
+                      headerTotalHeight = 114; // sm: top-6 (24px) + h-90 (90px)
+                    }
+                    
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerTotalHeight - gap;
+                    window.scrollTo({
+                      top: Math.max(0, offsetPosition),
+                      behavior: 'smooth'
+                    });
+                  }
+                }, 100);
+              }}
+              className="hover:opacity-70 transition-opacity py-2 cursor-pointer"
+            >
+              Works
+            </a>
+            <Link href="/about" className="hover:opacity-70 transition-opacity py-2" onClick={() => setMobileMenuOpen(false)}>
+              About
+            </Link>
+            <a href="/PrateekSingh_Resume.pdf" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity py-2" onClick={() => setMobileMenuOpen(false)}>
+              Resume
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* 12-Column Grid Container - Max width with smooth responsive padding */}
+      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
+
+        <div className="flex-grow pb-10 pt-32 sm:pt-40 lg:pt-48">
           {/* 12-Column Grid System */}
-          <div className="grid grid-cols-12 gap-4 md:gap-6 w-full">
+          <div className="grid grid-cols-12 gap-4 sm:gap-5 lg:gap-6 w-full">
             {/* Introduction Section - Starts at column 5, spans 8 columns (66.67%) */}
-            <div className="col-span-12 md:col-start-5 md:col-span-8 flex flex-col gap-5 items-start min-h-[50vh] md:max-h-[50vh] pt-8">
-              <div className="flex gap-3 md:gap-5 items-start relative overflow-x-auto w-full pb-2 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide">
+            <div className="col-span-12 lg:col-start-5 lg:col-span-8 flex flex-col gap-5 items-start min-h-[50vh] pt-8">
+              <div className="flex gap-3 sm:gap-4 lg:gap-5 items-start relative overflow-x-auto w-full pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-hide">
                 <button
                   onClick={() => handleTabChange("designers")}
-                  className={`px-3 md:px-4 py-1.5 md:py-2 rounded-md cursor-pointer transition-all duration-[600ms] min-w-fit shrink-0 ${
+                  className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-md cursor-pointer transition-all duration-[600ms] min-w-fit shrink-0 ${
                     selectedTab === "designers" 
                       ? "bg-black/10" 
                       : "hover:bg-black/5"
                   }`}
                 >
-                  <p className="font-montserrat font-medium leading-[2] text-sm md:text-base text-black whitespace-nowrap">
+                  <p className="font-montserrat font-medium leading-[2] text-sm sm:text-base text-black whitespace-nowrap">
                     For Designers
                   </p>
                 </button>
                 <button
                   onClick={() => handleTabChange("recruiters")}
-                  className={`px-3 md:px-4 py-1.5 md:py-2 rounded-md cursor-pointer transition-all duration-[600ms] min-w-fit shrink-0 ${
+                  className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-md cursor-pointer transition-all duration-[600ms] min-w-fit shrink-0 ${
                     selectedTab === "recruiters" 
                       ? "bg-black/10" 
                       : "hover:bg-black/5"
                   }`}
                 >
-                  <p className="font-montserrat font-medium leading-[2] text-sm md:text-base text-black whitespace-nowrap">
+                  <p className="font-montserrat font-medium leading-[2] text-sm sm:text-base text-black whitespace-nowrap">
                     Recruiters
                   </p>
                 </button>
                 <button
                   onClick={() => handleTabChange("aiEnthusiasts")}
-                  className={`px-3 md:px-4 py-1.5 md:py-2 rounded-md cursor-pointer transition-all duration-[600ms] min-w-fit shrink-0 ${
+                  className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-md cursor-pointer transition-all duration-[600ms] min-w-fit shrink-0 ${
                     selectedTab === "aiEnthusiasts" 
                       ? "bg-black/10" 
                       : "hover:bg-black/5"
                   }`}
                 >
-                  <p className="font-montserrat font-medium leading-[2] text-sm md:text-base text-black whitespace-nowrap">
+                  <p className="font-montserrat font-medium leading-[2] text-sm sm:text-base text-black whitespace-nowrap">
                     AI Enthusiasts
                   </p>
                 </button>
                 <button
                   onClick={() => handleTabChange("engineers")}
-                  className={`px-3 md:px-4 py-1.5 md:py-2 rounded-md cursor-pointer transition-all duration-[600ms] min-w-fit shrink-0 ${
+                  className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-md cursor-pointer transition-all duration-[600ms] min-w-fit shrink-0 ${
                     selectedTab === "engineers" 
                       ? "bg-black/10" 
                       : "hover:bg-black/5"
                   }`}
                 >
-                  <p className="font-montserrat font-medium leading-[2] text-sm md:text-base text-black whitespace-nowrap">
+                  <p className="font-montserrat font-medium leading-[2] text-sm sm:text-base text-black whitespace-nowrap">
                     Engineers
                   </p>
                 </button>
               </div>
               <div className="flex flex-col items-start w-full">
-                <div className="font-red-hat font-semibold leading-[1.2] text-[32px] md:text-[48px] lg:text-[64px] text-black/90 w-full">
+                <div className="font-nunito font-semibold leading-[1.2] text-[32px] sm:text-[40px] md:text-[48px] lg:text-[64px] text-black/90 w-full">
                   <p 
                     key={selectedTab}
-                    className="font-[400] transition-opacity duration-[600ms]"
+                    className="font-nunito font-[400] transition-opacity duration-[600ms]"
                     style={{ opacity }}
                   >
                     {displayContent.greeting} {displayContent.description}
@@ -260,26 +292,26 @@ export default function Home() {
             </div>
 
             {/* Case Studies Section - Full width (12 columns) */}
-            <div id="works" className="col-span-12 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mt-8 md:mt-16">
+            <div id="works" className="col-span-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 mt-8 sm:mt-12 lg:mt-16">
               {caseStudies.map((study, index) => (
                 <Link
                   key={study.slug}
                   href={`/case-studies/${study.slug}`}
-                  className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] min-h-[400px] md:h-[505px] relative rounded-[15px] hover:bg-[rgba(255,255,255,0.3)] transition-colors flex flex-col"
+                  className="group bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] min-h-[400px] sm:h-[450px] lg:h-[505px] relative rounded-[15px] hover:bg-[rgba(255,255,255,0.3)] transition-colors flex flex-col"
                 >
                   <div className="flex-1 overflow-clip relative rounded-[inherit] w-full flex flex-col">
-                    <div className="flex flex-col gap-3 md:gap-[13px] items-start p-4 md:p-0 md:left-[37px] md:top-8 md:w-[376px] md:absolute relative z-10">
-                      <p className="font-helvetica leading-normal not-italic text-xl md:text-[32px] text-black/80 w-full">
+                    <div className="flex flex-col gap-3 sm:gap-[13px] items-start p-4 sm:p-0 sm:left-[24px] lg:left-[37px] sm:top-6 lg:top-8 sm:max-w-[calc(100%-48px)] lg:max-w-[376px] sm:absolute relative z-10 sm:pr-4 lg:pr-8">
+                      <p className="font-helvetica leading-normal not-italic text-xl sm:text-2xl lg:text-[32px] text-black/80 max-w-full break-words overflow-wrap-anywhere">
                         {study.title}
                       </p>
-                      <p className="font-montserrat font-medium leading-[1.6] opacity-60 text-sm md:text-base text-black w-full">
+                      <p className="font-montserrat font-medium leading-[1.6] opacity-60 text-sm sm:text-base text-black max-w-full break-words overflow-wrap-anywhere">
                         {study.description}
                       </p>
                     </div>
-                    <div className="absolute bottom-[-33px] h-[200px] md:h-[275px] left-[50%] translate-x-[-50%] w-[80%] md:w-[453.832px] mt-auto">
+                    <div className="absolute bottom-[-33px] lg:bottom-[-103px] h-[200px] sm:h-[240px] lg:h-[344px] left-[50%] translate-x-[-50%] w-[80%] sm:w-[70%] lg:w-full max-w-full mt-auto transition-transform duration-300 group-hover:-translate-y-[10%]">
                       <img
                         alt={study.title}
-                        className="absolute inset-0 max-w-none object-center object-cover pointer-events-none w-full h-full"
+                        className="absolute inset-0 max-w-full object-center object-contain pointer-events-none w-full h-full"
                         src={caseStudyImages[index] || imgCaseStudyImage}
                       />
                     </div>
@@ -289,41 +321,41 @@ export default function Home() {
             </div>
 
             {/* AI Projects Section - Starts at column 5, spans 8 columns */}
-            <div className="col-span-12 md:col-start-5 md:col-span-8 flex flex-col gap-8 md:gap-12 items-start mt-16 md:mt-32">
+            <div className="col-span-12 lg:col-start-5 lg:col-span-8 flex flex-col gap-8 sm:gap-10 lg:gap-12 items-start mt-12 sm:mt-20 lg:mt-32">
               <div className="flex flex-col gap-4 items-start">
-                <p className="font-red-hat font-semibold leading-[1.2] text-[32px] md:text-[48px] lg:text-[64px] text-black/90 w-full max-w-full md:max-w-[588px]">
+                <p className="font-nunito font-[400] leading-[1.2] text-[32px] sm:text-[40px] md:text-[48px] lg:text-[64px] text-black/90 w-full max-w-full sm:max-w-[588px]">
                   I have built some cool AI Stuff
                 </p>
-                <p className="font-montserrat font-medium leading-[1.6] opacity-60 text-sm md:text-base text-black w-full max-w-full md:max-w-[588px]">
+                <p className="font-montserrat font-medium leading-[1.6] opacity-60 text-sm sm:text-base text-black w-full max-w-full sm:max-w-[588px]">
                   I believe that AI is here to stay and while at the core it still is series of algorithms, on the surface it is a marvellous enabler. Lorem ipsum dolor sit amet consectetur. Vestibulum purus cursus dignissim vulputate leo. Pretium eu aliquet augue hendrerit id at proin. Vitae mattis semper in ac. Ornare blandit
                 </p>
               </div>
-              <div className="flex flex-col gap-6 md:gap-8 items-start w-full">
+              <div className="flex flex-col gap-6 sm:gap-7 lg:gap-8 items-start w-full">
                 {/* AI Project 1 */}
                 <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] w-full">
-                  <div className="box-border flex flex-col md:flex-row gap-4 md:gap-6 items-start overflow-clip p-4 md:p-8 rounded-[inherit] w-full">
-                    <div className="relative shrink-0 w-[80px] h-[80px] md:w-[120px] md:h-[120px]">
+                  <div className="box-border flex flex-col sm:flex-row gap-4 sm:gap-5 lg:gap-6 items-start overflow-clip p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
+                    <div className="relative shrink-0 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] lg:w-[120px] lg:h-[120px]">
                       <img
                         alt="Plugin Frame Cleaner"
                         className="absolute backdrop-blur-[11.429px] backdrop-filter inset-0 max-w-none object-center object-cover opacity-80 pointer-events-none w-full h-full"
                         src={imgProjectImage}
                       />
                     </div>
-                    <div className="basis-0 flex flex-col grow items-start justify-between min-h-0 min-w-0 relative self-stretch shrink-0 w-full md:w-auto">
-                      <div className="flex flex-wrap gap-2 md:gap-[14px] items-center w-full md:w-[353px]">
-                        <p className="font-helvetica leading-normal not-italic text-xl md:text-[32px] text-black/80">
+                    <div className="basis-0 flex flex-col grow items-start justify-between min-h-0 min-w-0 relative self-stretch shrink-0 w-full sm:w-auto">
+                      <div className="flex flex-wrap gap-2 sm:gap-3 lg:gap-[14px] items-center w-full sm:w-[300px] lg:w-[353px]">
+                        <p className="font-helvetica leading-normal not-italic text-xl sm:text-2xl lg:text-[32px] text-black/80">
                           Plugin
                         </p>
-                        <div className="flex h-0 items-center justify-center relative shrink-0 w-0 hidden md:flex">
+                        <div className="flex h-0 items-center justify-center relative shrink-0 w-0 hidden sm:flex">
                           <div className="flex-none rotate-[270deg]">
                             <div className="bg-gradient-to-l from-transparent h-px opacity-50 to-transparent via-50% via-black/60 w-4" />
                           </div>
                         </div>
-                        <p className="font-helvetica leading-normal not-italic text-xl md:text-[32px] text-black/80">
+                        <p className="font-helvetica leading-normal not-italic text-xl sm:text-2xl lg:text-[32px] text-black/80">
                           Frame Cleaner
                         </p>
                       </div>
-                      <p className="font-montserrat font-medium leading-[1.6] opacity-60 text-sm md:text-base text-black w-full">
+                      <p className="font-montserrat font-medium leading-[1.6] opacity-60 text-sm sm:text-base text-black w-full">
                         Lorem ipsum dolor sit amet consectetur. Vestibulum purus cursus dignissim vulputate leo. Pretium eu aliquet augue hendrerit id at proin. Vitae mattis semper in ac. Ornare blandit
                       </p>
                     </div>
@@ -332,29 +364,29 @@ export default function Home() {
 
                 {/* AI Project 2 */}
                 <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] w-full">
-                  <div className="box-border flex flex-col md:flex-row gap-4 md:gap-6 items-start overflow-clip p-4 md:p-8 rounded-[inherit] w-full">
-                    <div className="relative shrink-0 w-[80px] h-[80px] md:w-[120px] md:h-[120px]">
+                  <div className="box-border flex flex-col sm:flex-row gap-4 sm:gap-5 lg:gap-6 items-start overflow-clip p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
+                    <div className="relative shrink-0 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] lg:w-[120px] lg:h-[120px]">
                       <img
                         alt="Plugin Frame Cleaner"
                         className="absolute backdrop-blur-[11.429px] backdrop-filter inset-0 max-w-none object-center object-cover opacity-80 pointer-events-none w-full h-full"
                         src={imgLogoSelectionIndicatorNew2}
                       />
                     </div>
-                    <div className="basis-0 flex flex-col grow items-start justify-between min-h-0 min-w-0 relative self-stretch shrink-0 w-full md:w-auto">
-                      <div className="flex flex-wrap gap-2 md:gap-[14px] items-center w-full md:w-[353px]">
-                        <p className="font-helvetica leading-normal not-italic text-xl md:text-[32px] text-black/80">
+                    <div className="basis-0 flex flex-col grow items-start justify-between min-h-0 min-w-0 relative self-stretch shrink-0 w-full sm:w-auto">
+                      <div className="flex flex-wrap gap-2 sm:gap-3 lg:gap-[14px] items-center w-full sm:w-[300px] lg:w-[353px]">
+                        <p className="font-helvetica leading-normal not-italic text-xl sm:text-2xl lg:text-[32px] text-black/80">
                           Plugin
                         </p>
-                        <div className="flex h-0 items-center justify-center relative shrink-0 w-0 hidden md:flex">
+                        <div className="flex h-0 items-center justify-center relative shrink-0 w-0 hidden sm:flex">
                           <div className="flex-none rotate-[270deg]">
                             <div className="bg-gradient-to-l from-transparent h-px opacity-50 to-transparent via-50% via-black/60 w-4" />
                           </div>
                         </div>
-                        <p className="font-helvetica leading-normal not-italic text-xl md:text-[32px] text-black/80">
+                        <p className="font-helvetica leading-normal not-italic text-xl sm:text-2xl lg:text-[32px] text-black/80">
                           Frame Cleaner
                         </p>
                       </div>
-                      <p className="font-montserrat font-medium leading-[1.6] opacity-60 text-sm md:text-base text-black w-full">
+                      <p className="font-montserrat font-medium leading-[1.6] opacity-60 text-sm sm:text-base text-black w-full">
                         Lorem ipsum dolor sit amet consectetur. Vestibulum purus cursus dignissim vulputate leo. Pretium eu aliquet augue hendrerit id at proin. Vitae mattis semper in ac. Ornare blandit
                       </p>
                     </div>
@@ -363,10 +395,10 @@ export default function Home() {
 
                 {/* AI Project 3 */}
                 <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] w-full">
-                  <div className="box-border flex flex-col md:flex-row gap-4 md:gap-6 items-start overflow-clip p-4 md:p-8 rounded-[inherit] w-full">
-                    <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] shrink-0 w-[80px] h-[80px] md:w-[120px] md:h-[120px]">
+                  <div className="box-border flex flex-col sm:flex-row gap-4 sm:gap-5 lg:gap-6 items-start overflow-clip p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
+                    <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] shrink-0 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] lg:w-[120px] lg:h-[120px]">
                       <div className="overflow-clip relative rounded-[inherit] w-full h-full">
-                        <div className="absolute h-[60px] md:h-[90px] left-[20px] md:left-[26px] top-[10px] md:top-[15px] w-[46px] md:w-[69px]">
+                        <div className="absolute h-[60px] sm:h-[75px] lg:h-[90px] left-[20px] sm:left-[23px] lg:left-[26px] top-[10px] sm:top-[12px] lg:top-[15px] w-[46px] sm:w-[57px] lg:w-[69px]">
                           <div className="absolute inset-0 overflow-hidden pointer-events-none">
                             <img
                               alt="Design to Code"
@@ -377,21 +409,21 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div className="basis-0 flex flex-col grow items-start justify-between min-h-0 min-w-0 relative self-stretch shrink-0 w-full md:w-auto">
-                      <div className="flex flex-wrap gap-2 md:gap-[14px] items-center w-full md:w-[353px]">
-                        <p className="font-helvetica leading-normal not-italic text-xl md:text-[32px] text-black/80">
+                    <div className="basis-0 flex flex-col grow items-start justify-between min-h-0 min-w-0 relative self-stretch shrink-0 w-full sm:w-auto">
+                      <div className="flex flex-nowrap gap-2 sm:gap-3 lg:gap-[14px] items-center w-full sm:w-[300px] lg:w-[353px] whitespace-nowrap">
+                        <p className="font-helvetica leading-normal not-italic text-xl sm:text-2xl lg:text-[32px] text-black/80">
                           Design to Code
                         </p>
-                        <div className="flex h-0 items-center justify-center relative shrink-0 w-0 hidden md:flex">
+                        <div className="flex h-0 items-center justify-center relative shrink-0 w-0 hidden sm:flex">
                           <div className="flex-none rotate-[270deg]">
                             <div className="bg-gradient-to-l from-transparent h-px opacity-50 to-transparent via-50% via-black/60 w-4" />
                           </div>
                         </div>
-                        <p className="font-helvetica leading-normal not-italic text-xl md:text-[32px] text-black/80">
+                        <p className="font-helvetica leading-normal not-italic text-xl sm:text-2xl lg:text-[32px] text-black/80">
                           Xflow &lt; &gt; GFF 2025
                         </p>
                       </div>
-                      <p className="font-montserrat font-medium leading-[1.6] opacity-60 text-sm md:text-base text-black w-full">
+                      <p className="font-montserrat font-medium leading-[1.6] opacity-60 text-sm sm:text-base text-black w-full">
                         Lorem ipsum dolor sit amet consectetur. Vestibulum purus cursus dignissim vulputate leo. Pretium eu aliquet augue hendrerit id at proin. Vitae mattis semper in ac. Ornare blandit
                       </p>
                     </div>
@@ -401,22 +433,22 @@ export default function Home() {
             </div>
 
             {/* Blog Section - Starts at column 1, spans 8 columns */}
-            <div className="col-span-12 md:col-start-1 md:col-span-8 flex flex-col gap-8 md:gap-12 items-start mt-16 md:mt-32 mb-20">
+            <div className="col-span-12 lg:col-start-1 lg:col-span-8 flex flex-col gap-8 sm:gap-10 lg:gap-12 items-start mt-12 sm:mt-20 lg:mt-32 mb-20">
               <div className="flex flex-col gap-4 items-start">
-                <p className="font-red-hat font-semibold leading-[1.2] text-[32px] md:text-[48px] lg:text-[64px] text-black/90 w-full max-w-full md:max-w-[588px]">
+                <p className="font-nunito font-[400] leading-[1.2] text-[32px] sm:text-[40px] md:text-[48px] lg:text-[64px] text-black/90 w-full max-w-full sm:max-w-[588px]">
                   I wish I wrote more often
                 </p>
-                <p className="font-montserrat font-medium leading-[2] opacity-60 text-sm md:text-base text-black w-full max-w-full md:max-w-[588px]">
+                <p className="font-montserrat font-medium leading-[2] opacity-60 text-sm sm:text-base text-black w-full max-w-full sm:max-w-[588px]">
                   This will be my new year resolution! Lorem ipsum dolor sit amet consectetur. Vestibulum purus cursus dignissim vulputate leo. Pretium eu aliquet augue hendrerit id at proin. Vitae mattis semper in ac. Ornare blandit
                 </p>
               </div>
-              <div className="flex flex-col gap-6 md:gap-8 items-start w-full">
+              <div className="flex flex-col gap-6 sm:gap-7 lg:gap-8 items-start w-full">
                 {/* Blog Post 1 */}
                 <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] w-full">
-                  <div className="box-border flex flex-col md:flex-row gap-4 md:gap-6 items-start overflow-clip p-4 md:p-8 rounded-[inherit] w-full">
-                    <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] shrink-0 w-[80px] h-[80px] md:w-[120px] md:h-[120px]">
+                  <div className="box-border flex flex-col sm:flex-row gap-4 sm:gap-5 lg:gap-6 items-start overflow-clip p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
+                    <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] shrink-0 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] lg:w-[120px] lg:h-[120px]">
                       <div className="overflow-clip relative rounded-[inherit] w-full h-full">
-                        <div className="absolute h-[60px] md:h-[90px] left-[20px] md:left-[26px] top-[10px] md:top-[15px] w-[46px] md:w-[69px]">
+                        <div className="absolute h-[60px] sm:h-[75px] lg:h-[90px] left-[20px] sm:left-[23px] lg:left-[26px] top-[10px] sm:top-[12px] lg:top-[15px] w-[46px] sm:w-[57px] lg:w-[69px]">
                           <div className="absolute inset-0 overflow-hidden pointer-events-none">
                             <img
                               alt="Blog post"
@@ -427,21 +459,21 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div className="basis-0 flex flex-col grow items-start justify-between min-h-0 min-w-0 relative self-stretch shrink-0 w-full md:w-auto">
-                      <div className="flex flex-wrap gap-2 md:gap-[14px] items-center w-full md:w-[353px]">
-                        <p className="font-helvetica leading-normal not-italic text-xl md:text-[32px] text-black/80">
+                    <div className="basis-0 flex flex-col grow items-start justify-between min-h-0 min-w-0 relative self-stretch shrink-0 w-full sm:w-auto">
+                      <div className="flex flex-nowrap gap-2 sm:gap-3 lg:gap-[14px] items-center w-full sm:w-[300px] lg:w-[353px] whitespace-nowrap">
+                        <p className="font-helvetica leading-normal not-italic text-xl sm:text-2xl lg:text-[32px] text-black/80">
                           Design to Code
                         </p>
-                        <div className="flex h-0 items-center justify-center relative shrink-0 w-0 hidden md:flex">
+                        <div className="flex h-0 items-center justify-center relative shrink-0 w-0 hidden sm:flex">
                           <div className="flex-none rotate-[270deg]">
                             <div className="bg-gradient-to-l from-transparent h-px opacity-50 to-transparent via-50% via-black/60 w-4" />
                           </div>
                         </div>
-                        <p className="font-helvetica leading-normal not-italic text-xl md:text-[32px] text-black/80">
+                        <p className="font-helvetica leading-normal not-italic text-xl sm:text-2xl lg:text-[32px] text-black/80">
                           Xflow &lt; &gt; GFF 2025
                         </p>
                       </div>
-                      <p className="font-montserrat font-medium leading-[1.6] opacity-60 text-sm md:text-base text-black w-full">
+                      <p className="font-montserrat font-medium leading-[1.6] opacity-60 text-sm sm:text-base text-black w-full">
                         Lorem ipsum dolor sit amet consectetur. Vestibulum purus cursus dignissim vulputate leo. Pretium eu aliquet augue hendrerit id at proin. Vitae mattis semper in ac. Ornare blandit
                       </p>
                     </div>
@@ -450,10 +482,10 @@ export default function Home() {
 
                 {/* Blog Post 2 */}
                 <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] w-full">
-                  <div className="box-border flex flex-col md:flex-row gap-4 md:gap-6 items-start overflow-clip p-4 md:p-8 rounded-[inherit] w-full">
-                    <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] shrink-0 w-[80px] h-[80px] md:w-[120px] md:h-[120px]">
+                  <div className="box-border flex flex-col sm:flex-row gap-4 sm:gap-5 lg:gap-6 items-start overflow-clip p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
+                    <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] shrink-0 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] lg:w-[120px] lg:h-[120px]">
                       <div className="overflow-clip relative rounded-[inherit] w-full h-full">
-                        <div className="absolute h-[60px] md:h-[90px] left-[20px] md:left-[26px] top-[10px] md:top-[15px] w-[46px] md:w-[69px]">
+                        <div className="absolute h-[60px] sm:h-[75px] lg:h-[90px] left-[20px] sm:left-[23px] lg:left-[26px] top-[10px] sm:top-[12px] lg:top-[15px] w-[46px] sm:w-[57px] lg:w-[69px]">
                           <div className="absolute inset-0 overflow-hidden pointer-events-none">
                             <img
                               alt="Blog post"
@@ -464,21 +496,21 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div className="basis-0 flex flex-col grow items-start justify-between min-h-0 min-w-0 relative self-stretch shrink-0 w-full md:w-auto">
-                      <div className="flex flex-wrap gap-2 md:gap-[14px] items-center w-full md:w-[353px]">
-                        <p className="font-helvetica leading-normal not-italic text-xl md:text-[32px] text-black/80">
+                    <div className="basis-0 flex flex-col grow items-start justify-between min-h-0 min-w-0 relative self-stretch shrink-0 w-full sm:w-auto">
+                      <div className="flex flex-nowrap gap-2 sm:gap-3 lg:gap-[14px] items-center w-full sm:w-[300px] lg:w-[353px] whitespace-nowrap">
+                        <p className="font-helvetica leading-normal not-italic text-xl sm:text-2xl lg:text-[32px] text-black/80">
                           Design to Code
                         </p>
-                        <div className="flex h-0 items-center justify-center relative shrink-0 w-0 hidden md:flex">
+                        <div className="flex h-0 items-center justify-center relative shrink-0 w-0 hidden sm:flex">
                           <div className="flex-none rotate-[270deg]">
                             <div className="bg-gradient-to-l from-transparent h-px opacity-50 to-transparent via-50% via-black/60 w-4" />
                           </div>
                         </div>
-                        <p className="font-helvetica leading-normal not-italic text-xl md:text-[32px] text-black/80">
+                        <p className="font-helvetica leading-normal not-italic text-xl sm:text-2xl lg:text-[32px] text-black/80">
                           Xflow &lt; &gt; GFF 2025
                         </p>
                       </div>
-                      <p className="font-montserrat font-medium leading-[1.6] opacity-60 text-sm md:text-base text-black w-full">
+                      <p className="font-montserrat font-medium leading-[1.6] opacity-60 text-sm sm:text-base text-black w-full">
                         Lorem ipsum dolor sit amet consectetur. Vestibulum purus cursus dignissim vulputate leo. Pretium eu aliquet augue hendrerit id at proin. Vitae mattis semper in ac. Ornare blandit
                       </p>
                     </div>
@@ -490,7 +522,7 @@ export default function Home() {
         </div>
 
         {/* Footer - Full width (12 columns) */}
-        <div className="backdrop-blur-sm backdrop-filter bg-[rgba(255,255,255,0.5)] border border-[#f0f0f0] box-border flex flex-col md:flex-row font-montserrat font-medium min-h-[90px] h-auto md:h-[90px] items-center justify-between gap-4 mb-10 mt-auto px-4 md:px-8 py-4 md:py-0 rounded-[4px] text-sm md:text-base text-black underline w-full max-w-[1440px]">
+        <div className="backdrop-blur-sm backdrop-filter bg-[rgba(255,255,255,0.5)] border border-[#f0f0f0] box-border flex flex-col sm:flex-row font-montserrat font-medium min-h-[90px] h-auto sm:h-[90px] items-center justify-between gap-4 mb-10 mt-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-0 rounded-[4px] text-sm sm:text-base text-black underline w-full max-w-7xl">
           <a
             href="mailto:hello@prateeksingh.in"
             className="decoration-solid hover:opacity-70 transition-opacity"

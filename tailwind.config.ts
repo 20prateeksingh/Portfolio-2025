@@ -16,8 +16,9 @@ const config: Config = {
       },
       fontFamily: {
         montserrat: ['"Montserrat"', "sans-serif"],
-        "red-hat": ['"Red Hat Display"', "sans-serif"],
+        nunito: ['"Nunito"', "sans-serif"],
         helvetica: ['"Helvetica"', "sans-serif"],
+        serif: ['"Merriweather"', "serif"],
       },
     },
   },
