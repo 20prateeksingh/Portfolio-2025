@@ -407,8 +407,8 @@ export default function Home() {
                 <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] w-full">
                   <div className="box-border flex flex-col sm:flex-row gap-4 sm:gap-5 lg:gap-6 items-start p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
                     {/* Mobile: Icon and Title Row */}
-                    <div className="flex flex-row gap-4 items-stretch w-full sm:contents">
-                      <div className="bg-[rgba(255,255,255,0.2)] border border-white relative rounded-[15px] shrink-0 w-[80px] sm:w-[92px] flex items-center justify-center p-3 sm:p-4">
+                    <div className="flex flex-row gap-4 items-center w-full sm:contents">
+                      <div className="bg-[rgba(255,255,255,0.2)] border border-white relative rounded-[15px] shrink-0 w-[80px] sm:w-[92px] aspect-square flex items-center justify-center p-3 sm:p-4">
                         <img
                           alt="Vibecoding Logo"
                           className="w-full h-auto object-contain"
@@ -453,7 +453,7 @@ export default function Home() {
                 <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] w-full">
                   <div className="box-border flex flex-col sm:flex-row gap-4 sm:gap-5 lg:gap-6 items-start p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
                     {/* Mobile: Icon and Title Row */}
-                    <div className="flex flex-row gap-4 items-stretch w-full sm:contents">
+                    <div className="flex flex-row gap-4 items-center w-full sm:contents">
                       <div className="bg-[rgba(255,255,255,0.2)] border border-white relative rounded-[15px] shrink-0 w-[80px] sm:w-[92px] aspect-square flex items-center justify-center p-3 sm:p-4">
                         <img
                           alt="Frame Cleaner"
@@ -499,7 +499,7 @@ export default function Home() {
                 <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] w-full">
                   <div className="box-border flex flex-col sm:flex-row gap-4 sm:gap-5 lg:gap-6 items-start p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
                     {/* Mobile: Icon and Title Row */}
-                    <div className="flex flex-row gap-4 items-stretch w-full sm:contents">
+                    <div className="flex flex-row gap-4 items-center w-full sm:contents">
                       <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] shrink-0 w-[80px] sm:w-[92px] aspect-square flex items-center justify-center p-3 sm:p-4">
                         <img
                           alt="Design to Code"
