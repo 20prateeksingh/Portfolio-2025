@@ -3,6 +3,18 @@
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About - Prateek Singh",
+  description: "Learn more about Prateek Singh - a Product Designer with background in Architecture, currently designing cross-border payment solutions at Xflowpay.",
+  openGraph: {
+    title: "About - Prateek Singh",
+    description: "Learn more about Prateek Singh - a Product Designer with background in Architecture, currently designing cross-border payment solutions at Xflowpay.",
+    url: "https://prateeksingh.in/about",
+    type: "profile",
+  },
+};
 
 export default function AboutPage() {
   return (

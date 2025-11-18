@@ -13,10 +13,46 @@ import ProgressBar from "@/components/case-study/ProgressBar";
 import BackToTop from "@/components/case-study/BackToTop";
 import CaseStudyNavbar from "@/components/case-study/CaseStudyNavbar";
 import Footer from "@/components/Footer";
+import type { Metadata } from "next";
 
 interface CaseStudyPageProps {
   params: {
     slug: string;
+  };
+}
+
+export async function generateMetadata({ params }: CaseStudyPageProps): Promise<Metadata> {
+  const caseStudy = getCaseStudyBySlug(params.slug);
+
+  if (!caseStudy) {
+    return {
+      title: "Case Study Not Found",
+    };
+  }
+
+  return {
+    title: `${caseStudy.title} - Prateek Singh`,
+    description: caseStudy.description,
+    openGraph: {
+      title: `${caseStudy.title} - Prateek Singh`,
+      description: caseStudy.description,
+      url: `https://prateeksingh.in/case-studies/${params.slug}`,
+      type: "article",
+      images: caseStudy.coverImage ? [
+        {
+          url: caseStudy.coverImage,
+          width: 1200,
+          height: 630,
+          alt: caseStudy.title,
+        },
+      ] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${caseStudy.title} - Prateek Singh`,
+      description: caseStudy.description,
+      images: caseStudy.coverImage ? [caseStudy.coverImage] : undefined,
+    },
   };
 }
 

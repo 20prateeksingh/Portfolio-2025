@@ -6,6 +6,17 @@ import { getAllCaseStudies } from "@/lib/case-studies";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
+export const metadata = {
+  title: "Prateek Singh - Product Designer Portfolio",
+  description: "Explore my case studies, AI projects, and design articles. Currently Lead UX @ Xflowpay, working on cross-border payments and fintech solutions.",
+  openGraph: {
+    title: "Prateek Singh - Product Designer Portfolio",
+    description: "Explore my case studies, AI projects, and design articles. Currently Lead UX @ Xflowpay.",
+    url: "https://prateeksingh.in",
+    type: "website",
+  },
+};
+
 // Local image paths
 const imgCaseStudyImage = "/images/case-study-1.png";
 const imgCaseStudyImage1 = "/images/case-study-2.png";
