@@ -32,6 +32,7 @@ export interface CaseStudySection {
   items?: Array<{
     title: string;
     fields: string[];
+    image?: string;
   }>;
   steps?: Array<{
     image: string;
@@ -234,14 +235,14 @@ export const caseStudies: CaseStudy[] = [
           "Invoices are one of the core elements of the workflow of our product. Creating an invoice was a net new offering. As a part of this, we also revamped our existing invoicing elements.",
         comparisons: [
           {
-            before: "/images/invoicing/create-before.png",
-            after: "/images/invoicing/create-after.png",
+            before: "/images/invoicing/create-after.png",
+            after: "/images/invoicing/create-before.png",
             caption:
               "Upload invoice: (swipe right to view the updated design) Our users so far could upload invoices to get paid against. We reworked on the flow. This is also now half-and-half allowing users to view invoices that they are uploading while filling in the details.",
           },
           {
-            before: "/images/invoicing/invoicing-before.png",
-            after: "/images/invoicing/invoicing-after.png",
+            before: "/images/invoicing/invoicing-after.png",
+            after: "/images/invoicing/invoicing-before.png",
             caption:
               "Invoice Details Page: (swipe right to view the updated design) We had over an year worth of feedback on how our users were consuming this page. We used the feedback and solved for easier scanability.",
           },
@@ -255,6 +256,8 @@ export const caseStudies: CaseStudy[] = [
     description: "Solving fees for us, our users and their users",
     category: "UX Design",
     year: "2024",
+    coverImage: "/images/fee-settings/cover-consolidated.png",
+    tagline: "Fee settings",
     content: {
       overview: "A comprehensive fee management system that addresses the needs of multiple stakeholder groups.",
       challenge: "Creating a fee structure that works for the platform, direct users, and end customers required careful balance.",
@@ -262,6 +265,212 @@ export const caseStudies: CaseStudy[] = [
       results: "Improved fee transparency and user understanding, leading to better adoption rates.",
       technologies: ["Figma", "React", "TypeScript"],
     },
+    sections: [
+      {
+        type: "introduction",
+        title: "Introduction",
+        content:
+          "Xflow is a B2B payment company that provides cross-border money movement. We charge a fee on every transaction. As our product evolved so did our pricing strategy and complexity. This case study details how we designed pricing on our dashboard for scalability and configurability.",
+        metadata: {
+          role: "Lead Designer, Researcher",
+          team: "4 people",
+          duration: "3 months",
+          impact: [
+            "Reduced pricing-related user queries by 25%",
+            "Designed for scale, works across 50+ pricing combinations and 4 user types.",
+          ],
+        },
+      },
+      {
+        type: "problem",
+        title: "Problem Statement",
+        content:
+          "We had recently entered the market and were still trying to find our pricing sweet spot. Our first iteration was showing a static line of text that mentions the fee the user was being charged. It made basic sense once it was first designed, this was our version v.0, the MVP that we shipped to users, the real users.\n\n• As the business grew, we struck different pricing deals with different users. No one-size-fits-all solution, not just the fee amounts, but even the fee calculation methodology varied.\n• We had since launched our dashboard via APIs, leading to a new user type - Platform Users. They needed fee configurability for their own users. Both Xflow and the Platform User make money here, more maths!\n• We went multi-currency! \"For all currencies converting to INR has X fees, except USD to INR, which is Y fees\". The challenge was to communicate without overwhelming the users.",
+        images: ["/images/fee-settings/problem-diagram.png"],
+      },
+      {
+        type: "insights",
+        title: "The maths",
+        content:
+          "Xflow charges a fee on money movement which is two-fold:\n• Payout Fee: This is an agreed upon flat fee that Xflow charges users.\n• FX Spread: We also charge a spread on the FX. If our bank partners give us an FX rate of x, we forward it to users as (x-y), where y is the spread.",
+        images: ["/images/fee-settings/math-diagram.png"],
+        items: [
+          {
+            title: "Using Fixed Fee",
+            fields: [
+              "A flat fee is charged, regardless of transaction amount.",
+              "This may not be favourable from a revenue and scale standpoint for large transaction amounts",
+            ],
+            image: "/images/fee-settings/fixed-fee.png",
+          },
+          {
+            title: "Using Variable Fee",
+            fields: [
+              "Charging a variable / percentage of the overall transaction. If fee is set to 1%. A fee of USD 15 would be levied on a USD 1,500.00 transaction",
+              "This is accompanied with a minimum fee. The minimum fee ensures we don't lose money on extremely small transactions.",
+            ],
+            image: "/images/fee-settings/variable-fee.png",
+          },
+          {
+            title: "Using Fixed + Variable Fee",
+            fields: [
+              "A combination of two ensures a scalable fee model. This is the most commonly used fee type.",
+            ],
+            image: "/images/fee-settings/fixed-variable-fee.png",
+          },
+        ],
+      },
+      {
+        type: "custom",
+        title: "Platform Usecase",
+        content:
+          "Platforms are users who leverage our payment capabilities to provide cross-border payments to their own users (connected users). They set the fees for their users.\n\nFunds flow and fees: Xflow Passthrough Fee + Platform Fee = Connected User Fee\n\nCreating an experience for Platform Users to set their connected users' fees",
+        images: [
+          "/images/fee-settings/platform-flow.png",
+          "/images/fee-settings/formula-diagram.png",
+        ],
+      },
+      {
+        type: "custom",
+        title: "Iterations for fee configurability",
+        content:
+          "Our platform users also use our APIs. So, the challenge was to build for configurability without deviating very far from the API build.",
+        images: ["/images/fee-settings/iterations.png"],
+      },
+      {
+        type: "wireframes",
+        title: "Wireframes",
+        content:
+          "Editing fee for a Connected User\nThis was our first iteration, when we supported only USD → INR. Solving for Multi-currency in the next section",
+        steps: [
+          {
+            image: "/images/fee-settings/wire-1.png",
+            caption: "",
+          },
+          {
+            image: "/images/fee-settings/wire-2.png",
+            caption: "",
+          },
+          {
+            image: "/images/fee-settings/wire-3.png",
+            caption: "",
+          },
+          {
+            image: "/images/fee-settings/wire-4.png",
+            caption: "",
+          },
+          {
+            image: "/images/fee-settings/wire-5.png",
+            caption: "",
+          },
+        ],
+      },
+      {
+        type: "custom",
+        title: "We went multi-currency!",
+        content:
+          "This was a major achievement for us as we now offered to receive payments in 25+ currencies and not just USD to INR. This also meant we needed to re-look at our pricing model and its representation in dashboard.",
+        images: ["/images/fee-settings/multi-currency.png"],
+      },
+      {
+        type: "wireframes",
+        title: "Wireframes",
+        content:
+          "Editing fee for a Connected User\nMulti-currency arrived and setting fees became slightly more complex. We introduced fallback fees!\n\nAdding a new Fee pair\nAdding a new fee pair means defining a fee for a currency corridor and moving away from the fallback fee.",
+        steps: [
+          // First subsection: "Editing fee for a Connected User" - 4 images
+          {
+            image: "/images/fee-settings/wire-multi-1.png",
+            caption: "",
+          },
+          {
+            image: "/images/fee-settings/wire-multi-2.png",
+            caption: "",
+          },
+          {
+            image: "/images/fee-settings/wire-multi-3.png",
+            caption: "",
+          },
+          {
+            image: "/images/fee-settings/wire-multi-4.png",
+            caption: "",
+          },
+          // Second subsection: "Adding a new Fee pair" - 4 images
+          {
+            image: "/images/fee-settings/wire-multi-5.png",
+            caption: "",
+          },
+          {
+            image: "/images/fee-settings/wire-multi-6.png",
+            caption: "",
+          },
+          {
+            image: "/images/fee-settings/wire-multi-7.png",
+            caption: "",
+          },
+          {
+            image: "/images/fee-settings/wire-multi-8.png",
+            caption: "",
+          },
+        ],
+      },
+      {
+        type: "custom",
+        title: "Negative Earnings",
+        content:
+          "Let's recall how connected users are charged fees for their transactions. Platform user sets fee for their connected user. This fee includes Xflow's and Platform's fee. The platform can charge very high or very low, Xflow's fee remains fixed, the delta goes to the Platform.\n\nHowever, what if a Connected User's fee is set lower than the sum of Xflow's and the Platform's fees?\n\nPlatform's Earnings:\n• The Platform User earns fee on every of their Connected User's transaction\n• When the CU fee is less than Xflow's passthrough, the Platform has to pay the deficit using earnings from other transactions\n• If deficit exceeds earnings, it will lead to Negative Earning\n• This can lead to business disruption for the Platform user and it's connected users.\n\nThe Pre-funding Balance helps avoid negative earnings by nullifying them. This helps maintain business continuity",
+      },
+      {
+        type: "wireframes",
+        title: "Wireframes",
+        content:
+          "Platform Earnings\nConnected User Fee is lower than Xflow passthrough and Platform Fee - Negative nullification happens through other earnings - Pre-funding balance not consumed\n\nPlatform Earnings\nConnected User Fee is lower than Xflow passthrough and Platform Fee - Negative nullification can not happen through other earnings - Pre-funding balance running low",
+        steps: [
+          {
+            image: "/images/fee-settings/wire-earnings-1.png",
+            caption: "",
+          },
+          {
+            image: "/images/fee-settings/wire-earnings-2.png",
+            caption: "",
+          },
+          {
+            image: "/images/fee-settings/wire-earnings-3.png",
+            caption: "",
+          },
+          {
+            image: "/images/fee-settings/wire-earnings-4.png",
+            caption: "",
+          },
+          {
+            image: "/images/fee-settings/wire-earnings-5.png",
+            caption: "",
+          },
+          {
+            image: "/images/fee-settings/wire-earnings-6.png",
+            caption: "",
+          },
+          {
+            image: "/images/fee-settings/wire-earnings-7.png",
+            caption: "",
+          },
+          {
+            image: "/images/fee-settings/wire-earnings-8.png",
+            caption: "",
+          },
+          {
+            image: "/images/fee-settings/wire-earnings-9.png",
+            caption: "",
+          },
+        ],
+      },
+      {
+        type: "custom",
+        title: "Impact and Next Steps",
+        content:
+          "Impact:\n• Reduced pricing related user query by 25%\n• Designed for scale. Works over 50+ pricing combinations across 4 user types.\n\nPricing update:\nWe recently redid our pricing strategy, to make it more lucrative for the SMBs. For this, we retained much of the design discussed above and added tiered system of pricing. The user can, at any time, switch between pricing tiers.\n\nView Xflowpay website: https://www.xflowpay.com/pricing",
+      },
+    ],
   },
   {
     slug: "checkout",

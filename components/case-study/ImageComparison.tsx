@@ -20,6 +20,10 @@ export default function ImageComparison({
     setSliderValue(parseInt(e.target.value));
   };
 
+  const handleSliderInput = (e: React.FormEvent<HTMLInputElement>) => {
+    setSliderValue(parseInt((e.target as HTMLInputElement).value));
+  };
+
   return (
     <div className="max-w-[856px] mx-auto my-5 rounded-xl overflow-hidden">
       <div className="relative flex">
@@ -52,13 +56,13 @@ export default function ImageComparison({
 
         {/* Slider line */}
         <div
-          className="absolute top-0 bottom-0 w-1 bg-white shadow-[0_0_4px_rgba(0,0,0,0.2)] z-10"
+          className="absolute top-0 bottom-0 w-1 bg-white shadow-[0_0_4px_rgba(0,0,0,0.2)] z-10 pointer-events-none"
           style={{ left: `${sliderValue}%`, transform: "translateX(-50%)" }}
         />
 
         {/* Slider icon */}
         <div
-          className="absolute top-1/2 z-20 w-12 h-12 bg-white/80 border-2 border-black/25 rounded-full flex items-center justify-center shadow-md cursor-grab hover:bg-white/95 hover:scale-105 transition-all"
+          className="absolute top-1/2 z-20 w-12 h-12 bg-white/80 border-2 border-black/25 rounded-full flex items-center justify-center shadow-md pointer-events-none"
           style={{
             left: `${sliderValue}%`,
             transform: "translate(-50%, -50%) rotate(90deg)",
@@ -86,8 +90,9 @@ export default function ImageComparison({
           min="0"
           max="100"
           value={sliderValue}
+          onInput={handleSliderInput}
           onChange={handleSliderChange}
-          className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-30"
+          className="absolute inset-0 w-full h-full opacity-0 cursor-grab active:cursor-grabbing z-30"
         />
       </div>
       {caption && (

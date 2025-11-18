@@ -16,9 +16,9 @@ const config: Config = {
       },
       fontFamily: {
         montserrat: ['"Montserrat"', "sans-serif"],
-        nunito: ['"Nunito"', "sans-serif"],
+        nunito: ['"Nunito Sans"', "sans-serif"],
         helvetica: ['"Helvetica"', "sans-serif"],
-        serif: ['"Merriweather"', "serif"],
+        serif: ['"Nunito Sans"', "sans-serif"],
       },
     },
   },

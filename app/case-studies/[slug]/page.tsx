@@ -8,6 +8,7 @@ import ApproachesSection from "@/components/case-study/ApproachesSection";
 import WireframesSection from "@/components/case-study/WireframesSection";
 import FinalProductSection from "@/components/case-study/FinalProductSection";
 import EcosystemSection from "@/components/case-study/EcosystemSection";
+import CustomSection from "@/components/case-study/CustomSection";
 import ProgressBar from "@/components/case-study/ProgressBar";
 import BackToTop from "@/components/case-study/BackToTop";
 import CaseStudyNavbar from "@/components/case-study/CaseStudyNavbar";
@@ -25,12 +26,12 @@ export async function generateStaticParams() {
   }));
 }
 
-function renderSection(section: any, index: number) {
+function renderSection(section: any, index: number, slug: string) {
   switch (section.type) {
     case "introduction":
       return <IntroductionSection key={index} section={section} />;
     case "problem":
-      return <ProblemSection key={index} section={section} />;
+      return <ProblemSection key={index} section={section} caseStudySlug={slug} />;
     case "insights":
       return <InsightsSection key={index} section={section} />;
     case "approaches":
@@ -43,6 +44,8 @@ function renderSection(section: any, index: number) {
       return <FinalProductSection key={index} section={section} />;
     case "ecosystem":
       return <EcosystemSection key={index} section={section} />;
+    case "custom":
+      return <CustomSection key={index} section={section} />;
     default:
       return null;
   }
@@ -120,10 +123,10 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
           {/* Render all sections */}
           {caseStudy.sections!.map((section, index) => (
             <div key={index} id={`section-${index}`}>
-              {renderSection(section, index)}
+              {renderSection(section, index, caseStudy.slug)}
               {index < caseStudy.sections!.length - 1 && (
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                  <hr className="my-20 border-black/30" />
+                  <hr className="my-8 sm:my-20 border-black/15" />
                 </div>
               )}
             </div>

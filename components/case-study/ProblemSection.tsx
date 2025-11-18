@@ -4,12 +4,14 @@ import { useState } from "react";
 import Image from "next/image";
 import { CaseStudySection } from "@/lib/case-studies";
 import ImageModal from "./ImageModal";
+import FormattedContent from "./FormattedContent";
 
 interface ProblemSectionProps {
   section: CaseStudySection;
+  caseStudySlug?: string;
 }
 
-export default function ProblemSection({ section }: ProblemSectionProps) {
+export default function ProblemSection({ section, caseStudySlug }: ProblemSectionProps) {
   const [modalImage, setModalImage] = useState<{
     src: string;
     alt: string;
@@ -17,43 +19,70 @@ export default function ProblemSection({ section }: ProblemSectionProps) {
 
   return (
     <>
-      <section className="py-12">
+      <section className="py-6 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             <div className="lg:col-span-4">
-              <h2 className="text-4xl font-serif mb-8 sticky top-[100px]">
+              <h2 className="text-4xl font-serif mb-8 sticky top-[122px] sm:top-[130px] lg:top-[154px]">
                 {section.title}
               </h2>
             </div>
             <div className="lg:col-span-8">
-              <p className="text-base leading-[180%] mb-6">{section.content}</p>
+              <FormattedContent content={section.content} />
 
               {section.images && section.images.length > 0 && (
-                <div className="space-y-6">
-                  {section.images.map((image, index) => (
-                    <div key={index}>
-                      <Image
-                        src={image}
-                        alt={`${section.title} image ${index + 1}`}
-                        width={1200}
-                        height={800}
-                        className="w-full h-auto rounded-lg shadow-[0px_5px_7px_0px_rgba(205,205,205,0.20)] cursor-zoom-in hover:opacity-90 transition-opacity"
-                        onClick={() =>
-                          setModalImage({
-                            src: image,
-                            alt: `${section.title} image ${index + 1}`,
-                          })
-                        }
-                        unoptimized
-                      />
-                      {index === section.images!.length - 1 && (
-                        <div className="text-xs leading-[150%] text-center mt-3">
-                          Sample of invoices that we went through to understand
-                          what really makes an invoice
+                <div className="space-y-6 lg:space-y-10">
+                  {section.images.map((image, index) => {
+                    // Use full-width auto-height for invoicing case study
+                    const isInvoicing = caseStudySlug === "invoicing";
+                    
+                    if (isInvoicing) {
+                      return (
+                        <div
+                          key={index}
+                          className="w-full cursor-pointer"
+                          onClick={() =>
+                            setModalImage({
+                              src: image,
+                              alt: `${section.title} image ${index + 1}`,
+                            })
+                          }
+                        >
+                          <Image
+                            src={image}
+                            alt={`${section.title} image ${index + 1}`}
+                            width={0}
+                            height={0}
+                            sizes="100vw"
+                            className="w-full h-auto"
+                            unoptimized
+                          />
                         </div>
-                      )}
-                    </div>
-                  ))}
+                      );
+                    }
+                    
+                    // Default rendering for other case studies
+                    return (
+                      <div
+                        key={index}
+                        className="h-[200px] sm:h-[280px] md:aspect-[1914/694] md:h-auto relative w-full"
+                      >
+                        <Image
+                          src={image}
+                          alt={`${section.title} image ${index + 1}`}
+                          fill
+                          className="object-contain object-center"
+                          onClick={() =>
+                            setModalImage({
+                              src: image,
+                              alt: `${section.title} image ${index + 1}`,
+                            })
+                          }
+                          unoptimized
+                        />
+                      </div>
+                    );
+                  })}
                 </div>
               )}
             </div>
