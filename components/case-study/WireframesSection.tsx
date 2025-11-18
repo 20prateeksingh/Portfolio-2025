@@ -108,6 +108,21 @@ export default function WireframesSection({
         } else if (title.includes("Adding a new Fee pair") && totalImages === 8 && parts.length === 2) {
           // Second subsection of multi-currency wireframes gets 4
           imageCount = 4;
+        } else if (totalImages === 10 && parts.length === 4) {
+          // For FX AI Analyst wireframes: 1, 1, 3, 5 distribution
+          // Check more specific titles first to avoid partial matches
+          if (title.includes("Details of FX Market Trend")) {
+            imageCount = 3;
+          } else if (title.includes("Market Trend")) {
+            imageCount = 1;
+          } else if (title.includes("Payout Calculator")) {
+            imageCount = 1;
+          } else if (title.includes("Setting a Limit Order")) {
+            imageCount = 5;
+          } else {
+            const remainingSubsections = parts.length - i;
+            imageCount = Math.max(1, Math.floor((totalImages - imageIndex) / remainingSubsections));
+          }
         } else {
           // Distribute images evenly, or use specific logic based on content
           const remainingSubsections = parts.length - i;
@@ -256,7 +271,7 @@ export default function WireframesSection({
                   const isLastSubsection = subsectionIndex === subsections.length - 1;
                   
                   return (
-                    <div key={subsectionIndex} className="flex flex-col gap-6 lg:gap-10">
+                    <div key={subsectionIndex} className="flex flex-col">
                       {/* Text Block - only show if there's content */}
                       {(subsection.title || subsection.description) && (
                         <div

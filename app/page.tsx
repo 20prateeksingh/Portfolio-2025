@@ -39,7 +39,7 @@ export default function Home() {
   const [opacity, setOpacity] = useState(1);
   
   const caseStudies = getAllCaseStudies();
-  const caseStudyImages = [imgCaseStudyImage, imgCaseStudyImage1, imgCaseStudyImage2];
+  const caseStudyImages = ["/images/FX AI Analyst.png", imgCaseStudyImage, imgCaseStudyImage1];
   
   const currentContent = tabContent[selectedTab];
 
@@ -339,33 +339,68 @@ export default function Home() {
 
             {/* AI Projects Section - Starts at column 5, spans 8 columns */}
             <div className="col-span-12 lg:col-start-5 lg:col-span-8 flex flex-col gap-8 sm:gap-10 lg:gap-12 items-start mt-6 sm:mt-20 lg:mt-32">
-              <div className="flex flex-col gap-4 items-start">
-                <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80 w-full max-w-full sm:max-w-[588px] break-words overflow-wrap-anywhere">
+              <div className="flex flex-col gap-4 items-start w-full">
+                <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80 w-full sm:max-w-[588px] break-words overflow-wrap-anywhere">
                   I have built some cool AI Stuff
                 </p>
-                <p className="font-montserrat font-medium leading-[1.6] opacity-60 text-sm sm:text-base text-black w-full max-w-full sm:max-w-[588px]">
-                  I believe that AI is here to stay and while at the core it still is series of algorithms, on the surface it is a marvellous enabler. Lorem ipsum dolor sit amet consectetur. Vestibulum purus cursus dignissim vulputate leo. Pretium eu aliquet augue hendrerit id at proin. Vitae mattis semper in ac. Ornare blandit
+                <p className="font-montserrat font-medium leading-[1.6] opacity-60 text-sm sm:text-base text-black w-full sm:max-w-[588px]">
+                  I believe that AI is here to stay. Developments in the past year have made AI consumer grade and has become an enabler. Designers are no longer just the audience to development but are at the forefront. Some stuff I built using AI in the past couple of months:
                 </p>
               </div>
               <div className="flex flex-col gap-6 sm:gap-7 lg:gap-8 items-start w-full">
-                {/* AI Project 1 */}
+                {/* AI Project 1 - Vibecoding */}
                 <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] w-full">
-                  <div className="box-border flex flex-col sm:flex-row gap-4 sm:gap-5 lg:gap-6 items-start overflow-clip p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
-                    <div className="relative shrink-0 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] lg:w-[120px] lg:h-[120px]">
+                  <div className="box-border flex flex-row gap-4 sm:gap-5 lg:gap-6 items-start p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
+                    <div className="bg-[rgba(255,255,255,0.2)] border border-white relative rounded-[15px] shrink-0 w-[80px] sm:w-[92px] flex items-center justify-center p-3 sm:p-4">
                       <img
-                        alt="Plugin Frame Cleaner"
-                        className="absolute backdrop-blur-[11.429px] backdrop-filter inset-0 max-w-none object-center object-cover opacity-80 pointer-events-none w-full h-full"
+                        alt="Vibecoding Logo"
+                        className="w-full h-auto object-contain"
+                        src="/images/Logo_PS.svg"
+                      />
+                    </div>
+                    <div className="flex flex-col gap-3 flex-1 items-start w-full">
+                      <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 lg:gap-[14px] items-start sm:items-center w-full">
+                        <div className="flex gap-2 sm:gap-3 lg:gap-[14px] items-center">
+                          <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
+                            Vibecoding
+                          </p>
+                          <div className="hidden sm:flex h-0 items-center justify-center relative shrink-0 w-0">
+                            <div className="flex-none rotate-[270deg]">
+                              <div className="bg-gradient-to-l from-transparent h-px opacity-50 to-transparent via-50% via-black/60 w-4" />
+                            </div>
+                          </div>
+                        </div>
+                        <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
+                          prateeksingh.in
+                        </p>
+                      </div>
+                      <p className="font-montserrat font-medium leading-[1.6] opacity-60 text-sm sm:text-base text-black w-full">
+                        Vibe-coded this website over a weekend fuelled by curiosity and caffeine. Build basic layouts on Figma, MCP to cursor and a <span className="italic">LOT</span> of prompting!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* AI Project 2 - Frame Cleaner */}
+                <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] w-full">
+                  <div className="box-border flex flex-row gap-4 sm:gap-5 lg:gap-6 items-start p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
+                    <div className="bg-[rgba(255,255,255,0.2)] border border-white relative rounded-[15px] shrink-0 w-[80px] sm:w-[92px] aspect-square flex items-center justify-center p-3 sm:p-4">
+                      <img
+                        alt="Frame Cleaner"
+                        className="w-full h-auto object-contain opacity-80"
                         src={imgProjectImage}
                       />
                     </div>
-                    <div className="basis-0 flex flex-col grow items-start justify-between min-h-0 min-w-0 relative self-stretch shrink-0 w-full sm:w-auto">
-                      <div className="flex flex-wrap gap-2 sm:gap-3 lg:gap-[14px] items-center w-full sm:w-[300px] lg:w-[353px]">
-                        <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
-                          Plugin
-                        </p>
-                        <div className="flex h-0 items-center justify-center relative shrink-0 w-0 hidden sm:flex">
-                          <div className="flex-none rotate-[270deg]">
-                            <div className="bg-gradient-to-l from-transparent h-px opacity-50 to-transparent via-50% via-black/60 w-4" />
+                    <div className="flex flex-col gap-3 flex-1 items-start w-full">
+                      <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 lg:gap-[14px] items-start sm:items-center w-full">
+                        <div className="flex gap-2 sm:gap-3 lg:gap-[14px] items-center">
+                          <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
+                            Plugin
+                          </p>
+                          <div className="hidden sm:flex h-0 items-center justify-center relative shrink-0 w-0">
+                            <div className="flex-none rotate-[270deg]">
+                              <div className="bg-gradient-to-l from-transparent h-px opacity-50 to-transparent via-50% via-black/60 w-4" />
+                            </div>
                           </div>
                         </div>
                         <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
@@ -373,75 +408,40 @@ export default function Home() {
                         </p>
                       </div>
                       <p className="font-montserrat font-medium leading-[1.6] opacity-60 text-sm sm:text-base text-black w-full">
-                        Lorem ipsum dolor sit amet consectetur. Vestibulum purus cursus dignissim vulputate leo. Pretium eu aliquet augue hendrerit id at proin. Vitae mattis semper in ac. Ornare blandit
+                        Plugin that optimise auto-layout in as few layers as possible, removing redundant layers. Plugin is hosted <a href="https://www.figma.com/community/plugin/1546639159666408069/frame-cleaner" target="_blank" rel="noopener noreferrer" className="underline decoration-solid cursor-pointer hover:opacity-80 transition-opacity">here</a>. Received multiple <a href="https://www.linkedin.com/posts/prateeksingh20_the-figma-plugin-ive-been-quietly-building-activity-7392188218303115265-5OcR?utm_source=share&utm_medium=member_desktop" target="_blank" rel="noopener noreferrer" className="underline decoration-solid cursor-pointer hover:opacity-80 transition-opacity">shoutouts</a> in the community.
                       </p>
                     </div>
                   </div>
                 </div>
 
-                {/* AI Project 2 */}
+                {/* AI Project 3 - Design to Code */}
                 <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] w-full">
-                  <div className="box-border flex flex-col sm:flex-row gap-4 sm:gap-5 lg:gap-6 items-start overflow-clip p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
-                    <div className="relative shrink-0 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] lg:w-[120px] lg:h-[120px]">
+                  <div className="box-border flex flex-row gap-4 sm:gap-5 lg:gap-6 items-start p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
+                    <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] shrink-0 w-[80px] sm:w-[92px] aspect-square flex items-center justify-center p-3 sm:p-4">
                       <img
-                        alt="Plugin Frame Cleaner"
-                        className="absolute backdrop-blur-[11.429px] backdrop-filter inset-0 max-w-none object-center object-cover opacity-80 pointer-events-none w-full h-full"
-                        src={imgLogoSelectionIndicatorNew2}
+                        alt="Design to Code"
+                        className="w-auto h-full object-contain"
+                        src={imgProjectImage1}
                       />
                     </div>
-                    <div className="basis-0 flex flex-col grow items-start justify-between min-h-0 min-w-0 relative self-stretch shrink-0 w-full sm:w-auto">
-                      <div className="flex flex-wrap gap-2 sm:gap-3 lg:gap-[14px] items-center w-full sm:w-[300px] lg:w-[353px]">
-                        <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
-                          Plugin
-                        </p>
-                        <div className="flex h-0 items-center justify-center relative shrink-0 w-0 hidden sm:flex">
-                          <div className="flex-none rotate-[270deg]">
-                            <div className="bg-gradient-to-l from-transparent h-px opacity-50 to-transparent via-50% via-black/60 w-4" />
+                    <div className="flex flex-col gap-3 flex-1 items-start w-full">
+                      <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 lg:gap-[14px] items-start sm:items-center w-full">
+                        <div className="flex gap-2 sm:gap-3 lg:gap-[14px] items-center">
+                          <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
+                            Design to Code
+                          </p>
+                          <div className="hidden sm:flex h-0 items-center justify-center relative shrink-0 w-0">
+                            <div className="flex-none rotate-[270deg]">
+                              <div className="bg-gradient-to-l from-transparent h-px opacity-50 to-transparent via-50% via-black/60 w-4" />
+                            </div>
                           </div>
                         </div>
                         <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
-                          Frame Cleaner
+                          Xflow at GFF 2025
                         </p>
                       </div>
                       <p className="font-montserrat font-medium leading-[1.6] opacity-60 text-sm sm:text-base text-black w-full">
-                        Lorem ipsum dolor sit amet consectetur. Vestibulum purus cursus dignissim vulputate leo. Pretium eu aliquet augue hendrerit id at proin. Vitae mattis semper in ac. Ornare blandit
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* AI Project 3 */}
-                <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] w-full">
-                  <div className="box-border flex flex-col sm:flex-row gap-4 sm:gap-5 lg:gap-6 items-start overflow-clip p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
-                    <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] shrink-0 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] lg:w-[120px] lg:h-[120px]">
-                      <div className="overflow-clip relative rounded-[inherit] w-full h-full">
-                        <div className="absolute h-[60px] sm:h-[75px] lg:h-[90px] left-[20px] sm:left-[23px] lg:left-[26px] top-[10px] sm:top-[12px] lg:top-[15px] w-[46px] sm:w-[57px] lg:w-[69px]">
-                          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                            <img
-                              alt="Design to Code"
-                              className="absolute h-full left-0 max-w-none top-0 w-[235.29%]"
-                              src={imgProjectImage1}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="basis-0 flex flex-col grow items-start justify-between min-h-0 min-w-0 relative self-stretch shrink-0 w-full sm:w-auto">
-                      <div className="flex flex-nowrap gap-2 sm:gap-3 lg:gap-[14px] items-center w-full sm:w-[300px] lg:w-[353px] whitespace-nowrap">
-                        <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
-                          Design to Code
-                        </p>
-                        <div className="flex h-0 items-center justify-center relative shrink-0 w-0 hidden sm:flex">
-                          <div className="flex-none rotate-[270deg]">
-                            <div className="bg-gradient-to-l from-transparent h-px opacity-50 to-transparent via-50% via-black/60 w-4" />
-                          </div>
-                        </div>
-                        <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
-                          Xflow &lt; &gt; GFF 2025
-                        </p>
-                      </div>
-                      <p className="font-montserrat font-medium leading-[1.6] opacity-60 text-sm sm:text-base text-black w-full">
-                        Lorem ipsum dolor sit amet consectetur. Vestibulum purus cursus dignissim vulputate leo. Pretium eu aliquet augue hendrerit id at proin. Vitae mattis semper in ac. Ornare blandit
+                        I lead the design effort for Xflow at Global Fintech Festival this year. We <a href="https://www.linkedin.com/posts/prateeksingh20_xflow-xflowatgff25-activity-7384929232356843520-fprQ?utm_source=share&utm_medium=member_desktop" target="_blank" rel="noopener noreferrer" className="underline decoration-solid cursor-pointer hover:opacity-80 transition-opacity">used</a> AI to supercharge our presence in the fest.
                       </p>
                     </div>
                   </div>
@@ -462,28 +462,24 @@ export default function Home() {
               <div className="flex flex-col gap-6 sm:gap-7 lg:gap-8 items-start w-full">
                 {/* Blog Post 1 */}
                 <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] w-full">
-                  <div className="box-border flex flex-col sm:flex-row gap-4 sm:gap-5 lg:gap-6 items-start overflow-clip p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
-                    <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] shrink-0 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] lg:w-[120px] lg:h-[120px]">
-                      <div className="overflow-clip relative rounded-[inherit] w-full h-full">
-                        <div className="absolute h-[60px] sm:h-[75px] lg:h-[90px] left-[20px] sm:left-[23px] lg:left-[26px] top-[10px] sm:top-[12px] lg:top-[15px] w-[46px] sm:w-[57px] lg:w-[69px]">
-                          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                            <img
-                              alt="Blog post"
-                              className="absolute h-full left-0 max-w-none top-0 w-[235.29%]"
-                              src={imgProjectImage1}
-                            />
-                          </div>
-                        </div>
-                      </div>
+                  <div className="box-border flex flex-row gap-4 sm:gap-5 lg:gap-6 items-start p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
+                    <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] shrink-0 w-[80px] sm:w-[92px] aspect-square flex items-center justify-center p-3 sm:p-4">
+                      <img
+                        alt="Blog post"
+                        className="w-auto h-full object-contain"
+                        src={imgProjectImage1}
+                      />
                     </div>
-                    <div className="basis-0 flex flex-col grow items-start justify-between min-h-0 min-w-0 relative self-stretch shrink-0 w-full sm:w-auto">
-                      <div className="flex flex-nowrap gap-2 sm:gap-3 lg:gap-[14px] items-center w-full sm:w-[300px] lg:w-[353px] whitespace-nowrap">
-                        <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
-                          Design to Code
-                        </p>
-                        <div className="flex h-0 items-center justify-center relative shrink-0 w-0 hidden sm:flex">
-                          <div className="flex-none rotate-[270deg]">
-                            <div className="bg-gradient-to-l from-transparent h-px opacity-50 to-transparent via-50% via-black/60 w-4" />
+                    <div className="flex flex-col gap-3 flex-1 items-start w-full">
+                      <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 lg:gap-[14px] items-start sm:items-center w-full">
+                        <div className="flex gap-2 sm:gap-3 lg:gap-[14px] items-center">
+                          <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
+                            Design to Code
+                          </p>
+                          <div className="hidden sm:flex h-0 items-center justify-center relative shrink-0 w-0">
+                            <div className="flex-none rotate-[270deg]">
+                              <div className="bg-gradient-to-l from-transparent h-px opacity-50 to-transparent via-50% via-black/60 w-4" />
+                            </div>
                           </div>
                         </div>
                         <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
@@ -499,28 +495,24 @@ export default function Home() {
 
                 {/* Blog Post 2 */}
                 <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] w-full">
-                  <div className="box-border flex flex-col sm:flex-row gap-4 sm:gap-5 lg:gap-6 items-start overflow-clip p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
-                    <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] shrink-0 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] lg:w-[120px] lg:h-[120px]">
-                      <div className="overflow-clip relative rounded-[inherit] w-full h-full">
-                        <div className="absolute h-[60px] sm:h-[75px] lg:h-[90px] left-[20px] sm:left-[23px] lg:left-[26px] top-[10px] sm:top-[12px] lg:top-[15px] w-[46px] sm:w-[57px] lg:w-[69px]">
-                          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                            <img
-                              alt="Blog post"
-                              className="absolute h-full left-0 max-w-none top-0 w-[235.29%]"
-                              src={imgProjectImage1}
-                            />
-                          </div>
-                        </div>
-                      </div>
+                  <div className="box-border flex flex-row gap-4 sm:gap-5 lg:gap-6 items-start p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
+                    <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] shrink-0 w-[80px] sm:w-[92px] aspect-square flex items-center justify-center p-3 sm:p-4">
+                      <img
+                        alt="Blog post"
+                        className="w-auto h-full object-contain"
+                        src={imgProjectImage1}
+                      />
                     </div>
-                    <div className="basis-0 flex flex-col grow items-start justify-between min-h-0 min-w-0 relative self-stretch shrink-0 w-full sm:w-auto">
-                      <div className="flex flex-nowrap gap-2 sm:gap-3 lg:gap-[14px] items-center w-full sm:w-[300px] lg:w-[353px] whitespace-nowrap">
-                        <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
-                          Design to Code
-                        </p>
-                        <div className="flex h-0 items-center justify-center relative shrink-0 w-0 hidden sm:flex">
-                          <div className="flex-none rotate-[270deg]">
-                            <div className="bg-gradient-to-l from-transparent h-px opacity-50 to-transparent via-50% via-black/60 w-4" />
+                    <div className="flex flex-col gap-3 flex-1 items-start w-full">
+                      <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 lg:gap-[14px] items-start sm:items-center w-full">
+                        <div className="flex gap-2 sm:gap-3 lg:gap-[14px] items-center">
+                          <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
+                            Design to Code
+                          </p>
+                          <div className="hidden sm:flex h-0 items-center justify-center relative shrink-0 w-0">
+                            <div className="flex-none rotate-[270deg]">
+                              <div className="bg-gradient-to-l from-transparent h-px opacity-50 to-transparent via-50% via-black/60 w-4" />
+                            </div>
                           </div>
                         </div>
                         <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">

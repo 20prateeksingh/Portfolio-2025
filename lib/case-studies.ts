@@ -66,18 +66,18 @@ export interface CaseStudy {
 
 export const caseStudies: CaseStudy[] = [
   {
-    slug: "invoicing",
-    title: "Invoicing",
-    description: "Invoicing solutions for freelancer segment",
+    slug: "fx-ai-analyst",
+    title: "FX AI Analyst",
+    description: "Moving money with market insights",
     category: "UX Design",
     year: "2024",
-    coverImage: "/images/invoicing/Invoicing-cover-blue-wide.png",
-    tagline: "Invoicing solution for payments",
+    coverImage: "/images/fx-ai-analyst/cover-illustration.png",
+    tagline: "FX AI Analyst",
     content: {
-      overview: "A comprehensive invoicing solution designed specifically for freelancers, focusing on simplicity and efficiency.",
-      challenge: "Freelancers needed a streamlined invoicing system that could handle their unique needs without complexity.",
-      solution: "We developed an intuitive invoicing interface that simplifies the billing process while maintaining professional standards.",
-      results: "Significantly reduced time spent on invoicing and improved user satisfaction among freelancer users.",
+      overview: "An AI-powered FX analytics platform that provides market insights for money movement decisions.",
+      challenge: "Users needed better visibility into FX market trends to make informed decisions about cross-border payments.",
+      solution: "We developed an intelligent analytics interface that leverages AI to provide actionable market insights.",
+      results: "Improved decision-making for users and increased confidence in timing cross-border transactions.",
       technologies: ["Figma", "React", "TypeScript"],
     },
     sections: [
@@ -85,168 +85,163 @@ export const caseStudies: CaseStudy[] = [
         type: "introduction",
         title: "Introduction",
         content:
-          "Xflowpay is a fintech company that offers cross-border payments. We started by serving businesses for higher transaction volumes. To reach a wider audience, we expanded to cater to freelancers and sole proprietors (FSPs). To better understand FSPs, we interviewed 50+ users, gathering valuable insights that shaped our product to be FSP-friendly. One key finding was the need for an integrated invoicing solution to streamline payment processes and enhance user experience.",
+          "Xflow is a B2B cross border payments company. The most common fund flow for our users is receiving USD and getting an INR payout. We started by offering great pricing to users. However, the market dictated how well those dollars converted to INR on any given day. This case study is how we built a product to make the market a little more forgiving.",
         metadata: {
-          role: "Lead Designer, Researcher",
+          role: "Lead Designer",
           team: "4 people",
-          duration: "3 months",
+          duration: "1.5 months",
           impact: [
-            'Invoices are created <span class="bold">20x times</span> than they are being uploaded to our platform. Validating our hypothesis that invoicing solution integrated with payments would help the freelancers segment.',
-            'Over <span class="bold">70% first time users</span> created invoices without dropping off. The drop offs can be attribute to non-tool reasons as well.',
-            'Median time to create invoice is ~3 minutes. This is including first time users who need a longer set-up. Repeat users complete creation in <span class="bold">under 30 seconds</span>.',
+            "Transactions worth USD 10+ millions using the new product so far.",
+            "Savings over 1cr in INR conversions across users.",
           ],
         },
       },
       {
-        type: "problem",
-        title: "Problem Statement",
+        type: "custom",
+        title: "Opportunity",
         content:
-          "We are a new player trying to disrupt existing systems. One of the challenges was to get users to migrate from their existing methods of creating invoices. In our research we found that most users used general purpose tools like Excel, Notion and Sheets. There was also a cohort of users using specialized invoicing tools like Zoho and Tally. Almost all of the users leaned towards free tools and readily available templates.",
-        images: [
-          "/images/invoicing/Competetion logos.png",
-          "/images/invoicing/invoicing.gif",
-        ],
-      },
-      {
-        type: "insights",
-        title: "Insights",
-        content:
-          "We are a new player trying to disrupt existing systems. One of the challenges was to get users to migrate from their existing methods of creating invoices. In our research we found that most users used general purpose tools like Excel, Notion and Sheets. There was also a cohort of users using specialised invoicing tools like Zoho and Tally. Almost all of the users leaned towards free tools and readily available templates.",
+          "Users want predictability, but the market is anything but predictable. Consider the following case - how the market can influence how much INR our users receive.",
+        images: ["/images/fx-ai-analyst/opportunity-diagram.png"],
+        metadata: {
+          imageCaption: "A difference of just half a rupee in the FX rate leads to tens of thousands of rupees in payout difference",
+          afterImageText: "We knew we couldn't control the market, but we could help our users time it. To do this, we built two products:",
+        },
         items: [
           {
-            title: "Partner Details",
+            title: "FX AI Analyst",
             fields: [
-              "Partner name",
-              "Address",
-              "Email",
-              "description",
+              "Looks at market conditions and gives a 3-day FX outlook. This provides a prediction range for how the market is expected to behave over the upcoming 3 days.",
             ],
           },
           {
-            title: "Invoice Particulars",
+            title: "Limit Order",
             fields: [
-              "Invoice number",
-              "Invoicing dates",
-              "Currency",
-              "Due date",
-              "Description",
-            ],
-          },
-          {
-            title: "Invoice Item",
-            fields: [
-              "Item name",
-              "Unit / Rate / Qty",
-              "Description",
-              "SAC Code",
-              "Discount",
-              "Taxes",
-            ],
-          },
-          {
-            title: "Payment Info",
-            fields: [
-              "Online payment",
-              "Payment terms",
-              "Bank transfer instructions",
-            ],
-          },
-          {
-            title: "Branding",
-            fields: ["Theme colors", "Logo", "Font"],
-          },
-          {
-            title: "User Details",
-            fields: [
-              "Name",
-              "Email",
-              "Address",
-              "Phone number",
-              "GST",
-              "Website",
+              "Allows users to set a limit order based on their target FX rate. As soon as the rate is hit, funds are withdrawn at that rate.",
             ],
           },
         ],
       },
       {
-        type: "approaches",
-        title: "UX Approaches",
+        type: "custom",
+        title: "Research Approach",
         content:
-          "At a broad level we identified two approaches based on interaction with the invoice tool. While an interaction in-situ on the invoice document is very intuitive, it lacks flow curation and may lead to frustration down the line for users. The form and preview approach allows staged information sorting and also prevents information overload.",
-        approaches: [
+          "This was to be our pilot version. Historical transactions from our dashboard could not directly help us predict how users would use the new product offerings. We knew, however, that our users made decisions based on three major factors - **trust**, **savings** and **data**.\n\nWe stitched together user stories that would later become our litmus test along the design cycle.",
+        metadata: {
+          userStories: [
+            '"I\'m a user of Xflow Dashboard, I...',
+            '"I want to see how the market is performing right now, what has the <strong>trend</strong> been like?"',
+            '"If I withdraw right now, <strong>how much INR</strong> would I receive?"',
+            '"What is the <strong>market outlook</strong>, how does it fare <strong>against the current rate</strong>?"',
+            '"Why should I <strong>trust</strong> your market sentiment analysis? How do I know of your <strong>track record</strong>?"',
+            '"How do I <strong>action</strong> on your analysis? How will this <strong>save me money</strong>?"',
+            '"<strong>Is my money safe</strong> if I set the limit order?"',
+          ],
+          architectureTitle: "Information Architecture",
+          architectureDescription: "To satisfy all of the above user needs, we created four distinct yet interdependent information modules.",
+        },
+        items: [
           {
-            image: "/images/invoicing/Approach 1.png",
-            title: "In-situ approach",
-            description:
-              "WYSIWYG approach to let a user directly interact with invoice document. Paypal provides a similar tool.",
+            title: "Current Trend",
+            fields: [
+              "Current Rate",
+              "Last updated on",
+              "Next update in",
+              "Market momentum",
+            ],
           },
           {
-            image: "/images/invoicing/Approach 2.png",
-            title: "Form and preview",
-            description:
-              "Form on left and preview on the right. The invoice generated is 1:1 of the output. Stripe follows a similar approach.",
+            title: "FX Outlook",
+            fields: [
+              "Forecasted Range",
+              "Compared to current rate",
+              "Prediction justification",
+              "Last updated",
+              "Valid Till",
+              "Past prediction performance",
+            ],
+          },
+          {
+            title: "Limit Order",
+            fields: [
+              "Target Rate",
+              "Valid from",
+              "Valid Till",
+              "Post expiry actions",
+              "Invoice",
+              "Expected INR",
+              "Receiving bank account",
+            ],
+          },
+          {
+            title: "Payout Calculator",
+            fields: [
+              "Amount in USD",
+              "Rate applicable",
+              "Expected INR",
+              "Compared to other rates",
+            ],
           },
         ],
+      },
+      {
+        type: "custom",
+        title: "Iterations for fee configurability",
+        content:
+          "Our platform users also use our APIs. So, the challenge was to build for configurability without deviating very far from the API build.",
+        images: ["/images/fx-ai-analyst/iterations.png"],
       },
       {
         type: "wireframes",
         title: "Wireframes",
-        content: "",
+        content: "Market Trend: Current rate + FX Outlook\n\nPayout Calculator\n\nDetails of FX Market Trend\n\nSetting a Limit Order",
         steps: [
           {
-            image: "/images/invoicing/invoicingWiresStep1.png",
-            caption: "Step 1: Adding partner (client) information.",
+            image: "/images/fx-ai-analyst/wireframe-market-trend.png",
+            caption: "",
           },
           {
-            image: "/images/invoicing/invoicingWiresStep2.png",
-            caption:
-              "Step 2: Adding invoice items. A user can quick-add an existing item or create new.",
+            image: "/images/fx-ai-analyst/wireframe-payout-calculator.png",
+            caption: "",
           },
           {
-            image: "/images/invoicing/invoicingWiresStep3.png",
-            caption:
-              "Step 3: Providing invoice information, some of these are compliant related.",
+            image: "/images/fx-ai-analyst/wireframe-fx-details-1.png",
+            caption: "",
           },
           {
-            image: "/images/invoicing/invoicingWiresStep4.png",
-            caption:
-              "Step 4: Configuring payment details. The user can choose how they want to receive payment against this invoice.",
+            image: "/images/fx-ai-analyst/wireframe-fx-details-2.png",
+            caption: "",
           },
           {
-            image: "/images/invoicing/invoicingWiresStep5.png",
-            caption:
-              "Invoice created: User can quick send an email with invoice and payment details to their partner.",
+            image: "/images/fx-ai-analyst/wireframe-fx-details-3.png",
+            caption: "",
+          },
+          {
+            image: "/images/fx-ai-analyst/wireframe-fx-details-4.png",
+            caption: "",
+          },
+          {
+            image: "/images/fx-ai-analyst/wireframe-limit-order-1.png",
+            caption: "",
+          },
+          {
+            image: "/images/fx-ai-analyst/wireframe-limit-order-2.png",
+            caption: "",
+          },
+          {
+            image: "/images/fx-ai-analyst/wireframe-limit-order-3.png",
+            caption: "",
+          },
+          {
+            image: "/images/fx-ai-analyst/wireframe-limit-order-4.png",
+            caption: "",
           },
         ],
       },
       {
-        type: "final-product",
-        title: "Final Product",
-        content: "",
-        video: {
-          url: "https://www.youtube.com/embed/MQ9jRWYr-PE?si=a5yhZT-wOc8YA4L2",
-          embedId: "MQ9jRWYr-PE",
-        },
-      },
-      {
-        type: "ecosystem",
-        title: "Ecosystem",
+        type: "custom",
+        title: "Impact and Next Steps",
         content:
-          "Invoices are one of the core elements of the workflow of our product. Creating an invoice was a net new offering. As a part of this, we also revamped our existing invoicing elements.",
-        comparisons: [
-          {
-            before: "/images/invoicing/create-after.png",
-            after: "/images/invoicing/create-before.png",
-            caption:
-              "Upload invoice: (swipe right to view the updated design) Our users so far could upload invoices to get paid against. We reworked on the flow. This is also now half-and-half allowing users to view invoices that they are uploading while filling in the details.",
-          },
-          {
-            before: "/images/invoicing/invoicing-after.png",
-            after: "/images/invoicing/invoicing-before.png",
-            caption:
-              "Invoice Details Page: (swipe right to view the updated design) We had over an year worth of feedback on how our users were consuming this page. We used the feedback and solved for easier scanability.",
-          },
-        ],
+          "Impact:\n• Transactions worth USD 10+ millions using the new product so far.\n• Savings over 1cr in INR conversions across users.\n\nFX AI update:\nThe product was very well received. We are currently working on making the offering richer by creating dedicated details page for each limit order, making data richer on our dashboard.\nView Xflowpay website: https://www.xflowpay.com/products/fx-ai-analyst",
       },
     ],
   },
@@ -468,23 +463,194 @@ export const caseStudies: CaseStudy[] = [
         type: "custom",
         title: "Impact and Next Steps",
         content:
-          "Impact:\n• Reduced pricing related user query by 25%\n• Designed for scale. Works over 50+ pricing combinations across 4 user types.\n\nPricing update:\nWe recently redid our pricing strategy, to make it more lucrative for the SMBs. For this, we retained much of the design discussed above and added tiered system of pricing. The user can, at any time, switch between pricing tiers.\n\nView Xflowpay website: https://www.xflowpay.com/pricing",
+          "Impact:\n• Reduced pricing related user query by 25%\n• Designed for scale. Works over 50+ pricing combinations across 4 user types.\n\nPricing update:\nWe recently redid our pricing strategy, to make it more lucrative for the SMBs. For this, we retained much of the design discussed above and added tiered system of pricing. The user can, at any time, switch between pricing tiers.\nView Xflowpay website: https://www.xflowpay.com/pricing",
       },
     ],
   },
   {
-    slug: "checkout",
-    title: "Checkout",
-    description: "Checkout experience for Indian businesses",
+    slug: "invoicing",
+    title: "Invoicing",
+    description: "Invoicing solutions for freelancer segment",
     category: "UX Design",
     year: "2024",
+    coverImage: "/images/invoicing/Invoicing-cover-blue-wide.png",
+    tagline: "Invoicing solution for payments",
     content: {
-      overview: "A localized checkout experience designed specifically for the Indian market with its unique payment preferences.",
-      challenge: "Indian businesses have specific payment method preferences and regulatory requirements that needed to be addressed.",
-      solution: "We created a checkout flow that supports multiple payment methods including UPI, cards, and wallets while maintaining security.",
-      results: "Increased checkout completion rates and improved user satisfaction with payment options.",
+      overview: "A comprehensive invoicing solution designed specifically for freelancers, focusing on simplicity and efficiency.",
+      challenge: "Freelancers needed a streamlined invoicing system that could handle their unique needs without complexity.",
+      solution: "We developed an intuitive invoicing interface that simplifies the billing process while maintaining professional standards.",
+      results: "Significantly reduced time spent on invoicing and improved user satisfaction among freelancer users.",
       technologies: ["Figma", "React", "TypeScript"],
     },
+    sections: [
+      {
+        type: "introduction",
+        title: "Introduction",
+        content:
+          "Xflowpay is a fintech company that offers cross-border payments. We started by serving businesses for higher transaction volumes. To reach a wider audience, we expanded to cater to freelancers and sole proprietors (FSPs). To better understand FSPs, we interviewed 50+ users, gathering valuable insights that shaped our product to be FSP-friendly. One key finding was the need for an integrated invoicing solution to streamline payment processes and enhance user experience.",
+        metadata: {
+          role: "Lead Designer, Researcher",
+          team: "4 people",
+          duration: "3 months",
+          impact: [
+            'Invoices are created <span class="bold">20x times</span> than they are being uploaded to our platform. Validating our hypothesis that invoicing solution integrated with payments would help the freelancers segment.',
+            'Over <span class="bold">70% first time users</span> created invoices without dropping off. The drop offs can be attribute to non-tool reasons as well.',
+            'Median time to create invoice is ~3 minutes. This is including first time users who need a longer set-up. Repeat users complete creation in <span class="bold">under 30 seconds</span>.',
+          ],
+        },
+      },
+      {
+        type: "problem",
+        title: "Problem Statement",
+        content:
+          "We are a new player trying to disrupt existing systems. One of the challenges was to get users to migrate from their existing methods of creating invoices. In our research we found that most users used general purpose tools like Excel, Notion and Sheets. There was also a cohort of users using specialized invoicing tools like Zoho and Tally. Almost all of the users leaned towards free tools and readily available templates.",
+        images: [
+          "/images/invoicing/Competetion logos.png",
+          "/images/invoicing/invoicing.gif",
+        ],
+      },
+      {
+        type: "insights",
+        title: "Insights",
+        content:
+          "We are a new player trying to disrupt existing systems. One of the challenges was to get users to migrate from their existing methods of creating invoices. In our research we found that most users used general purpose tools like Excel, Notion and Sheets. There was also a cohort of users using specialised invoicing tools like Zoho and Tally. Almost all of the users leaned towards free tools and readily available templates.",
+        items: [
+          {
+            title: "Partner Details",
+            fields: [
+              "Partner name",
+              "Address",
+              "Email",
+              "description",
+            ],
+          },
+          {
+            title: "Invoice Particulars",
+            fields: [
+              "Invoice number",
+              "Invoicing dates",
+              "Currency",
+              "Due date",
+              "Description",
+            ],
+          },
+          {
+            title: "Invoice Item",
+            fields: [
+              "Item name",
+              "Unit / Rate / Qty",
+              "Description",
+              "SAC Code",
+              "Discount",
+              "Taxes",
+            ],
+          },
+          {
+            title: "Payment Info",
+            fields: [
+              "Online payment",
+              "Payment terms",
+              "Bank transfer instructions",
+            ],
+          },
+          {
+            title: "Branding",
+            fields: ["Theme colors", "Logo", "Font"],
+          },
+          {
+            title: "User Details",
+            fields: [
+              "Name",
+              "Email",
+              "Address",
+              "Phone number",
+              "GST",
+              "Website",
+            ],
+          },
+        ],
+      },
+      {
+        type: "approaches",
+        title: "UX Approaches",
+        content:
+          "At a broad level we identified two approaches based on interaction with the invoice tool. While an interaction in-situ on the invoice document is very intuitive, it lacks flow curation and may lead to frustration down the line for users. The form and preview approach allows staged information sorting and also prevents information overload.",
+        approaches: [
+          {
+            image: "/images/invoicing/Approach 1.png",
+            title: "In-situ approach",
+            description:
+              "WYSIWYG approach to let a user directly interact with invoice document. Paypal provides a similar tool.",
+          },
+          {
+            image: "/images/invoicing/Approach 2.png",
+            title: "Form and preview",
+            description:
+              "Form on left and preview on the right. The invoice generated is 1:1 of the output. Stripe follows a similar approach.",
+          },
+        ],
+      },
+      {
+        type: "wireframes",
+        title: "Wireframes",
+        content: "",
+        steps: [
+          {
+            image: "/images/invoicing/invoicingWiresStep1.png",
+            caption: "Step 1: Adding partner (client) information.",
+          },
+          {
+            image: "/images/invoicing/invoicingWiresStep2.png",
+            caption:
+              "Step 2: Adding invoice items. A user can quick-add an existing item or create new.",
+          },
+          {
+            image: "/images/invoicing/invoicingWiresStep3.png",
+            caption:
+              "Step 3: Providing invoice information, some of these are compliant related.",
+          },
+          {
+            image: "/images/invoicing/invoicingWiresStep4.png",
+            caption:
+              "Step 4: Configuring payment details. The user can choose how they want to receive payment against this invoice.",
+          },
+          {
+            image: "/images/invoicing/invoicingWiresStep5.png",
+            caption:
+              "Invoice created: User can quick send an email with invoice and payment details to their partner.",
+          },
+        ],
+      },
+      {
+        type: "final-product",
+        title: "Final Product",
+        content: "",
+        video: {
+          url: "https://www.youtube.com/embed/MQ9jRWYr-PE?si=a5yhZT-wOc8YA4L2",
+          embedId: "MQ9jRWYr-PE",
+        },
+      },
+      {
+        type: "ecosystem",
+        title: "Ecosystem",
+        content:
+          "Invoices are one of the core elements of the workflow of our product. Creating an invoice was a net new offering. As a part of this, we also revamped our existing invoicing elements.",
+        comparisons: [
+          {
+            before: "/images/invoicing/create-after.png",
+            after: "/images/invoicing/create-before.png",
+            caption:
+              "Upload invoice: (swipe right to view the updated design) Our users so far could upload invoices to get paid against. We reworked on the flow. This is also now half-and-half allowing users to view invoices that they are uploading while filling in the details.",
+          },
+          {
+            before: "/images/invoicing/invoicing-after.png",
+            after: "/images/invoicing/invoicing-before.png",
+            caption:
+              "Invoice Details Page: (swipe right to view the updated design) We had over an year worth of feedback on how our users were consuming this page. We used the feedback and solved for easier scanability.",
+          },
+        ],
+      },
+    ],
   },
 ];
 

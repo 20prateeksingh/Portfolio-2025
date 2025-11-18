@@ -93,7 +93,9 @@ export default function Navigation({ onWorksClick }: NavigationProps = {}) {
       {/* Mobile Menu */}
       <div className={`fixed top-[114px] left-0 right-0 z-[9998] transition-all duration-300 sm:hidden pointer-events-none ${mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pointer-events-none">
-          <div className={`backdrop-blur-sm backdrop-filter border rounded-[4px] flex flex-col py-6 px-4 gap-4 font-montserrat font-medium text-[#0c120c] text-base sm:text-lg uppercase pointer-events-auto transition-colors duration-300 ${
+          <div className={`backdrop-blur-sm backdrop-filter border rounded-[4px] flex flex-col py-6 px-4 gap-4 font-montserrat font-medium text-[#0c120c] text-base sm:text-lg uppercase transition-colors duration-300 ${
+            mobileMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'
+          } ${
             isOverCover 
               ? 'bg-[rgba(255,255,255,0.1)] border-[rgba(240,240,240,0.5)]' 
               : 'bg-[rgba(255,255,255,0.5)] border-[#f0f0f0]'
@@ -106,14 +108,14 @@ export default function Navigation({ onWorksClick }: NavigationProps = {}) {
                   onWorksClick(e);
                 }
               }}
-              className="hover:opacity-70 transition-opacity py-2 cursor-pointer pointer-events-auto"
+              className="hover:opacity-70 transition-opacity py-2 cursor-pointer"
             >
               Works
             </a>
-            <Link href="/about" className="hover:opacity-70 transition-opacity py-2 pointer-events-auto" onClick={() => setMobileMenuOpen(false)}>
+            <Link href="/about" className="hover:opacity-70 transition-opacity py-2" onClick={() => setMobileMenuOpen(false)}>
               About
             </Link>
-            <a href="/PrateekSingh_Resume.pdf" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity py-2 pointer-events-auto" onClick={() => setMobileMenuOpen(false)}>
+            <a href="/PrateekSingh_Resume.pdf" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity py-2" onClick={() => setMobileMenuOpen(false)}>
               Resume
             </a>
           </div>

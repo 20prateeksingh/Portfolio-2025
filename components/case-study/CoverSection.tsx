@@ -8,11 +8,12 @@ interface CoverSectionProps {
 }
 
 export default function CoverSection({ tagline, coverImage }: CoverSectionProps) {
-  // For fee-settings, we need special layout with consolidated image
+  // For fee-settings and FX AI Analyst, we need special layout with centered image
   const isFeeSettings = coverImage.includes("fee-settings");
+  const isFxAiAnalyst = coverImage.includes("fx-ai-analyst");
 
   // Original layout for invoicing and other case studies
-  if (!isFeeSettings) {
+  if (!isFeeSettings && !isFxAiAnalyst) {
     return (
       <section className="relative h-screen bg-[#6666FF] mb-20 overflow-hidden">
         <div className="absolute top-[30%] left-1/2 -translate-x-1/2 z-10 w-full text-center">
@@ -31,20 +32,35 @@ export default function CoverSection({ tagline, coverImage }: CoverSectionProps)
             unoptimized
           />
         </div>
-        <div className="absolute bottom-[7vh] left-1/2 -translate-x-1/2 animate-bounce z-10">
-          <svg
-            className="w-6 h-6 text-white"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
+      </section>
+    );
+  }
+
+  // FX AI Analyst specific layout
+  if (isFxAiAnalyst) {
+    return (
+      <section className="relative h-screen bg-[#6666FF] mb-20 overflow-hidden">
+        {/* Title - positioned at top to match other case studies */}
+        <div className="absolute top-[30%] left-1/2 -translate-x-1/2 z-10 w-full text-center px-4">
+          <h1 className="text-4xl md:text-6xl text-white font-serif mb-4">
+            {tagline}
+          </h1>
+          <p className="text-xl md:text-2xl text-white/90 font-montserrat">
+            Moving money with market insights
+          </p>
+        </div>
+        
+        {/* AI Insights Card Illustration - positioned in lower half */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 translate-y-[calc(50%-10vh)] z-0 w-[90%] md:w-[70%] lg:w-[35vw] max-w-[600px]">
+          <Image
+            src={coverImage}
+            alt="AI FX Insights"
+            width={824}
+            height={495}
+            className="w-full h-auto"
+            priority
+            unoptimized
+          />
         </div>
       </section>
     );
@@ -73,21 +89,6 @@ export default function CoverSection({ tagline, coverImage }: CoverSectionProps)
           priority
           unoptimized
         />
-      </div>
-      <div className="absolute bottom-[7vh] left-1/2 -translate-x-1/2 animate-bounce z-10">
-        <svg
-          className="w-6 h-6 text-white"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 14l-7 7m0 0l-7-7m7 7V3"
-          />
-        </svg>
       </div>
     </section>
   );

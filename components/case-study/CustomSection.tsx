@@ -9,6 +9,248 @@ interface CustomSectionProps {
 }
 
 export default function CustomSection({ section }: CustomSectionProps) {
+  // Special layouts for FX AI Analyst sections
+  const isResearchApproach = section.title === "Research Approach";
+  const isOpportunity = section.title === "Opportunity";
+  const isImpactAndNextSteps = section.title === "Impact and Next Steps";
+
+  // Research Approach Section - merged with User Stories and Information Architecture
+  if (isResearchApproach) {
+    const userStories = section.metadata?.userStories || [];
+    const architectureTitle = section.metadata?.architectureTitle || "";
+    const architectureDescription = section.metadata?.architectureDescription || "";
+    
+    return (
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <div className="lg:col-span-4">
+            <h2 className="text-4xl font-serif mb-8 sticky top-[122px] sm:top-[130px] lg:top-[154px]">
+              {section.title}
+            </h2>
+          </div>
+          <div className="lg:col-span-8 space-y-10">
+            {/* Research approach intro text */}
+            {section.content && (
+              <FormattedContent
+                content={section.content}
+                className="text-gray-700 text-base leading-[2]"
+              />
+            )}
+            
+            {/* User Stories - bordered box */}
+            {userStories.length > 0 && (
+              <div className="border border-black/20 rounded-[24px] px-0 py-8 flex flex-col gap-6 items-center">
+                <p className="text-lg font-semibold text-center px-6">{userStories[0]}</p>
+                {userStories.slice(1).map((story, idx) => (
+                  <React.Fragment key={idx}>
+                    <div className="h-px bg-black/20 w-[75%]" />
+                    <p 
+                      className="text-base italic text-center px-6 leading-[2]"
+                      dangerouslySetInnerHTML={{ __html: story }}
+                    />
+                  </React.Fragment>
+                ))}
+              </div>
+            )}
+            
+            {/* Divider */}
+            <div className="h-px bg-gray-300 w-full" />
+            
+            {/* Information Architecture subsection */}
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-lg font-semibold text-[#0c120c] mb-2">{architectureTitle}</h3>
+                <p className="text-base text-[#0c120c] leading-[2]">{architectureDescription}</p>
+              </div>
+              
+              {/* Architecture cards - 3 column grid */}
+              {section.items && section.items.length > 0 && (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-min">
+                  {section.items.map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="bg-[#fefefe] p-8 rounded-2xl shadow-[0px_5px_7px_#cdcdcd20]"
+                    >
+                      <div className="mb-3">
+                        <h3 className="text-xl font-serif">{item.title}</h3>
+                      </div>
+                      <div className="pl-4">
+                        <div className="space-y-0">
+                          {item.fields.map((field, fieldIdx) => (
+                            <div
+                              key={fieldIdx}
+                              className="text-base leading-[180%]"
+                            >
+                              {field}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Opportunity Section - merged section with diagram, products, and overview
+  if (isOpportunity) {
+    const imageCaption = section.metadata?.imageCaption || "";
+    const afterImageText = section.metadata?.afterImageText || "";
+    
+    return (
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <div className="lg:col-span-4">
+            <h2 className="text-4xl font-serif mb-8 sticky top-[122px] sm:top-[130px] lg:top-[154px]">
+              {section.title}
+            </h2>
+          </div>
+          <div className="lg:col-span-8 space-y-6">
+            {/* Intro text */}
+            {section.content && (
+              <FormattedContent
+                content={section.content}
+                className="text-gray-700 text-base leading-[2]"
+              />
+            )}
+            
+            {/* Diagram image with caption */}
+            {section.images && section.images.length > 0 && (
+              <div className="flex flex-col gap-3">
+                <div className="w-full">
+                  <img
+                    src={section.images[0]}
+                    alt="Opportunity diagram"
+                    className="w-full h-auto"
+                  />
+                </div>
+                {imageCaption && (
+                  <p className="text-xs text-[#0c120c] leading-[1.5]">
+                    {imageCaption}
+                  </p>
+                )}
+              </div>
+            )}
+            
+            {/* After image text */}
+            {afterImageText && (
+              <p className="text-base text-[#0c120c] leading-[2]">
+                {afterImageText}
+              </p>
+            )}
+            
+            {/* Product items */}
+            {section.items && section.items.length > 0 && (
+              <div className="space-y-6">
+                {section.items.map((item, idx) => (
+                  <div key={idx} className="flex flex-col gap-2">
+                    <h3 className="text-lg font-semibold text-[#0c120c] leading-[1.5]">
+                      {item.title}
+                    </h3>
+                    <p className="text-base text-[#0c120c] leading-[2]">
+                      {item.fields[0]}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
+            
+            {/* Products overview image */}
+            <div className="w-full">
+              <img
+                src="/images/fx-ai-analyst/products-overview.png"
+                alt="Products overview"
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Impact and Next Steps Section
+  if (isImpactAndNextSteps) {
+    const contentParts = section.content?.split('\n\n') || [];
+    return (
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <div className="lg:col-span-4">
+            <h2 className="text-4xl font-serif mb-8 sticky top-[122px] sm:top-[130px] lg:top-[154px]">
+              {section.title}
+            </h2>
+          </div>
+          <div className="lg:col-span-8 space-y-6">
+            {contentParts.map((part, idx) => {
+              if (part.startsWith('Impact:')) {
+                const bullets = part.split('\n').slice(1);
+                return (
+                  <div key={idx}>
+                    <p className="text-lg font-semibold mb-4">Impact</p>
+                    <ul className="space-y-2 list-disc ml-6">
+                      {bullets.map((bullet, bulletIdx) => (
+                        <li key={bulletIdx} className="text-base text-[#0c120c] leading-[2]">
+                          {bullet.replace('• ', '')}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                );
+              } else if (part.startsWith('FX AI update:') || part.startsWith('Pricing update:')) {
+                // Detect which type of update section this is
+                const updateType = part.startsWith('FX AI update:') ? 'FX AI update' : 'Pricing update';
+                const updatePrefix = part.startsWith('FX AI update:') ? 'FX AI update:' : 'Pricing update:';
+                
+                const content = part.replace(updatePrefix, '').trim();
+                const linkMatch = part.match(/View Xflowpay website: (https?:\/\/[^\s]+)/);
+                const textContent = content.split('View Xflowpay website:')[0].trim();
+                return (
+                  <div key={idx} className="space-y-4">
+                    <div className="h-px bg-gray-300 w-full" />
+                    <p className="text-lg font-semibold">{updateType}</p>
+                    <p className="text-base text-[#0c120c] leading-[2]">{textContent}</p>
+                    {linkMatch && (
+                      <a
+                        href={linkMatch[1]}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#0088ff] underline text-base font-semibold inline-flex items-center gap-2 hover:opacity-80"
+                      >
+                        View Xflowpay website
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="inline-block"
+                        >
+                          <path
+                            d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </a>
+                    )}
+                  </div>
+                );
+              }
+              return null;
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   // Special centered layout for these sections
   const isCenteredLayout =
     section.title === "Iterations for fee configurability" ||
@@ -40,16 +282,12 @@ export default function CustomSection({ section }: CustomSectionProps) {
 
                 if (isIterations) {
                   return (
-                    <div
-                      key={idx}
-                      className="h-[300px] sm:h-[500px] md:h-[800px] lg:h-[1200px] relative w-full"
-                    >
                       <img
+                      key={idx}
                         src={image}
                         alt={`${section.title} - Image ${idx + 1}`}
-                        className="w-full h-full object-contain object-center"
+                      className="w-full h-auto"
                       />
-                    </div>
                   );
                 }
 
@@ -179,13 +417,12 @@ export default function CustomSection({ section }: CustomSectionProps) {
                 
                 if (isIterations) {
                   return (
-                    <div key={idx} className="h-[300px] sm:h-[500px] md:h-[800px] lg:h-[1200px] relative w-full">
                       <img
+                      key={idx}
                         src={image}
                         alt={`${section.title} - Image ${idx + 1}`}
-                        className="absolute inset-0 w-full h-full object-contain object-center"
+                      className="w-full h-auto"
                       />
-                    </div>
                   );
                 }
                 
