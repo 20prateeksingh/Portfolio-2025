@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Personal Assistant for Car Users</title>
+    <meta charset="UTF-8">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M6XLQ33');</script>
+    <!-- End Google Tag Manager -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This webpage is Prateek Singh's design portfolio.">
+    <meta name="keywords" content="Prateek Singh, UX Designer, Product Designer, Designer, User Experience">
+    <meta name="author" content="Prateek Singh">
+    <link href='https://fonts.googleapis.com/css?family=Cardo' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="Assets/flavicon.ico">
+    <meta property="og:title" content="Prateek Singh's Portfolio" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://prateeksingh.in/" />
+    <meta property="og:image" content="https://prateeksingh.in/Assets/Website_og_thumbnail.png" />
+    <meta name="description" property="og:description" content="I'm a Product Designer / UX Designer based in India. This website is my tiny island in the vast sea that is the internet." />
+    <meta name="author" content="Prateek Singh">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="PA.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GD4QKS7PSS"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GD4QKS7PSS');
+    </script>
+</head>
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M6XLQ33"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Back to Top -->
+
+    <button type="button" class="btn btn-floating btn-lg" id="btn-back-to-top">
+        <img src="Assets/chevron-up.svg" alt="Back to Top" id="chevron-up">
+    </button>
+
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-sm navbar-light navbarBg sticky-top ">
+        <div class="container" id="navAdjust">
+            <a href="index.html" class="navbar-brand">
+                <img src="Assets/Logo.svg" alt="Prateek Singh"> 
+            </a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="index.html#recentProjects" class="nav-link">WORKS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Assets/PrateekSingh_Resume.pdf" target="_blank" rel="noopener noreferrer" class="nav-link">RESUME</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cover Image -->
+
+    <div class="cover">
+        <div class="tagline text-center">
+            "Ok Google! Take the wheels."
+        </div>
+        <div class="coverImage">
+            <img src="Assets/PA_HeroImage.png" alt="Image of an infotainment screen in a car" class="img-fluid">
+        </div>
+    </div>
+    <div id="goto">
+        <a href="#introduction" class="p-5">
+            <img src="/Assets/chevron-double-down.svg" alt="Go to Projects" id="chevron-down">
+        </a>
+    </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="gallery-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-big">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="Assets/CJM.png" class="modal-img" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Introduction -->
+
+    <div class="container introduction" id="introduction">
+        <h2>
+            Personal Assistant for Car Users
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+
+        </h2>
+        
+        <div class="body">
+            Design of a system around the user - someone who drives to work. The system is hosted on cloud and interacts with the user via their car infotainment system, phones and other IoT devices. The objective is to increase efficiency, provide entertainment and reinforce safety of the user.
+        </div>
+
+        <div class="row justify-content-between">
+            <div class="col-lg-5 col-12">
+                <span class="bodyHeader">
+                    Team:
+                </span>
+            </br>
+                <span class="body">
+                    Prateek Singh, Kaavya Shakunthala, Pranav Bidwe, Richa Yadav, Devanshu Marwah, Avik Biswas
+                </span>
+            </br></br>
+            </div>
+            
+            <div class="col-lg-5 col-12">
+                <span class="bodyHeader">
+                    Project Duration:
+                </span>
+            </br>
+                <span class="body">
+                    8 Weeks
+                </span>
+            </br></br>
+            </div>
+
+            <div class="col-lg-5 col-12">
+                <span class="bodyHeader">
+                    My Role:
+                </span>
+            </br>
+                <span class="body">
+                    System Architecture Design, collaborated on research, ideation, prototyping and user testing.
+                </span>
+            </br></br>
+            </div>
+
+            <div class="col-lg-5 col-12">
+                <span class="bodyHeader">
+                    Skills:
+                </span>
+            </br>
+                <span class="body">
+                    HMI, UX Research, Wire Frames, Hi-Fi Mocks, Prototyping
+                </span>
+            </br></br>
+            </div>          
+        </div>
+
+        <h2 class="row text-center mt-3">
+            “Car drivers need seamless accessibility over car controls without getting distracted.”
+        </h2>
+    </div>
+
+
+    <div class="container">
+        <hr class="divider">
+    </div>
+
+    <!-- The Challenge -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-12 headerText">
+                <h2>
+                    The Challenge
+                </h2>
+            </div>
+            <div class="col-lg-9 col-12">
+                <div class="body">
+                    The very first challenge was to <span class="bold">re-define the problem statement.</span>  The initial problem statement provided by the client was very open-ended and did not correctly capture the apparent requirements. After multiple rounds of stakeholder interviews and initial research, we narrowed down the problem statement by creating boundaries along these segments - Aspirations, Target user group and purpose of the product.
+                </div>
+                <video class="video-fluid z-depth-1 roundedBorder" src="Assets/SurveysAndInterviews.mp4" autoplay loop muted>
+                </video>
+                <div class="row g-2 imgDetails">
+                    <div class="col-md-4 col-12">
+                        <img class="roundedBorder img-fluid gallery-item" src="Assets/EmpathyMap.png" alt="Empathy Map">
+                    </div>
+                    <div class="col-md-4 col-12">
+                        <img class="roundedBorder img-fluid gallery-item" src="Assets/Persona.png" alt="Persona">
+                    </div>
+                    <div class="col-md-4 col-12">
+                        <img class="roundedBorder img-fluid gallery-item" src="Assets/CJM.png" alt="Customer Journey Map">
+                    </div>
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    <div class="container">
+        <hr class="divider">
+    </div>
+
+    <!-- Research Insights -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-12 headerText">
+                <h2>
+                    Research Insights
+                </h2>
+            </div>
+            <div class="col-lg-9 col-12 bodyContent">
+                <div class="body">
+                    We conducted a guerrilla research and conducted interviews and surveys on a group of 49 people. People who own a car and/or drive it to work frequently were selected. We captured multiple data points and synthesized our findings. These findings were then presented to the entire team and project stakeholders. Some of these findings were significant enough that these would later pivot our design. e.g 
+                </div>
+                <ul class="body m-0">
+                    <li>
+                        <span class="bold">Trust</span> is one of the biggest deterrents to VUI acceptance as a primary mode of interaction.
+                    </li>
+                    <li>
+                        The initial act of <span class="bold">connection between the Car’s Infotainment system and the user’s phone</span> continues to be the major pain point.
+                    </li>
+                    <li>
+                        Almost one out of every three car accidents are due to the driver being distracted by their phones.
+                    </li>
+                    <li>
+                        The use of technologies like AI and ML to increase car and driver safety is on the rise and has the potential to become the norm.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <hr class="divider">
+    </div>
+
+    <!-- Market Analysis / Feature Analysis -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-12 headerText">
+                <h2>
+                    Market Analysis / Feature Analysis
+                </h2>
+            </div>
+            <div class="col-lg-9 col-12 bodyContent">
+                <div class="body">
+                    We knew we were not the only ones trying to accomplish a good in-car user experience. There were already many well established players pioneering this field. The more we looked into it, the more we were in awe of the astounding amount of work that was being done. Mercedes-Benz, with its MBUX, was clearly leading the pack.
+                </div>                
+
+                <img src="Assets/brandAnalysis.png" class="img-fluid" alt="Brand Analysis">
+                <div class="body my-5">
+                    This clearly begged us to ask the question -
+                </div>
+                <h2 class="text-center mb-5">
+                    “What is it fundamentally different that our product can offer for it to <em>stand out?</em>”
+                </h2>
+                <img src="Assets/Market_comparison.png" class="img-fluid mb-5" alt="Market Comparison">
+
+                <div class="body mb-0">
+                    We noticed a pattern among the features being offered by each of these companies/products. Every product offered a base set of features that constitutes an In-car experience. The amount of depth of these features varied from product to product. Each of these also had what we called a ‘secret sauce’ that was their identifying quality.
+                    <br>
+                    Upon even further analysis we could clearly see two very distinct and maybe even contradicting school of thoughts dictating how engaging the experience is:
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Schools of Thought -->
+
+    <div class="container-fluid schools">
+        <div class="container">
+            <h2 class="text-center mb-3">
+                The 2 schools of thought for in-car UX.
+            </h2>
+            <div class="row justify-content-between">
+                <div class="col-lg-5 col-md-6 col-12">
+                    <div class="text-center">
+                        <img class="img-fluid text-center my-3" src="Assets/interaction.svg" alt="interaction icon">
+                    </div>
+                    <img class="img-fluid my-3 roundedBorder gallery-item" src="Assets/Interaction.gif" alt="Interaction">
+                    <div class="caption text-end">Source - Tesla</div>
+                
+                    <h2>
+                        Interaction Oriented
+                    </h2>
+                    <ul class="body">
+                        <li>
+                            Prioritising the experience of the user.
+                        </li>
+                        <li>
+                            Amount and depth of interaction highly adjustable by the user.
+                        </li>
+                        <li>
+                            GUI-first type of interactions.
+                        </li>
+                    </ul>
+                    <div class="bodySubHeader">
+                        Why?
+                    </div>
+                    <div class="body">
+                        Highly versatile in breadth and depth of features that can be offered.
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-md-6 col-12">
+                    <div class="text-center">
+                        <img class="img-fluid text-center my-3" src="Assets/sensory.svg" alt="Sensory icon">
+                    </div>
+                    <img class="img-fluid img_function my-3 roundedBorder gallery-item" src="Assets/Function.png" alt="Function">
+                    <div class="caption text-end"><a href="https://www.amazon.in/echoauto/dp/B078YMSW15" style="color: black;">Source</a></div>
+                    <h2>
+                        Function oriented
+                    </h2>
+                    <ul class="body">
+                        <li>
+                            Prioritising function over engagement of the user.
+                        </li>
+                        <li>
+                            Amount and depth of interaction dictated by the product.
+                        </li>
+                        <li>
+                            VUI-first type of interactions.
+                        </li>
+                    </ul>
+                    <div class="bodySubHeader">
+                        Why?
+                    </div>
+                    <div class="body">
+                        Safer as the interaction is less distractive.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Limitations / Boundaries -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-12 headerText">
+                <h2>
+                    Limitations / Boundaries
+                </h2>
+            </div>
+            <div class="col-lg-9 col-12 bodyContent">
+                <div class="body">
+                    After having diverged to gather a plethora of data, we begun to <span class="bold">converge</span>. The biggest act of convergence was to establish the limitations and boundaries of this project. Knowing very well that many of these are temporary boundaries put in place, so we could focus in a greater detail on the remaining agenda. 
+                </div>
+                
+                <div class="row justify-content-between">
+                    <div class="limitations col-md-5 col-12">
+                        <img src="Assets/001-android.png" alt="Android Icon">
+                        <div class="body">
+                            Built over Android Auto.
+                        </div>
+                    </div>
+                    <div class="limitations col-md-5 col-12">
+                        <img src="Assets/002-technical-support.png" alt="Technical Support Icon">
+                        <div class="body">
+                            Implementation of technology based on trends.
+                        </div>
+                    </div>
+                    <div class="limitations col-md-5 col-12">
+                        <img src="Assets/004-driver.png" alt="Driver Icon">
+                        <div class="body">
+                            Designing only for the driver.
+                        </div>
+                    </div>
+                    <div class="limitations col-md-5 col-12">
+                        <img src="Assets/003-india-gate.png" alt="India gate Icon">
+                        <div class="body">
+                            Designed for the Indian context.
+                        </div>
+                    </div>
+                    <div class="limitations col-md-5 col-12">
+                        <img src="Assets/006-private.png" alt="Privacy Icon">
+                        <div class="body">
+                            Designed for private vehicles only.
+                        </div>
+                    </div>
+                    <div class="limitations col-md-5 col-12">
+                        <img src="Assets/005-future.png" alt="Time Icon">
+                        <div class="body">
+                            Designing for 5 years down the line.
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <hr class="divider">
+    </div>
+
+    <!-- Ideation -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-12 headerText">
+                <h2>
+                    Ideation
+                </h2>
+            </div>
+            <div class="col-lg-9 col-12 bodyContent">
+                <div class="body">
+                    At this point there was adequate clarity for us to wear our thinking hats and begin the ideation phase. We structured and re-structured the data along different parameters and observed the patterns that came up. We then performed a series of time boxed exercises within the core team as well as with the stakeholders and documented the ideas that emerged.  
+                </div>
+                
+                <div class="row mb-5 g-2 justify-content-between">
+                    <div class="col-md-4 col-12">
+                        <img class="img-fluid roundedBorder gallery-item" src="Assets/Ideation.png" alt="Ideation">
+                    </div>
+                    <div class="col-md-4 col-12">
+                        <img class="img-fluid roundedBorder gallery-item" src="Assets/Flowchart.png" alt="Flowchart">
+                    </div>
+                    <div class="col-md-4 col-12">
+                        <img class="img-fluid roundedBorder gallery-item" src="Assets/5whys.png" alt="5 Whys">
+                    </div>
+                </div>
+                
+                <div class="bodySubHeader">
+                    Final Ideation
+                </div>
+                <div class="body">
+                    At this point there was adequate clarity for us to wear our thinking hats and begin the ideation phase. We structured and re-structured the data along different parameters and observed the patterns that came up. We then performed a series of time boxed exercises within the core team as well as with the stakeholders and documented the ideas that emerged.  
+                </div>
+                
+                <div class="row caption mb-5 g-2 justify-content-between">
+                    <div class="col-md-3 col-sm-6 col-xs-12  ideation text-center">
+                        <span class="roundedBorder">Personalised cloud account</span>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12  ideation text-center">
+                        <span class="roundedBorder">Fatigue detection of user</span>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12  ideation text-center">
+                        <span class="roundedBorder">Emergency Situations</span>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12  ideation text-center">
+                        <span class="roundedBorder">Assessing and Promoting good driving skills</span>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12  ideation text-center">
+                        <span class="roundedBorder">Route Trivia at new locations</span>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12  ideation text-center">
+                        <span class="roundedBorder">Schedule based triggers</span>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12  ideation text-center">
+                        <span class="roundedBorder">Parking slots booking</span>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12  ideation text-center">
+                        <span class="roundedBorder">Parking slots booking</span>
+                    </div>
+                </div>
+
+                <div class="bodySubHeader">
+                    Card Sorting
+                </div>
+                <div class="body mb-4">
+                    The system that we were developing would also replace the existing car infotainment systems and would serve as a platform for additional features. To ensure adoption by the users who are used to a car infotainment screen, we clubbed the major tasks into traditional lingo; the results of which are displayed below:
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <img class="img-fluid" src="Assets/cardSorting.png" alt="Card Sorting">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <hr class="divider">
+    </div>
+    
+    <!-- System Design -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-12 headerText">
+                <h2>
+                    System Design
+                </h2>
+            </div>
+            <div class="col-lg-9 col-12 bodyContent">
+                <div class="body">
+                    The System consists of four interconnected elements - the Personal Assistant, the Car, User’s devices and the user themselves. The car’s infotainment system and the user’s devices serve as the medium for the user to interact with the personal assistant. Additionally, based on the many different context that this interaction happens, there can exist three different states of the system.
+                </div>
+                <div class="text-center">
+                    <img class="img-fluid my-5" src="Assets/elements.png" alt="Elements of
+                    the system.">
+                </div>
+                <div class="body mb-5">
+                    These states are:
+                    <br>
+                    <b>Active State</b> - When the user is inside the car.<br>
+                    <b>Standby State</b> - When the car is active and is expecting the user.<br>
+                    <b>Inactive State</b> - When the car is off and the user is interacting with the system using their personal devices.
+                </div>
+                <img src="Assets/elementsWeb.png" alt="web of elements" class="img-fluid my-5">
+
+                <div class="body">
+                    In this sprint we were focusing solely on the Active state and its hand off to the other states. The <span class="bold">feedback loop</span> as displayed below is the key to how we aim to achieve hyper-personalisation. The more the user interacts with the system, the more the system will be able to fine-tune to suit the user’s need.
+                </div>
+
+                <video class="video-fluid z-depth-1 roundedBorder my-5" src="Assets/States.mp4" autoplay loop  muted>
+                </video>
+
+                <div class="body text-center">
+                    <em>"Imagine it’s a Monday morning and you’re heading to work. You walk towards the car and its ready, expecting you with the AC and interior set to your liking. Playing your favourite music and navigation set to your office with a small detour to your goto cafeteria."</em>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <hr class="divider">
+    </div>
+
+    <!-- Use Cases -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-12 headerText">
+                <h2>
+                    Use Cases
+                </h2>
+            </div>
+            <div class="col-lg-9 col-12 bodyContent">
+                <div class="body">
+                    Using the eight selected features as the main story-points we stitched stories around. As a preliminary step we sketched out the system’s flowchart, documenting how the system would respond to a particular action or reaction of user.<br>
+                    This is where we understood that <span class="bold">no response is a response in disguise. </span>
+                </div>
+                <img src="Assets/useCases04.png" alt="Use Case" class="mb-2 img-fluid roundedBorder gallery-item">
+             
+                <div class="row g-2 mb-2 useCases">
+                    <div class="col-md-4 col-12">
+                        <img src="Assets/useCases03.png" alt="Use Case" class="img-fluid roundedBorder gallery-item">
+                    </div>
+                    <div class="col-md-4 col-12">
+                        <img src="Assets/useCases02.png" alt="Use Case" class="img-fluid roundedBorder gallery-item">
+                    </div>
+                    <div class="col-md-4 col-12">
+                        <img src="Assets/useCases01.png" alt="Use Case" class="img-fluid roundedBorder gallery-item">
+                    </div>
+                </div>
+
+                <div class="text-end caption ">
+                    * Click to enlarge
+                </div>
+            
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <hr class="divider">
+    </div>
+
+    <!-- Experience hierarchy -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-12 headerText">
+                <h2>
+                    Experience hierarchy
+                </h2>
+            </div>
+            <div class="col-lg-9 col-12 bodyContent">
+                <div class="bodyHeader mb-4">
+                    Voice User Interface (VUI) vs Graphics User Interface (GUI)
+                </div>
+                <div class="body">
+                    Post our scrutiny of levels of engagement and interaction with the system inside car, we designed ours to be a hybrid model. We designed our system to be an <span class="bold">VUI first</span> and using GUI to supplement the information. Having an audio led interaction helps us achieve the following:
+
+                    <ul>
+                        <li>Nudging the user to reply with voice instead of touch, eliminating eyes-off-road.</li>
+                        <li>Less distraction for the user.</li>
+                        <li>More variety of choices at every interface.</li>
+                    </ul>
+
+                    We are building over Android Auto, hence the trigger for initiating interaction from the user is set to <span class="bold">OK Google. </span>
+                </div>
+                <img class="img-fluid mt-4 gallery-item" src="Assets/Navigate.gif" alt="An example of VUI Interaction">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <hr class="divider">
+    </div>
+
+    <!-- Information Distribution -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-12 headerText">
+                <h2>
+                    Information Distribution
+                </h2>
+            </div>
+            <div class="col-lg-9 col-12 bodyContent">
+                <div class="body">
+                    While the product is designed to take up screens of multiple resolutions and ratios, <span class="bold">even a combination of screens as well</span>. For the POC we developed the most common screen ration found in-car - 21:9.<br>
+
+                    The 21:9 is split into two part. The left 5:9 displays status and key information while the remained 16:9 displays the main content and also hosts the on-screen navigation keys. 
+                </div>
+                <video class="video-fluid z-depth-1" src="Assets/Information Distribution_edited.mp4" autoplay loop muted>
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <hr class="divider">
+    </div>
+
+    <!-- Prototyping -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-12 headerText">
+                <h2>
+                    Prototyping
+                </h2>
+            </div>
+            <div class="col-lg-9 col-12 bodyContent">
+                <div class="body">
+                    We did quick paper mockups, took them to stake holders and capture their feedback. After a couple of rinse and repeat of the same, the entire team was able to arrive at agreeable middle ground for basic design layouts. 
+                </div>
+                <div class="row g-2">
+                    <div class="col-4 col-lg-3">
+                        <img src="Assets/paperPrototype1.png" alt="A Paper Prototype" class="img-fluid roundedBorder">
+                    </div>
+                    <div class="col-4 col-lg-3">
+                        <img src="Assets/paperPrototype2.png" alt="A Paper Prototype" class="img-fluid roundedBorder">
+                    </div>
+                    <div class="col-4 col-lg-3">
+                        <img src="Assets/paperPrototype3.png" alt="A Paper Prototype" class="img-fluid roundedBorder">
+                    </div>
+                    <div class="col-4 col-lg-3">
+                        <img src="Assets/paperPrototype4.png" alt="A Paper Prototype" class="img-fluid roundedBorder">
+                    </div>
+                    <div class="col-4 col-lg-3">
+                        <img src="Assets/paperPrototype5.png" alt="A Paper Prototype" class="img-fluid roundedBorder">
+                    </div>
+                    <div class="col-4 col-lg-3">
+                        <img src="Assets/paperPrototype6.png" alt="A Paper Prototype" class="img-fluid roundedBorder">
+                    </div>
+                    <div class="col-4 col-lg-3">
+                        <img src="Assets/paperPrototype7.png" alt="A Paper Prototype" class="img-fluid roundedBorder">
+                    </div>
+                    <div class="col-4 col-lg-3">
+                        <img src="Assets/paperPrototype8.png" alt="A Paper Prototype" class="img-fluid roundedBorder">
+                    </div>
+                    <div class="col-4 col-lg-3">
+                        <img src="Assets/paperPrototype9.png" alt="A Paper Prototype" class="img-fluid roundedBorder">
+                    </div>
+                    <div class="col-4 col-lg-3">
+                        <img src="Assets/paperPrototype10.png" alt="A Paper Prototype" class="img-fluid roundedBorder">
+                    </div>
+                    <div class="col-4 col-lg-3">
+                        <img src="Assets/paperPrototype11.png" alt="A Paper Prototype" class="img-fluid roundedBorder">
+                    </div>
+                    <div class="col-4 col-lg-3">
+                        <img src="Assets/paperPrototype12.png" alt="A Paper Prototype" class="img-fluid roundedBorder">
+                    </div>
+                </div>
+                <div class="bodyHeader mt-5">
+                    Low Fidelity Wireframes
+                </div>
+                <div class="body">
+                    With the paper prototypes in place; we took to software - Adobe XD here, to create screens needed for the two user flows that would also capture the eight selected features. 
+                </div>
+                <div class="bodySubHeader">
+                    Scenario 1
+                </div>
+                <div class="body">
+                    This scenario is about Rohan who is commuting to and from office. He uses his commute time to be more efficient.<br>
+                    Tasks - Fatigue Detection, Booking parking slots, E-commerce.
+                </div>
+                <img src="Assets/lofi 1a.png" alt="Lofi" class="img-fluid roundedBorder gallery-item">
+                <div class="bodySubHeader mt-5">
+                    Scenario 2
+                </div>
+                <div class="body">
+                    This scenario is about Roshini who is commuting to and from office. She is a newbie in driving and uses her commute time to improve her driving skills and trivia.<br>
+                    Tasks - Route Trivia, Autopilot, Rewards
+                </div>
+                <img src="Assets/lofi 2.png" alt="Lofi" class="img-fluid roundedBorder gallery-item">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <hr class="divider">
+    </div>
+
+    <!-- Visual Design -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-12 headerText">
+                <h2>
+                    Visual Design
+                </h2>
+            </div>
+            <div class="col-lg-9 col-12 bodyContent">
+                <div class="body">
+                    This is when the major decisions regarding the branding of the product was taken. We arrived at the following key-words for how we visualised the product would be perceived: 
+                </div>
+                <div class="subHeader text-center">
+                    <span class="bold">
+                        Energetic, dynamic, futuristic & bold
+                    </span>
+                </div>
+                <div class="body">
+                    We then went about creating the moodboards that would reflect the same emotion. As was required by the product we developed two versions - light and dark mode.
+                </div>
+                <div class="bodySubHeader">
+                    Moodboards:
+                </div>
+                <img src="Assets/Moodboard Night.png" alt="Moodboard Night" class="img-fluid mb-5">
+
+                <img src="Assets/Moodboard Day.png" alt="Moodboard Day" class="img-fluid">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <hr class="divider">
+    </div>
+
+    <!-- Interface Design -->
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-12 headerText">
+                <h2>
+                    Interface Design
+                </h2>
+            </div>
+            <div class="col-lg-9 col-12 bodyContent">
+                <div class="body mb-0">
+                    We translated the LoFi to High Fidelity screens using the moodboards that we had arrived at. Here too, we started off with multiple Mid-fi Screens and then post internal debates and discussions we arrived at the High fidelity screens.                
+                </div>
+                <img src="Assets/Trial.gif" alt="Mid-fi Iterations" class="img-fluid gallery-item mb-5">
+            </div>
+        </div>
+        <div class="bodyHeader text-center my-3">
+            High Fidelity Screens
+        </div>
+        <div class="row hifi g-2">
+            <img src="Assets/Hifi1.png" alt="Hi Fidelity Screen" class="col-md-6 col-12 img-fluid">
+            <img src="Assets/Hifi2.png" alt="Hi Fidelity Screen" class="col-md-6 col-12 img-fluid">
+            <img src="Assets/Hifi3.png" alt="Hi Fidelity Screen" class="col-md-6 col-12 img-fluid">
+            <img src="Assets/Hifi4.png" alt="Hi Fidelity Screen" class="col-md-6 col-12 img-fluid">
+            <img src="Assets/Hifi5.png" alt="Hi Fidelity Screen" class="col-md-6 col-12 img-fluid">
+            <img src="Assets/Hifi6.png" alt="Hi Fidelity Screen" class="col-md-6 col-12 img-fluid">
+            <img src="Assets/Hifi7.png" alt="Hi Fidelity Screen" class="col-md-6 col-12 img-fluid">
+            <img src="Assets/Hifi8.png" alt="Hi Fidelity Screen" class="col-md-6 col-12 img-fluid">
+        </div>
+        <img src="Assets/Mobile Sceens.png" alt="Hi Fidelity Screen" class="mt-5 col-12 img-fluid">
+    </div>
+
+    <!-- Footer -->
+
+    <footer>
+        <div class="footer container-fluid">
+            <div class="links text-center">
+                <a href="https://www.linkedin.com/in/prateeksingh20/" target="_blank" rel="noopener noreferrer">
+                    <img src="/Assets/LinkedIn.svg" alt="LinkedIn Logo" class="img-fluid logo">
+                </a><a href="https://www.medium.com/@prateeksingh20" target="_blank" rel="noopener noreferrer">
+                    <img src="/Assets/Medium.svg" alt="Medium Logo" class="img-fluid logo">
+                </a><a href="https://www.behance.net/prateeksingh20/" target="_blank" rel="noopener noreferrer">
+                    <img src="/Assets/Behance.svg" alt="Gmail Logo" class="img-fluid logo">
+                </a>
+            </div>
+            <div class="footnote text-center">
+                ©2022 | <a href="mailto:hello@prateeksingh.in">hello@prateeksingh.in</a>
+                <br>
+                Designed and coded with &#10084;
+            </div>
+        </div>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -187,7 +187,7 @@ export const caseStudies: CaseStudy[] = [
         type: "custom",
         title: "Design Iterations",
         content:
-          "Our platform users also use our APIs. So, the challenge was to build for configurability without deviating very far from the API build.",
+          "Iterating to find the right balance between current trend, future projections and showing rate in MMR / transaction Rate. The future projections also need to be a part of setting the limit order",
         images: ["/images/fx-ai-analyst/iterations.png"],
       },
       {

@@ -1,0 +1,578 @@
+html {
+    height: -webkit-fill-available;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #FAFAFA;
+    min-height: -webkit-fill-available;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* This is horizontal scroll */
+
+#progressBarContainer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 24px; /* Larger hitbox for hover */
+    /* background: #e0e0e0; */
+    z-index: 1000;
+    pointer-events: none;
+}
+
+/* Actual visible bar is thin and centered inside the container */
+#progressBar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 6px;
+    background: #6666FF;
+    width: 0%;
+    transition: width 0.2s ease;
+    pointer-events: auto;
+}
+
+/* Segment wrapper with hover-friendly size */
+#milestoneSegments {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.segment {
+    flex: 1;
+    position: relative;
+    align-self: flex-end;
+    height: 6px;
+    background: transparent;
+    pointer-events: all;
+    cursor: pointer;
+    transition: background 0.2s ease, height 0.2s ease;
+    z-index: 1;
+}
+
+.segment::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 48px; /* Larger hover area */
+    background: transparent;
+    pointer-events: auto;
+}
+
+
+.segment.active {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.segment:hover {
+    height: 12px; /* Grows upward from bottom */
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* Tooltip positioning */
+.tooltip {
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    color: #fff;
+    padding: 4px 8px;
+    font-size: 12px;
+    white-space: nowrap;
+    border-radius: 4px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.segment:hover .tooltip {
+    opacity: 1;
+}
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+    #progressBarContainer {
+        display: none;
+    }
+}
+
+/* Markers between segments */
+.segment:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    border-radius: 1px;
+    background-color: #6666FF;
+    opacity: 0.6;
+    transform: translateY(-50%);
+}
+
+
+
+
+/* 
+#progressBarContainer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #e0e0e0;
+    z-index: 1000;
+}
+  
+#progressBar {
+    height: 100%;
+    background: #6666FF;
+    width: 0%;
+    transition: width 0.2s ease;
+}
+  
+#milestoneSegments {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+  
+.segment {
+    flex: 1;
+    position: relative;
+    pointer-events: all;
+    cursor: pointer;
+    background: transparent;
+    transition: background 0.2s ease;
+}
+  
+.segment.active {
+    background: rgba(0, 0, 0, 0.4);
+}
+  
+.segment:hover {
+    background: rgba(0, 0, 0, 0.6);
+}
+  
+.tooltip {
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    color: #fff;
+    padding: 4px 8px;
+    font-size: 12px;
+    white-space: nowrap;
+    border-radius: 4px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+  
+.segment:hover .tooltip {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    #progressBarContainer {
+      display: none;
+    }
+}
+
+.segment:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 2px;
+    height: 60%;
+    border-radius: 1px;
+    background-color: #666;
+    opacity: 0.6;
+    transform: translateY(-50%);
+    transform-origin: top;
+  }
+   */
+
+/* above is scroll */
+
+.black{
+    color: #000000;
+}
+
+.grey1{
+    color: #121212 !important;
+}
+
+.grey2{
+    color: #181818 !important;
+}
+
+
+h1{
+    font-family: 'Merriweather', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 150%;
+}
+
+h2{
+    font-family: 'Merriweather', serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 150%;
+}
+
+h3{
+    font-family: 'Merriweather', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+}   
+
+
+.body{
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 180%;
+    margin-bottom: 1rem;
+
+}
+
+.bodyHeader{
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight:600;
+    font-size: 18px;
+    line-height: 150%;
+}
+
+.bodySubHeader{
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 150%;
+    text-decoration-line: underline;
+    margin-bottom: 0.5rem;
+}
+
+.caption{
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 150%;
+}
+
+#btn-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+}
+
+
+/* Navbar */
+
+.navbarBg{
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    box-shadow: none;
+}
+
+.nav-link{
+    font-family: 'Red Hat Display' , sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: uppercase;
+    padding-right: 2rem !important;
+    padding-left: 2rem !important;
+    color: hsla(120, 20%, 6%, 0.7) !important;
+}
+
+.nav-link:hover{
+    color: hsla(120, 20%, 6%, 1) !important;
+    transition: 0.5s;
+}
+
+.navbarBg.sticky-top.scrolled{
+    background: rgba(214, 214, 214, 0.3);
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0px 1px 0px #43434350 !important;
+    transition: 100ms linear;
+}
+
+.navbar{
+    margin-top: 75px;
+}
+
+.divider{
+    margin-top: 5rem;
+    margin-bottom:5rem ;
+    border: 1px;
+    background-color: #00000050;
+}
+
+.dividerBody{
+    margin-top: 2rem;
+    margin-bottom:2rem ;
+    border: 1px;
+    background-color: #00000050;
+}
+
+@media screen and (max-width:576px) {
+    .navbar{
+        margin-top: 0px !important;
+        backdrop-filter: blur(0px) !important;
+    }    
+
+    #navAdjust{
+        padding: 0 1rem !important;
+    }
+
+    .nav-link{
+        padding-left: 0 !important;
+    }
+
+    h1{
+        font-family: 'Merriweather', serif;
+        font-size: 36px;
+
+    }
+
+    .divider{
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+
+a.navbar-brand{
+    position: relative;
+}
+
+
+.video-fluid {
+    width: 100%;
+    height: auto;
+}
+
+/* .roundedBorder{
+    border: 1px solid #62929E;
+    border-radius: 0px;
+} */
+
+.bold{
+    font-weight: bold;
+    text-decoration: solid;
+    background-color: #CFFFB0;
+}
+
+
+#gallery-modal .modal-img{
+    width: 100%;
+}
+
+.gallery-item{
+    border-radius: 8px;
+    box-shadow: 0px 5px 7px 0px rgba(205, 205, 205, 0.20);
+}
+
+.gallery-item:hover{
+    /* filter: grayscale(); */
+    /* border: 1px solid #000; */
+    transition: 0.3s;
+    cursor:-webkit-zoom-in;
+    border-radius: 8px;
+}
+
+.modal-big{
+    max-width: 90vw;
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (min-width: 1366px)
+{
+    #chevron-up{
+        width: 24px;
+        height: 24px;
+    }
+
+    #chevron-down{
+        width: 24px;
+        height: 24px;
+    }
+}
+
+#btn-back-to-top:hover #chevron-up{
+    transform: scale(1.3);
+    transition: 0.6s ease;
+}
+
+#btn-back-to-top{
+    z-index: 5000;
+    background: rgba(214, 214, 214, 0.3);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.links{
+    padding: 1rem 0;
+}
+
+.links a{
+    text-decoration: none;
+    margin: 1rem;
+}
+
+.logo{
+    width: 32px;
+    height: 32px;
+}
+
+.logo:hover{
+    filter: opacity(0.5);
+}
+
+#goto{
+    position: absolute;
+    bottom: 7vh;
+    left: 50%;
+    transform: translate(-50% , 0);
+}
+
+
+#chevron-down{
+    animation: bounce 2s infinite;
+    animation-timing-function: ease;
+}
+
+@media screen and (max-width:768px) {
+    #goto{
+        bottom:10vh;
+    }   
+}
+
+
+@keyframes bounce {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(-1vh);}
+    0% {transform: translateY(0);}
+}
+
+.footnote{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 150%;
+}
+
+.footer{
+    margin-top: 3rem;
+    padding-bottom: 1rem;
+    background: rgba(214, 214, 214, 0.3);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0px -1px 0px #434343;
+}
+
+.footnote a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.footnote a:hover{
+    text-decoration: underline;
+}
+
+
+.forcedContainer{
+    max-width: 100%;
+}
+
+@media screen and (min-width:576px)
+{
+    .forcedContainer{
+        max-width: 540px;
+    }
+}
+
+@media screen and (min-width:768px)
+{
+    .forcedContainer{
+        max-width: 720px;
+    }
+}
+
+@media screen and (min-width:992px)
+{
+    .forcedContainer{
+        max-width: 960px;
+    }    
+}
+
+@media screen and (min-width:1200px)
+{
+    .forcedContainer{
+        max-width: 1140px;
+    }
+}
+
+@media screen and (min-width:1400px)
+{
+    .forcedContainer{
+        max-width: 1320px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .forcedContainer>h1{
+        font-size: 36px;
+        line-height: 49px;
+    }  
+}
+
+.headerText > * {
+    position: sticky;
+    top: 100px;
+}
+
+.stickyImage{
+    position: sticky;
+    top: 100px;
+    background-color: #FAFAFA;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.stickyImage.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

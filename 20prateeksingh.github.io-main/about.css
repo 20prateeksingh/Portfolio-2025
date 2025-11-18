@@ -1,0 +1,53 @@
+.about{
+    margin-top: 120px;
+}
+
+.about>img{
+    border-radius: 50%;
+}
+
+.images{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.images img{
+    height: auto;
+    transform: scale(0.9);
+}
+
+.appNames{
+    filter: opacity(0);
+}
+
+.images:hover .appNames{
+    filter: opacity(1);
+}
+
+.images img:hover{
+    transform: scale(1);
+    transition: 0.5s;
+}
+
+#toolkit{
+    width: 100%;
+}
+
+.line{
+    max-width: 100%;
+    height: 1px;
+    margin-left: calc(25% - 40px);
+    margin-right: calc(25% - 40px);
+    background-color: rgb(196, 196, 196);
+    margin-bottom: 1rem;
+}
+
+#wrapper a{     
+    color: inherit;
+}
+
+@media screen and (max-width:768px) {
+    .row{
+        --bs-gutter-x: 0rem !important    ;
+    }
+}

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Invoicing</title>
+    <meta charset="UTF-8">
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-M6XLQ33');</script>
+    <!-- End Google Tag Manager -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This webpage is Prateek Singh's design portfolio.">
+    <meta name="keywords" content="Prateek Singh, UX Designer, Product Designer, Designer, User Experience">
+    <meta name="author" content="Prateek Singh">
+    <link href='https://fonts.googleapis.com/css?family=Cardo' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,400;0,700;1,300&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="Assets/flavicon.ico">
+    <meta property="og:title" content="Prateek Singh's Portfolio" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://prateeksingh.in/" />
+    <meta property="og:image" content="https://prateeksingh.in/Assets/Website_og_thumbnail.png" />
+    <meta name="description" property="og:description"
+        content="I'm a Product Designer / UX Designer based in India. This website is my tiny island in the vast sea that is the internet." />
+    <meta name="author" content="Prateek Singh">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="invoicing.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GD4QKS7PSS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-GD4QKS7PSS');
+    </script>
+</head>
+
+<body>
+
+    <!-- Progress bar -->
+    <div id="progressBarContainer">
+        <div id="progressBar"></div>
+        <div id="milestoneSegments">
+        </div>
+      </div>
+          
+      
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M6XLQ33" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Back to Top -->
+
+    <button type="button" class="btn btn-floating btn-lg" id="btn-back-to-top">
+        <img src="Assets/chevron-up.svg" alt="Back to Top" id="chevron-up">
+    </button>
+
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-sm navbar-light navbarBg sticky-top ">
+        <div class="container" id="navAdjust">
+            <a href="index.html" class="navbar-brand">
+                <img src="Assets/Logo.svg" alt="Prateek Singh">
+            </a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="index.html#recentProjects" class="nav-link">WORKS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Assets/PrateekSingh_Resume.pdf" target="_blank" rel="noopener noreferrer"
+                            class="nav-link">RESUME</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cover Image -->
+
+<section id="Cover" class="section">
+        <div class="cover">
+            <div class="tagline text-center">
+                Invoicing solution for payments
+            </div>
+            <div class="coverImage">
+                <img src="Assets/Invoicing-cover-blue-wide.png" alt="Image of an infotainment screen in a car"
+                    class="img-fluid">
+            </div>
+        </div>
+        <div id="goto">
+            <a href="#introduction" class="p-5">
+                <img src="/Assets/chevron-double-down.svg" alt="Go to Projects" id="chevron-down">''
+            </a>
+        </div>
+        </div>
+</section>
+
+    <!-- Introduction -->
+
+    <section id="Introduction" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-12 headerText">
+                        <h2>
+                            Introduction
+                        </h2>
+        
+                    </div>
+                    <div class="col-lg-8 col-12 bodyContent">
+                        <div class="body">
+                            <p class="bodyHeader">
+                                Context
+                            </p>
+                            Xflowpay is a fintech company that offers cross-border payments. We started by serving businesses for higher transaction volumes. To reach a wider audience, we expanded to cater to freelancers and sole proprietors (FSPs). To better understand FSPs, we interviewed 50+ users, gathering valuable insights that shaped our product to be FSP-friendly. One key finding was the need for an <span class="bold">integrated invoicing solution</span> to streamline payment processes and enhance user experience.
+                        </div>
+                        <div class="row body col-12">
+                            <div class="col-4" style="min-width: 220px;">
+                                <p>
+                                    <strong>Role</strong>
+                                    <br>
+                                    Lead Designer, Researcher
+                                </p>
+                            </div>
+                            <div class="col-lg-2 col-4">
+                                <p>
+                                    <strong>Team</strong>
+                                    <br>
+                                    4 people
+                                </p>
+                            </div>
+                            <div class="col-lg-2 col-4">
+                                <p>
+                                    <strong>Duration</strong>
+                                    <br>
+                                    3 months
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <hr class="dividerBody">
+                        </div>
+                        <div class="body">
+                            <p class="bodyHeader">
+                                Impact
+                            </p>
+                            <div class="body m-0 impact">
+                                <div>
+                                    Invoices are created <span class="bold">20x times </span> than they are being uploaded to our platform. Validating our hypothesis that invoicing solution integrated with payments would help the freelancers segment.
+                                </div>
+                                <div>
+                                    Over <span class="bold">70% first time users</span> created invoices without dropping off. The drop offs can be attribute to non-tool reasons as well.
+                                </div>
+                                <div>
+                                    Median time to create invoice is ~3 minutes. This is including first time users who need a longer set-up. Repeat users complete creation in <span class="bold">under 30 seconds</span>.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <div class="container">
+        <hr class="divider">
+    </div>
+
+    <!-- Problem Statement -->
+
+    <section id="Problem Statement" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-12 headerText">
+                        <h2>
+                            Problem Statement
+                        </h2>
+                    </div>
+                    <div class="col-lg-8 col-12 bodyContent">
+                        <div class="body">
+                            We are a new player trying to disrupt existing systems. One of the challenges was to get users to migrate from their existing methods of creating invoices. In our research we found that most users used general purpose tools like Excel, Notion and Sheets. There was also a cohort of users using specialized invoicing tools like Zoho and Tally. Almost all of the users leaned towards free tools and readily available templates. 
+                        </div>
+                        <div class="col-12">
+                            <hr class="dividerBody">
+                        </div>
+                        <div class="my-4">
+                            <img src="Assets/Competetion logos.png" class="img-fluid" alt="Logos of Brands">
+                        </div>
+                        <img src="Assets/invoicing.gif" class="img-fluid" alt="GIF of invoices reviewed">
+                        <div class="ˀcol-12 mt-3">
+                            <div class="caption text-center">
+                                Sample of invoices that we went through to understand what really makes an invoice
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <div class="container">
+        <hr class="divider">
+    </div>
+
+    <!--Insights -->
+
+    <section id="Insights" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-12 headerText">
+                        <h2>
+                            Insights
+                        </h2>
+                    </div>
+                    <div class="col-lg-8 col-12 bodyContent">
+                        <div class="body">
+                            We are a new player trying to disrupt existing systems. One of the challenges was to get users to migrate from their existing methods of creating invoices. In our reserach we found that most users used general purpose tools like Excel, Notion and Sheets. There was also a cohort of users using specialised invoicing tools like Zoho and Tally. Almost all of the users leaned towards free tools and readily available templates. 
+                        </div>
+                        <div class="row">
+                            <div class="masonry">
+                                <div class="brick">
+                                    <div class="mb-3">
+                                        <h3>Partner Details</h3>
+                                    </div>
+                                    <div class="row body">
+                                        <div class="col-lg-12 col-6">Partner name</div>
+                                        <div class="col-lg-12 col-6">Address</div>
+                                        <div class="col-lg-12 col-6 lighter">Email</div>
+                                        <div class="col-lg-12 col-6 lighter">description</div>
+                                    </div>
+                                </div>
+                                <div class="brick">
+                                    <div class="mb-3">
+                                        <h3>Invoice Particulars</h3>
+                                    </div>
+                                    <div class="row body">
+                                        <div class="col-lg-12 col-6">Invoice number</div>
+                                        <div class="col-lg-12 col-6">Invoicing dates</div>
+                                        <div class="col-lg-12 col-6">Currency</div>
+                                        <div class="col-lg-12 col-6 lighter">Due date</div>
+                                        <div class="col-lg-12 col-6 lighter">Description</div>
+                                    </div>
+                                </div>
+                                <div class="brick">
+                                    <div class="mb-3">
+                                        <h3>Invoice Item</h3>
+                                    </div>
+                                    <div class="row body">
+                                        <div class="col-lg-12 col-6">Item name</div>
+                                        <div class="col-lg-12 col-6">Unit / Rate / Qty</div>
+                                        <div class="col-lg-12 col-6">Description</div>
+                                        <div class="col-lg-12 col-6 lighter">SAC Code</div>
+                                        <div class="col-lg-12 col-6 lighter">Discount</div>
+                                        <div class="col-lg-12 col-6 lighter">Taxes</div>
+                                    </div>
+                                </div>
+                                <div class="brick">
+                                    <div class="mb-3">
+                                        <h3>Payment Info</h3>
+                                    </div>
+                                    <div class="row body">
+                                        <div >Online payment</div>
+                                        <div >Payment terms</div>
+                                        <div >Bank transfer instructions</div>
+                                    </div>
+                                </div>
+                                <div class="brick">
+                                    <div class="mb-3">
+                                        <h3>Branding</h3>
+                                    </div>
+                                    <div class="row body">
+                                        <div class="col-lg-12 col-6">Theme colors</div>
+                                        <div class="col-lg-12 col-6">Logo</div>
+                                        <div class="col-lg-12 col-6 lighter">Font</div>
+                                    </div>
+                                </div> 
+                                <div class="brick">
+                                    <div class="mb-3">
+                                        <h3>User Details</h3>
+                                    </div>
+                                    <div class="row body">
+                                        <div class="col-lg-12 col-6">Name</div>
+                                        <div class="col-lg-12 col-6">Email</div>
+                                        <div class="col-lg-12 col-6">Address</div>
+                                        <div class="col-lg-12 col-6">Phone number</div>
+                                        <div class="col-lg-12 col-6 lighter">GST</div>
+                                        <div class="col-lg-12 col-6 lighter">Website</div>
+                                    </div>
+                                </div>
+                                
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <div class="container">
+        <hr class="divider">
+    </div>
+
+    <!-- UX Approaches -->
+
+    <section id="UX Approaches" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-12 headerText">
+                        <h2>
+                            UX Approaches
+                        </h2>
+                    </div>
+                    <div class="col-lg-8 col-12 bodyContent">
+                        <div class="body">
+                            At a broad level we identified two approaches based on interaction with the invoice tool. While an interaction in-situ on the invoice document is very intuitive, it lacks flow curation and may lead to frustration down the line for users. The form and preview approach allows staged information sorting and also prevents information overload.
+                        </div>
+                        <div class="row mb-5 g-2 ">
+                            <div class="col-xl-9 col-12">
+                                <img class="img-fluid roundedBorder gallery-item" src="Assets/Approach 1.png" alt="First approach">
+                            </div>
+                            <div class="col-xl-3 col-lg-9 col-12">
+                                <div class="caption">
+                                    <b>In-stue approach </b>
+                                    <br>
+                                    WSYWIG approach to let a user directly interact with invoice document. Paypal provides a similar tool.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row  mb-5 g-2 ">
+                            <div class="col-xl-9 col-12">
+                                <img class="img-fluid roundedBorder gallery-item" src="Assets/Approach 2.png" alt="Second Approach">
+                            </div>
+                            <div class="col-xl-3 col-lg-9 col-12">
+                                <div class="caption">
+                                    <b>Form and preview </b>
+                                    <br>
+                                    Form on left and preview on the right. The invoice generated is 1:1 of the output. Stripe follows a similar approach.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+    </section>
+
+    <div class="container">
+        <hr class="divider">
+    </div>
+
+    </div>
+    </div>
+    <!-- Wireframes-->
+
+    <section id="Wireframes" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-12 headerText">
+                        <h2>
+                            Wireframes
+                        </h2>
+                    </div>
+                    <div class="col-lg-8 col-12 bodyContent">
+                            <div class="stickyImage pb-5">
+                                <img class="img-fluid roundedBorder gallery-item mb-3" src="Assets/invoicingWiresStep1.png" alt="Step 1">
+                                <div class="caption">
+                                    <strong>Step 1: </strong>Adding partner (client) information.
+                                </div>
+                                <div class="col-12">
+                                    <hr class="dividerBody">
+                                </div>
+                            </div>  
+                        <div class="stickyImage pb-5">
+                            <img class="img-fluid roundedBorder gallery-item mb-3" src="Assets/invoicingWiresStep2.png" alt="Step 2">
+                            <div class="caption">
+                                <strong>Step 2: </strong>Adding invoice items. A user can quick-add an existing item or create new.
+                            </div>
+                            <div class="col-12">
+                                <hr class="dividerBody">
+                            </div>
+                        </div>
+                        <div class="stickyImage pb-5">
+                            <img class="img-fluid roundedBorder gallery-item mb-3" src="Assets/invoicingWiresStep3.png" alt="Step 3">
+                            <div class="caption">
+                                <strong>Step 3: </strong>Providing invoice information, some of these are compliant related.
+                            </div>
+                            <div class="col-12">
+                                <hr class="dividerBody">
+                            </div>
+                        </div>
+                        <div class="stickyImage pb-5">
+                            <img class="img-fluid roundedBorder gallery-item mb-3" src="Assets/invoicingWiresStep4.png" alt="Step 4">
+                            <div class="caption">
+                                <strong>Step 4: </strong>Configuring payment details. The user can choose how they want to receive payment against this invoice.
+                            </div>
+                            <div class="col-12">
+                                <hr class="dividerBody">
+                            </div>
+                        </div>
+                        <div class="stickyImage pb-5">
+                            <img class="img-fluid roundedBorder gallery-item mb-3" src="Assets/invoicingWiresStep5.png" alt="Email to partner">
+                            <div class="caption">
+                                <strong>Invoice created: </strong>User can quick send an email with invoice and payment details to their partner.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <div class="container">
+        <hr class="divider">
+    </div>
+
+    <!-- Final Product -->
+
+    <section id="Final Product" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-4">
+                        <h2>
+                            Final Product
+                        </h2>
+                        <div class="ratio ratio-16x9">
+                            <iframe 
+                            loading="lazy"
+                            src="https://www.youtube.com/embed/MQ9jRWYr-PE?si=a5yhZT-wOc8YA4L2" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <div class="container">
+        <hr class="divider">
+    </div>
+
+    <!-- Ecosystem -->
+
+    <section id="Ecosystem" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-12 headerText">
+                        <h2>
+                            Ecosystem
+                        </h2>
+                    </div>
+                <div class="col-lg-8 col-12 bodyContent">
+                    <div class="body">
+                        Invoices are one of the core elements of the workflow of our product. Creating an invoice was a net new offering. As a part of this, we also revamped our existing invoicing elements.
+                    </div>
+                    <div class="image-comparison">
+                        <div class="images-container">
+                        <img class="after-image" src="Assets/create-before.png" alt="After image" />
+                        <img class="before-image" src="Assets/create-after.png" alt="Before image" />
+                
+                        <div class="slider-line"></div>
+                        <div class="slider-icon">
+                            <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="w-6 h-6"
+                            >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+                            />
+                            </svg>
+                        </div>
+                
+                        <input type="range" class="slider" min="0" max="100" />
+                        </div>
+                    </div>
+                    <div class="caption">
+                        <strong>
+                            Upload invoice: 
+                        </strong> 
+                        <i>
+                            (swipe right to view the updated design)
+                        </i> 
+                        <br>
+                        Our users so far could upload invoices to get paid against. We reworked on the flow. This is also now half-and-half allowing users to view invoices that they are uploading while filling in the details.
+                    </div>
+                    <div class="image-comparison">
+                        <div class="images-container">
+                        <img class="after-image" src="Assets/invoicing-before.png" alt="After image" />
+                        <img class="before-image" src="Assets/invoicing-after.png" alt="Before image" />
+                
+                        <div class="slider-line"></div>
+                        <div class="slider-icon">
+                            <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="w-6 h-6"
+                            >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+                            />
+                            </svg>
+                        </div>
+                
+                        <input type="range" class="slider" min="0" max="100" />
+                        </div>
+                    </div>
+                    <div class="caption">
+                        <strong>
+                            Invoice Details Page: 
+                        </strong> 
+                        <i>
+                            (swipe right to view the updated design)
+                        </i> 
+                        <br>
+                        We had over an year worth of feedback on how our users were consuming this page. We used the feedback and solved for easier scanability.
+                    </div>
+                </div>
+                    
+                </div>
+            </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+        <div class="footer container-fluid">
+            <div class="links text-center">
+                <a href="https://www.linkedin.com/in/prateeksingh20/" target="_blank" rel="noopener noreferrer">
+                    <img src="/Assets/LinkedIn.svg" alt="LinkedIn Logo" class="img-fluid logo">
+                </a><a href="https://www.medium.com/@prateeksingh20" target="_blank" rel="noopener noreferrer">
+                    <img src="/Assets/Medium.svg" alt="Medium Logo" class="img-fluid logo">
+                </a><a href="https://www.behance.net/prateeksingh20/" target="_blank" rel="noopener noreferrer">
+                    <img src="/Assets/Behance.svg" alt="Gmail Logo" class="img-fluid logo">
+                </a>
+            </div>
+            <div class="footnote text-center">
+                ©2022 | <a href="mailto:hello@prateeksingh.in">hello@prateeksingh.in</a>
+                <br>
+                Designed and coded with &#10084;
+            </div>
+        </div>
+    </footer>     
+      
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="imageDragger.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

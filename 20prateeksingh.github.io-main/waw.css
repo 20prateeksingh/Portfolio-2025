@@ -1,0 +1,53 @@
+.cover{
+    margin-top: -150px;
+    position: relative;
+    height: 100vh;
+    background-color: #E5C1BD;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+
+@media screen and (max-width:576px){
+    .cover{
+        height: calc(100vh + 75px);
+        margin-top: -200px;
+    }
+}
+
+.coverImage{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 70vw;
+}
+
+#awards{
+    padding-top: 76px;
+}
+
+.more a{
+    text-decoration: underline;
+    color: inherit;
+}
+
+.more a:hover{
+    font-weight: bold;
+}
+
+@media screen and (max-width:1200px) {
+    .hideS{
+        display: none;
+    }    
+}
+
+#projects{
+    background-color: #E5C1BD;
+}
+
+
+#gotoWaw{
+    position: absolute;
+    bottom: 7vh;
+}

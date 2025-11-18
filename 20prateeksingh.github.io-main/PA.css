@@ -1,0 +1,82 @@
+.introduction{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cover{
+    margin-top: -150px;
+    position: relative;
+    height: 100vh;
+    background-color: #CFFFB0;
+    margin-bottom: 5rem;
+}
+
+@media screen and (max-width:576px){
+    .cover{
+        height: calc(100vh + 75px);
+        margin-top: -200px;
+    }
+}
+
+.tagline{
+    font-family: 'Cardo', sans-serif;
+    font-size: 36px;
+    line-height: 200%;
+    letter-spacing: 0.1em;
+    font-style: italic;
+    color: #286600;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 40%;
+    left: 50%;
+    z-index: 1;
+    width: 100%;
+}
+
+@media screen and (max-width:576px){
+    .tagline{
+    letter-spacing: 0;
+    }
+}
+
+.coverImage{
+    position: absolute;
+    bottom: 0;
+}
+
+.ReserachInsights{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.ReserachInsights>img{
+    margin-right: 2rem;
+}
+
+.ideation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* max-height: 130px; */
+}
+
+.ideation>span{
+    padding: 2.5rem 1rem;
+    height: 100%;
+    width: 100%;
+    vertical-align: middle;
+}
+
+
+.useCases>div>img{
+    max-height: 100%;
+}
+
+.schools{
+  background: #CFFFB0;
+  padding: 2.5rem 0;
+  margin: 2.5rem 0;
+}

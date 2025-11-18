@@ -254,7 +254,8 @@ export default function CustomSection({ section }: CustomSectionProps) {
   // Special centered layout for these sections
   const isCenteredLayout =
     section.title === "Iterations for fee configurability" ||
-    section.title === "We went multi-currency!";
+    section.title === "We went multi-currency!" ||
+    section.title === "Design Iterations";
 
   if (isCenteredLayout) {
     return (
@@ -278,9 +279,10 @@ export default function CustomSection({ section }: CustomSectionProps) {
             <div className="w-full">
               {section.images.map((image, idx) => {
                 const isIterations = section.title === "Iterations for fee configurability";
+                const isDesignIterations = section.title === "Design Iterations";
                 const isMultiCurrency = section.title === "We went multi-currency!";
 
-                if (isIterations) {
+                if (isIterations || isDesignIterations) {
                   return (
                       <img
                       key={idx}
@@ -413,9 +415,10 @@ export default function CustomSection({ section }: CustomSectionProps) {
               {section.images.map((image, idx) => {
                 // Different styling based on section
                 const isIterations = section.title === "Iterations for fee configurability";
+                const isDesignIterations = section.title === "Design Iterations";
                 const isMultiCurrency = section.title === "We went multi-currency!";
                 
-                if (isIterations) {
+                if (isIterations || isDesignIterations) {
                   return (
                       <img
                       key={idx}

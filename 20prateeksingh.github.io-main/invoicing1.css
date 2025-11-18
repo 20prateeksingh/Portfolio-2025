@@ -1,0 +1,84 @@
+/* Page-level styles for invoicing.html */
+
+body {
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  h1, h2 {
+    font-family: 'Merriweather', serif;
+  }
+  
+  .cover {
+    background-color: #6666FF;
+    height: 100vh;
+    position: relative;
+    margin-bottom: 5rem;
+  }
+  
+  .tagline {
+    color: #fff;
+    font-size: 3rem;
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .coverImage {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .image-comparison {
+    position: relative;
+    max-width: 700px;
+    margin: 40px auto;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .image-comparison img {
+    width: 100%;
+    display: block;
+  }
+  
+  .image-comparison .before-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+    height: 100%;
+  }
+  
+  .image-comparison .slider {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  .image-comparison .slider-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: #fff;
+    z-index: 1;
+  }
+  
+  .image-comparison .slider-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    color: #00000070;
+    font-size: 2rem;
+    z-index: 1;
+  }
+  

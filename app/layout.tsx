@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Analytics from "@/components/Analytics";
 
 export const metadata: Metadata = {
   title: "Prateek Singh - Portfolio",
@@ -16,10 +17,10 @@ export const metadata: Metadata = {
     siteName: "Prateek Singh Portfolio",
     images: [
       {
-        url: "/images/Prateek_bnw.jpg",
+        url: "/OG Image.png",
         width: 1200,
         height: 630,
-        alt: "Prateek Singh - Product Designer",
+        alt: "Prateek Singh - Product Designer Portfolio",
       },
     ],
   },
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Prateek Singh - Product Designer",
     description: "Senior Product Designer with 7+ years of experience in B2B fintech. Designing clear, thoughtful interfaces that make complex problems feel simple.",
-    images: ["/images/Prateek_bnw.jpg"],
+    images: ["/OG Image.png"],
   },
   robots: {
     index: true,
@@ -47,6 +48,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-M6XLQ33"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
+        
+        <Analytics />
         <main>{children}</main>
       </body>
     </html>
