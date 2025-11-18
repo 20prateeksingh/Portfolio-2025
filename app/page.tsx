@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { getAllCaseStudies } from "@/lib/case-studies";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 // Local image paths
 const imgCaseStudyImage = "/images/case-study-1.png";
@@ -16,20 +17,20 @@ const imgProjectImage1 = "/images/project-image-2.png";
 // Tab content mapping
 const tabContent = {
   designers: {
-    greeting: "Hello there,",
-    description: "I'm Prateek - a designer who cares about making beautiful things that help people."
+    greeting: "Hey!",
+    description: "I design clear, thoughtful interfaces that make complex problems feel simple."
   },
   recruiters: {
-    greeting: "Hello there,",
-    description: "I'm Prateek - a UX designer with expertise in building user-centered products and leading design teams."
+    greeting: "Hey,",
+    description: "I'm a Senior designer with 7+ years of experience. Currently working in B2B fintech."
   },
   aiEnthusiasts: {
-    greeting: "Hello there,",
-    description: "I'm Prateek - exploring the intersection of design and AI to create innovative solutions."
+    greeting: "I work with AI on and off work times.",
+    description: "See below for some recent projects that I built with AI and vibe-coding."
   },
   engineers: {
-    greeting: "Hello there,",
-    description: "I'm Prateek - a designer who speaks your language, bridging design and engineering to build better products."
+    greeting: "I'm a designer who codes;",
+    description: "I think in components + design for things that ship. I built this and this from scratch."
   }
 };
 
@@ -241,7 +242,7 @@ export default function Home() {
           <div className="grid grid-cols-12 gap-4 sm:gap-5 lg:gap-6 w-full">
             {/* Introduction Section - Starts at column 5, spans 8 columns (66.67%) */}
             <div className="col-span-12 lg:col-start-5 lg:col-span-8 flex flex-col gap-5 items-start min-h-[50vh] pt-8">
-              <div className="flex gap-3 sm:gap-4 lg:gap-5 items-start relative overflow-x-auto w-full pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-hide">
+              <div className="flex gap-3 sm:gap-4 lg:gap-5 items-start relative overflow-x-auto w-full pb-2 -mx-4 pl-4 pr-0 sm:mx-0 sm:px-0 scrollbar-hide">
                 <button
                   onClick={() => handleTabChange("designers")}
                   className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-md cursor-pointer transition-all duration-[600ms] min-w-fit shrink-0 ${
@@ -275,7 +276,7 @@ export default function Home() {
                   }`}
                 >
                   <p className="font-montserrat font-medium leading-[2] text-sm sm:text-base text-black whitespace-nowrap">
-                    AI Enthusiasts
+                    AI Pundits
                   </p>
                 </button>
                 <button
@@ -298,7 +299,61 @@ export default function Home() {
                     className="font-nunito font-[400] transition-opacity duration-[600ms]"
                     style={{ opacity }}
                   >
-                    {displayContent.greeting} {displayContent.description}
+                    {displayContent.greeting}{" "}
+                    {selectedTab === "aiEnthusiasts" ? (
+                      <>
+                        <a 
+                          href="#ai-projects"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            const element = document.getElementById('ai-projects');
+                            if (element) {
+                              const gap = 24;
+                              let headerTotalHeight = 106;
+                              if (window.innerWidth >= 1024) {
+                                headerTotalHeight = 130;
+                              } else if (window.innerWidth >= 640) {
+                                headerTotalHeight = 114;
+                              }
+                              const elementPosition = element.getBoundingClientRect().top;
+                              const offsetPosition = elementPosition + window.pageYOffset - headerTotalHeight - gap;
+                              window.scrollTo({
+                                top: Math.max(0, offsetPosition),
+                                behavior: 'smooth'
+                              });
+                            }
+                          }}
+                          className="underline decoration-solid cursor-pointer hover:opacity-80 transition-opacity"
+                        >
+                          See below
+                        </a>
+                        {" "}for some recent projects that I built with AI and vibe-coding.
+                      </>
+                    ) : selectedTab === "engineers" ? (
+                      <>
+                        I think in components + design for things that ship. I built{" "}
+                        <a 
+                          href="https://20prateeksingh.github.io"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline decoration-solid cursor-pointer hover:opacity-80 transition-opacity"
+                        >
+                          this
+                        </a>
+                        {" "}and{" "}
+                        <a 
+                          href="https://prateeksingh.in"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline decoration-solid cursor-pointer hover:opacity-80 transition-opacity"
+                        >
+                          this
+                        </a>
+                        {" "}from scratch.
+                      </>
+                    ) : (
+                      displayContent.description
+                    )}
                   </p>
                 </div>
               </div>
@@ -338,10 +393,10 @@ export default function Home() {
             </div>
 
             {/* AI Projects Section - Starts at column 5, spans 8 columns */}
-            <div className="col-span-12 lg:col-start-5 lg:col-span-8 flex flex-col gap-8 sm:gap-10 lg:gap-12 items-start mt-6 sm:mt-20 lg:mt-32">
+            <div id="ai-projects" className="col-span-12 lg:col-start-5 lg:col-span-8 flex flex-col gap-8 sm:gap-10 lg:gap-12 items-start mt-6 sm:mt-20 lg:mt-32">
               <div className="flex flex-col gap-4 items-start w-full">
                 <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80 w-full sm:max-w-[588px] break-words overflow-wrap-anywhere">
-                  I have built some cool AI Stuff
+                  I have built some cool AI stuff
                 </p>
                 <p className="font-montserrat font-medium leading-[1.6] opacity-60 text-sm sm:text-base text-black w-full sm:max-w-[588px]">
                   I believe that AI is here to stay. Developments in the past year have made AI consumer grade and has become an enabler. Designers are no longer just the audience to development but are at the forefront. Some stuff I built using AI in the past couple of months:
@@ -361,12 +416,12 @@ export default function Home() {
                     <div className="flex flex-col gap-3 flex-1 items-start w-full">
                       <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 lg:gap-[14px] items-start sm:items-center w-full">
                         <div className="flex gap-2 sm:gap-3 lg:gap-[14px] items-center">
-                          <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
+                        <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
                             Vibecoding
-                          </p>
+                        </p>
                           <div className="hidden sm:flex h-0 items-center justify-center relative shrink-0 w-0">
-                            <div className="flex-none rotate-[270deg]">
-                              <div className="bg-gradient-to-l from-transparent h-px opacity-50 to-transparent via-50% via-black/60 w-4" />
+                          <div className="flex-none rotate-[270deg]">
+                            <div className="bg-gradient-to-l from-transparent h-px opacity-50 to-transparent via-50% via-black/60 w-4" />
                             </div>
                           </div>
                         </div>
@@ -375,7 +430,7 @@ export default function Home() {
                         </p>
                       </div>
                       <p className="font-montserrat font-medium leading-[1.6] opacity-60 text-sm sm:text-base text-black w-full">
-                        Vibe-coded this website over a weekend fuelled by curiosity and caffeine. Build basic layouts on Figma, MCP to cursor and a <span className="italic">LOT</span> of prompting!
+                        Vibe-coded this website over a weekend fuelled by curiosity and caffeine. Built basic layouts on Figma, MCP to cursor and a <span className="italic">LOT</span> of prompting!
                       </p>
                     </div>
                   </div>
@@ -394,12 +449,12 @@ export default function Home() {
                     <div className="flex flex-col gap-3 flex-1 items-start w-full">
                       <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 lg:gap-[14px] items-start sm:items-center w-full">
                         <div className="flex gap-2 sm:gap-3 lg:gap-[14px] items-center">
-                          <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
-                            Plugin
-                          </p>
+                        <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
+                          Plugin
+                        </p>
                           <div className="hidden sm:flex h-0 items-center justify-center relative shrink-0 w-0">
-                            <div className="flex-none rotate-[270deg]">
-                              <div className="bg-gradient-to-l from-transparent h-px opacity-50 to-transparent via-50% via-black/60 w-4" />
+                          <div className="flex-none rotate-[270deg]">
+                            <div className="bg-gradient-to-l from-transparent h-px opacity-50 to-transparent via-50% via-black/60 w-4" />
                             </div>
                           </div>
                         </div>
@@ -418,21 +473,21 @@ export default function Home() {
                 <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] w-full">
                   <div className="box-border flex flex-row gap-4 sm:gap-5 lg:gap-6 items-start p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
                     <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] shrink-0 w-[80px] sm:w-[92px] aspect-square flex items-center justify-center p-3 sm:p-4">
-                      <img
-                        alt="Design to Code"
+                            <img
+                              alt="Design to Code"
                         className="w-auto h-full object-contain"
-                        src={imgProjectImage1}
-                      />
+                              src={imgProjectImage1}
+                            />
                     </div>
                     <div className="flex flex-col gap-3 flex-1 items-start w-full">
                       <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 lg:gap-[14px] items-start sm:items-center w-full">
                         <div className="flex gap-2 sm:gap-3 lg:gap-[14px] items-center">
-                          <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
-                            Design to Code
-                          </p>
+                        <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
+                          Design to Code
+                        </p>
                           <div className="hidden sm:flex h-0 items-center justify-center relative shrink-0 w-0">
-                            <div className="flex-none rotate-[270deg]">
-                              <div className="bg-gradient-to-l from-transparent h-px opacity-50 to-transparent via-50% via-black/60 w-4" />
+                          <div className="flex-none rotate-[270deg]">
+                            <div className="bg-gradient-to-l from-transparent h-px opacity-50 to-transparent via-50% via-black/60 w-4" />
                             </div>
                           </div>
                         </div>
@@ -453,76 +508,34 @@ export default function Home() {
             <div className="col-span-12 lg:col-start-1 lg:col-span-8 flex flex-col gap-8 sm:gap-10 lg:gap-12 items-start mt-6 sm:mt-20 lg:mt-32 mb-20">
               <div className="flex flex-col gap-4 items-start">
                 <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80 w-full max-w-full sm:max-w-[588px] break-words overflow-wrap-anywhere">
-                  I wish I wrote more often
+                  Articles I've written on design
                 </p>
                 <p className="font-montserrat font-medium leading-[2] opacity-60 text-sm sm:text-base text-black w-full max-w-full sm:max-w-[588px]">
-                  This will be my new year resolution! Lorem ipsum dolor sit amet consectetur. Vestibulum purus cursus dignissim vulputate leo. Pretium eu aliquet augue hendrerit id at proin. Vitae mattis semper in ac. Ornare blandit
+                  Writing is a big part of my design cycle. Outside of work, I have written a couple of articles. It will be my New Year resolution to write more!
                 </p>
               </div>
               <div className="flex flex-col gap-6 sm:gap-7 lg:gap-8 items-start w-full">
                 {/* Blog Post 1 */}
                 <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] w-full">
-                  <div className="box-border flex flex-row gap-4 sm:gap-5 lg:gap-6 items-start p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
-                    <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] shrink-0 w-[80px] sm:w-[92px] aspect-square flex items-center justify-center p-3 sm:p-4">
-                      <img
-                        alt="Blog post"
-                        className="w-auto h-full object-contain"
-                        src={imgProjectImage1}
-                      />
-                    </div>
-                    <div className="flex flex-col gap-3 flex-1 items-start w-full">
-                      <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 lg:gap-[14px] items-start sm:items-center w-full">
-                        <div className="flex gap-2 sm:gap-3 lg:gap-[14px] items-center">
-                          <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
-                            Design to Code
-                          </p>
-                          <div className="hidden sm:flex h-0 items-center justify-center relative shrink-0 w-0">
-                            <div className="flex-none rotate-[270deg]">
-                              <div className="bg-gradient-to-l from-transparent h-px opacity-50 to-transparent via-50% via-black/60 w-4" />
-                            </div>
-                          </div>
-                        </div>
-                        <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
-                          Xflow &lt; &gt; GFF 2025
-                        </p>
-                      </div>
-                      <p className="font-montserrat font-medium leading-[1.6] opacity-60 text-sm sm:text-base text-black w-full">
-                        Lorem ipsum dolor sit amet consectetur. Vestibulum purus cursus dignissim vulputate leo. Pretium eu aliquet augue hendrerit id at proin. Vitae mattis semper in ac. Ornare blandit
-                      </p>
-                    </div>
+                  <div className="box-border flex flex-col gap-3 items-start p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
+                    <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
+                      UI and the origins of its origin
+                    </p>
+                    <p className="font-montserrat font-medium leading-[1.6] opacity-60 text-sm sm:text-base text-black w-full">
+                      I'm an architect and we dealt with origins (0,0) of coordinate system a lot more there compared to UX. This <a href="https://medium.com/design-bootcamp/ui-and-the-origins-of-its-origin-25a1d7b69b33" target="_blank" rel="noopener noreferrer" className="underline decoration-solid cursor-pointer hover:opacity-80 transition-opacity">article</a> draws parallel between coordinate system of real and virtual.
+                    </p>
                   </div>
                 </div>
 
                 {/* Blog Post 2 */}
                 <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] w-full">
-                  <div className="box-border flex flex-row gap-4 sm:gap-5 lg:gap-6 items-start p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
-                    <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] shrink-0 w-[80px] sm:w-[92px] aspect-square flex items-center justify-center p-3 sm:p-4">
-                      <img
-                        alt="Blog post"
-                        className="w-auto h-full object-contain"
-                        src={imgProjectImage1}
-                      />
-                    </div>
-                    <div className="flex flex-col gap-3 flex-1 items-start w-full">
-                      <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 lg:gap-[14px] items-start sm:items-center w-full">
-                        <div className="flex gap-2 sm:gap-3 lg:gap-[14px] items-center">
-                          <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
-                            Design to Code
-                          </p>
-                          <div className="hidden sm:flex h-0 items-center justify-center relative shrink-0 w-0">
-                            <div className="flex-none rotate-[270deg]">
-                              <div className="bg-gradient-to-l from-transparent h-px opacity-50 to-transparent via-50% via-black/60 w-4" />
-                            </div>
-                          </div>
-                        </div>
-                        <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
-                          Xflow &lt; &gt; GFF 2025
-                        </p>
-                      </div>
-                      <p className="font-montserrat font-medium leading-[1.6] opacity-60 text-sm sm:text-base text-black w-full">
-                        Lorem ipsum dolor sit amet consectetur. Vestibulum purus cursus dignissim vulputate leo. Pretium eu aliquet augue hendrerit id at proin. Vitae mattis semper in ac. Ornare blandit
-                      </p>
-                    </div>
+                  <div className="box-border flex flex-col gap-3 items-start p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
+                    <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
+                      I tried coding the website I designed
+                    </p>
+                    <p className="font-montserrat font-medium leading-[1.6] opacity-60 text-sm sm:text-base text-black w-full">
+                      Pre-AI era, I took a stab at writing HTML and CSS to build my first online portfolio. The website can be found <a href="https://20prateeksingh.github.io" target="_blank" rel="noopener noreferrer" className="underline decoration-solid cursor-pointer hover:opacity-80 transition-opacity">here</a>, and my battle journal <a href="https://medium.com/ux-planet/i-tried-coding-the-website-i-designed-f554272e559e" target="_blank" rel="noopener noreferrer" className="underline decoration-solid cursor-pointer hover:opacity-80 transition-opacity">here</a>.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -531,21 +544,8 @@ export default function Home() {
         </div>
 
         {/* Footer - Full width (12 columns) */}
-        <div className="backdrop-blur-sm backdrop-filter bg-[rgba(255,255,255,0.5)] border border-[#f0f0f0] box-border flex flex-col sm:flex-row font-montserrat font-medium min-h-[90px] h-auto sm:h-[90px] items-center justify-between gap-4 mb-10 mt-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-0 rounded-[4px] text-sm sm:text-base text-black underline w-full max-w-7xl">
-          <a
-            href="mailto:hello@prateeksingh.in"
-            className="decoration-solid hover:opacity-70 transition-opacity"
-          >
-            hello@prateeksingh.in
-          </a>
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="decoration-solid hover:opacity-70 transition-opacity"
-          >
-            LinkedIN
-          </a>
+        <div className="mb-10 mt-auto">
+          <Footer />
         </div>
       </div>
     </div>

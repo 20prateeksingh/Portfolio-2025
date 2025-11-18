@@ -12,6 +12,7 @@ import CustomSection from "@/components/case-study/CustomSection";
 import ProgressBar from "@/components/case-study/ProgressBar";
 import BackToTop from "@/components/case-study/BackToTop";
 import CaseStudyNavbar from "@/components/case-study/CaseStudyNavbar";
+import Footer from "@/components/Footer";
 
 interface CaseStudyPageProps {
   params: {
@@ -189,6 +190,11 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
           </div>
         </div>
       )}
+
+      {/* Footer */}
+      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-10 pt-8">
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -85,7 +85,7 @@ export const caseStudies: CaseStudy[] = [
         type: "introduction",
         title: "Introduction",
         content:
-          "Xflow is a B2B cross border payments company. The most common fund flow for our users is receiving USD and getting an INR payout. We started by offering great pricing to users. However, the market dictated how well those dollars converted to INR on any given day. This case study is how we built a product to make the market a little more forgiving.",
+          "Xflow is a B2B cross border payments company. The most common fund flow for our users is receiving USD and getting an INR payout. We started by offering great pricing to users. However, the market dictated how well those dollars converted to INR on any given day. This case study shows how we built a product to make the market a little more forgiving.",
         metadata: {
           role: "Lead Designer",
           team: "4 people",
@@ -185,7 +185,7 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         type: "custom",
-        title: "Iterations for fee configurability",
+        title: "Design Iterations",
         content:
           "Our platform users also use our APIs. So, the challenge was to build for configurability without deviating very far from the API build.",
         images: ["/images/fx-ai-analyst/iterations.png"],
@@ -503,7 +503,7 @@ export const caseStudies: CaseStudy[] = [
         type: "problem",
         title: "Problem Statement",
         content:
-          "We are a new player trying to disrupt existing systems. One of the challenges was to get users to migrate from their existing methods of creating invoices. In our research we found that most users used general purpose tools like Excel, Notion and Sheets. There was also a cohort of users using specialized invoicing tools like Zoho and Tally. Almost all of the users leaned towards free tools and readily available templates.",
+          "We are a new player trying to disrupt existing systems. One of the challenges was to get users to migrate from their existing methods of creating invoices. In our research we found that most users used general-purpose tools like Excel, Notion and Sheets. There was also a cohort of users using specialized invoicing tools like Zoho and Tally. Almost all of the users leaned towards free tools and readily available templates.",
         images: [
           "/images/invoicing/Competetion logos.png",
           "/images/invoicing/invoicing.gif",
@@ -513,7 +513,7 @@ export const caseStudies: CaseStudy[] = [
         type: "insights",
         title: "Insights",
         content:
-          "We are a new player trying to disrupt existing systems. One of the challenges was to get users to migrate from their existing methods of creating invoices. In our research we found that most users used general purpose tools like Excel, Notion and Sheets. There was also a cohort of users using specialised invoicing tools like Zoho and Tally. Almost all of the users leaned towards free tools and readily available templates.",
+          "We are a new player trying to disrupt existing systems. One of the challenges was to get users to migrate from their existing methods of creating invoices. In our research we found that most users used general-purpose tools like Excel, Notion and Sheets. There was also a cohort of users using specialised invoicing tools like Zoho and Tally. Almost all of the users leaned towards free tools and readily available templates.",
         items: [
           {
             title: "Partner Details",
@@ -521,7 +521,7 @@ export const caseStudies: CaseStudy[] = [
               "Partner name",
               "Address",
               "Email",
-              "description",
+              "Description",
             ],
           },
           {
