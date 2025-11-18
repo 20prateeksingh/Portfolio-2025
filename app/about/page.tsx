@@ -32,13 +32,13 @@ export default function AboutPage() {
               <p>
                 <span className="font-bold">Namaste!</span>
                 <br />
-                I'm Prateek. This website is my tiny island in the vast sea that is the internet. Feel free to roam around - I am adding in more cool stuff as you read on.
+                I&apos;m Prateek. This website is my tiny island in the vast sea that is the internet. Feel free to roam around - I am adding in more cool stuff as you read on.
               </p>
               
               <p>
                 <span className="font-bold">Who I am?</span>
                 <br />
-                If you missed the obnoxiously large heading in the previous page, I'm a Product Designer. Currently collaborating with some amazing folks at Xflow and solving cross-border payments, one transaction at a time!
+                If you missed the obnoxiously large heading in the previous page, I&apos;m a Product Designer. Currently collaborating with some amazing folks at Xflow and solving cross-border payments, one transaction at a time!
                 However, I started my journey into design through Architecture. To this day, I hold a license to design buildings but I have taken a greater liking to designing digital products instead (much easier to do a revision, if v1.0 burns down).
               </p>
               

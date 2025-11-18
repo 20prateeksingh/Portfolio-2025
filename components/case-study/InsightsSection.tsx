@@ -118,7 +118,7 @@ export default function InsightsSection({ section }: InsightsSectionProps) {
                           )}
                         </div>
                         {/* Divider line between sections */}
-                        {index < section.items.length - 1 && (
+                        {section.items && index < section.items.length - 1 && (
                           <hr className="mt-6 lg:mt-10 border-black/15" />
                         )}
                       </div>

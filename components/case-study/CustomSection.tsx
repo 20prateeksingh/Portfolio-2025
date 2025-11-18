@@ -41,7 +41,7 @@ export default function CustomSection({ section }: CustomSectionProps) {
             {userStories.length > 0 && (
               <div className="border border-black/20 rounded-[24px] px-0 py-8 flex flex-col gap-6 items-center">
                 <p className="text-lg font-semibold text-center px-6">{userStories[0]}</p>
-                {userStories.slice(1).map((story, idx) => (
+                {userStories.slice(1).map((story: string, idx: number) => (
                   <React.Fragment key={idx}>
                     <div className="h-px bg-black/20 w-[75%]" />
                     <p 
@@ -762,14 +762,14 @@ function NegativeEarningsSection({ section }: CustomSectionProps) {
                   <p className="font-bold text-base text-[#0c120c] leading-[2] px-2" style={{ backgroundColor: 'rgba(0, 0, 0, 0.40)' }}>
                     Xflow Passthrough Fee
                   </p>
-                  <p className="text-base text-[#0c120c] leading-normal">Xflow's share of fee</p>
+                  <p className="text-base text-[#0c120c] leading-normal">Xflow&apos;s share of fee</p>
                 </div>
                 <p className="font-bold text-2xl text-[#0c120c]">+</p>
                 <div className="flex flex-col gap-1">
                   <p className="font-bold text-base text-[#0c120c] leading-[2] px-2" style={{ backgroundColor: 'rgba(0, 0, 0, 0.40)' }}>
                     Platform User (PU) Fee
                   </p>
-                  <p className="text-base text-[#0c120c] leading-normal">Platform's share of fee</p>
+                  <p className="text-base text-[#0c120c] leading-normal">Platform&apos;s share of fee</p>
                 </div>
               </div>
               <p className="font-bold text-2xl text-[#0c120c]">=</p>
@@ -868,7 +868,7 @@ function NegativeEarningsSection({ section }: CustomSectionProps) {
 
           {/* Platform's Earnings Section */}
           <div ref={platformEarningsRef} className="space-y-6">
-            <p className="font-bold text-base text-[#0c120c] leading-[2]">Platform's Earnings</p>
+            <p className="font-bold text-base text-[#0c120c] leading-[2]">Platform&apos;s Earnings</p>
             
             <div className="flex gap-10 items-start flex-col lg:flex-row">
               {/* Bullet Points */}

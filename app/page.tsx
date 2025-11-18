@@ -508,7 +508,7 @@ export default function Home() {
             <div className="col-span-12 lg:col-start-1 lg:col-span-8 flex flex-col gap-8 sm:gap-10 lg:gap-12 items-start mt-6 sm:mt-20 lg:mt-32 mb-20">
               <div className="flex flex-col gap-4 items-start">
                 <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80 w-full max-w-full sm:max-w-[588px] break-words overflow-wrap-anywhere">
-                  Articles I've written on design
+                  Articles I&apos;ve written on design
                 </p>
                 <p className="font-montserrat font-medium leading-[2] opacity-60 text-sm sm:text-base text-black w-full max-w-full sm:max-w-[588px]">
                   Writing is a big part of my design cycle. Outside of work, I have written a couple of articles. It will be my New Year resolution to write more!
@@ -522,7 +522,7 @@ export default function Home() {
                       UI and the origins of its origin
                     </p>
                     <p className="font-montserrat font-medium leading-[1.6] opacity-60 text-sm sm:text-base text-black w-full">
-                      I'm an architect and we dealt with origins (0,0) of coordinate system a lot more there compared to UX. This <a href="https://medium.com/design-bootcamp/ui-and-the-origins-of-its-origin-25a1d7b69b33" target="_blank" rel="noopener noreferrer" className="underline decoration-solid cursor-pointer hover:opacity-80 transition-opacity">article</a> draws parallel between coordinate system of real and virtual.
+                      I&apos;m an architect and we dealt with origins (0,0) of coordinate system a lot more there compared to UX. This <a href="https://medium.com/design-bootcamp/ui-and-the-origins-of-its-origin-25a1d7b69b33" target="_blank" rel="noopener noreferrer" className="underline decoration-solid cursor-pointer hover:opacity-80 transition-opacity">article</a> draws parallel between coordinate system of real and virtual.
                     </p>
                   </div>
                 </div>
