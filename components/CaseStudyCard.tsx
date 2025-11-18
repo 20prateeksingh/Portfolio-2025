@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { CaseStudy } from "@/lib/case-studies";
 
 interface CaseStudyCardProps {
@@ -22,10 +23,12 @@ export default function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
         </div>
         <div className="absolute bottom-[-33px] h-[275px] left-[50%] translate-x-[-50%] w-[453.832px]">
           {caseStudy.image ? (
-            <img
+            <Image
               src={caseStudy.image}
               alt={caseStudy.title}
-              className="absolute inset-0 max-w-none object-center object-cover pointer-events-none w-full h-full"
+              className="object-center object-cover pointer-events-none"
+              fill
+              sizes="454px"
             />
           ) : (
             <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">

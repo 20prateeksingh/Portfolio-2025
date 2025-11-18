@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const imgLogo = "/images/Logo_PS.svg";
@@ -55,7 +56,7 @@ export default function Navigation({ onWorksClick }: NavigationProps = {}) {
                 : 'bg-[rgba(255,255,255,0.5)] border-[#f0f0f0]'
             }`}>
               <Link href="/" className="block shrink-0 w-[50px] h-[50px] cursor-pointer hover:opacity-80 transition-opacity pointer-events-auto">
-                <img alt="Logo" className="block w-full h-full pointer-events-none" src={imgLogo} />
+                <Image alt="Logo" className="block w-full h-full pointer-events-none" src={imgLogo} width={50} height={50} unoptimized />
               </Link>
               
               {/* Desktop Navigation */}

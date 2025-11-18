@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { getAllCaseStudies } from "@/lib/case-studies";
 import Navigation from "@/components/Navigation";
@@ -381,10 +382,12 @@ export default function Home() {
                       </p>
                     </div>
                     <div className="absolute bottom-[-33px] lg:bottom-[-103px] h-[200px] sm:h-[240px] lg:h-[344px] left-[50%] translate-x-[-50%] w-[80%] sm:w-[70%] lg:w-full max-w-full mt-auto transition-transform duration-300 group-hover:-translate-y-[10%]">
-                      <img
+                      <Image
                         alt={`${study.title} - Case Study Preview`}
-                        className="absolute inset-0 max-w-full object-center object-contain pointer-events-none w-full h-full"
+                        className="object-center object-contain pointer-events-none"
                         src={caseStudyImages[index] || imgCaseStudyImage}
+                        fill
+                        sizes="(max-width: 640px) 80vw, (max-width: 1024px) 70vw, 33vw"
                       />
                     </div>
                   </div>
@@ -409,10 +412,13 @@ export default function Home() {
                     {/* Mobile: Icon and Title Row */}
                     <div className="flex flex-row gap-4 items-center w-full sm:contents">
                       <div className="bg-[rgba(255,255,255,0.2)] border border-white relative rounded-[15px] shrink-0 w-[80px] sm:w-[92px] aspect-square flex items-center justify-center p-3 sm:p-4">
-                      <img
+                      <Image
                         alt="Vibecoding Logo - Personal branding project"
                         className="w-full h-auto object-contain"
                         src="/images/Logo_PS.svg"
+                        width={92}
+                        height={92}
+                        unoptimized
                       />
                     </div>
                       <div className="flex flex-col gap-2 justify-center flex-1 sm:hidden">
@@ -455,10 +461,12 @@ export default function Home() {
                     {/* Mobile: Icon and Title Row */}
                     <div className="flex flex-row gap-4 items-center w-full sm:contents">
                     <div className="bg-[rgba(255,255,255,0.2)] border border-white relative rounded-[15px] shrink-0 w-[80px] sm:w-[92px] aspect-square flex items-center justify-center p-3 sm:p-4">
-                      <img
+                      <Image
                         alt="Frame Cleaner - Figma plugin for layer optimization"
                         className="w-full h-auto object-contain opacity-80"
                         src={imgProjectImage}
+                        width={92}
+                        height={92}
                       />
                     </div>
                       <div className="flex flex-col gap-2 justify-center flex-1 sm:hidden">
@@ -501,10 +509,12 @@ export default function Home() {
                     {/* Mobile: Icon and Title Row */}
                     <div className="flex flex-row gap-4 items-center w-full sm:contents">
                     <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] shrink-0 w-[80px] sm:w-[92px] aspect-square flex items-center justify-center p-3 sm:p-4">
-                            <img
+                            <Image
                               alt="Design to Code - Xflow at Global Fintech Festival 2025"
                         className="w-auto h-full object-contain"
                               src={imgProjectImage1}
+                              width={92}
+                              height={92}
                             />
                     </div>
                       <div className="flex flex-col gap-2 justify-center flex-1 sm:hidden">

@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import { getCaseStudyBySlug, getAllCaseStudies } from "@/lib/case-studies";
 import CoverSection from "@/components/case-study/CoverSection";
 import IntroductionSection from "@/components/case-study/IntroductionSection";
@@ -164,11 +165,13 @@ export default function CaseStudyPage({ params }: CaseStudyPageProps) {
         (!caseStudy.coverImage || !caseStudy.tagline) &&
         !hasRichContent && (
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden">
-              <img
+            <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden relative">
+              <Image
                 src={caseStudy.image}
                 alt={caseStudy.title}
-                className="w-full h-full object-cover"
+                className="object-cover"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 896px"
               />
             </div>
           </div>

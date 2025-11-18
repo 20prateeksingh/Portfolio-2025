@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { CaseStudySection } from "@/lib/case-studies";
 import FormattedContent from "./FormattedContent";
 
@@ -122,11 +123,13 @@ export default function CustomSection({ section }: CustomSectionProps) {
             {/* Diagram image with caption */}
             {section.images && section.images.length > 0 && (
               <div className="flex flex-col gap-3">
-                <div className="w-full">
-                  <img
+                <div className="w-full relative">
+                  <Image
                     src={section.images[0]}
                     alt="Opportunity diagram"
                     className="w-full h-auto"
+                    width={800}
+                    height={600}
                   />
                 </div>
                 {imageCaption && (
@@ -161,11 +164,13 @@ export default function CustomSection({ section }: CustomSectionProps) {
             )}
             
             {/* Products overview image */}
-            <div className="w-full">
-              <img
+            <div className="w-full relative">
+              <Image
                 src="/images/fx-ai-analyst/products-overview.png"
                 alt="Products overview"
                 className="w-full h-auto"
+                width={800}
+                height={600}
               />
             </div>
           </div>
@@ -262,7 +267,7 @@ export default function CustomSection({ section }: CustomSectionProps) {
       <div className="w-full px-4 sm:px-6 lg:px-[40px] py-8 sm:py-16">
         <div className="flex flex-col gap-6 lg:gap-10 items-center">
           {/* Centered Title and Content */}
-          <div className="flex flex-col gap-6 items-center text-center max-w-[924px]">
+          <div className="flex flex-col gap-6 lg:gap-10 items-center text-center max-w-[924px]">
             <h2 className="text-4xl font-serif text-gray-900">
               {section.title}
             </h2>
@@ -284,24 +289,27 @@ export default function CustomSection({ section }: CustomSectionProps) {
 
                 if (isIterations || isDesignIterations) {
                   return (
-                      <img
+                      <Image
                       key={idx}
                         src={image}
                         alt={`${section.title} - Image ${idx + 1}`}
                       className="w-full h-auto"
+                        width={1200}
+                        height={800}
                       />
                   );
                 }
 
                 if (isMultiCurrency) {
                   return (
-                    <div key={idx} className="h-[300px] sm:h-[500px] md:h-[900px] lg:h-[1291px] relative w-full">
-                      <img
-                        src={image}
-                        alt={`${section.title} - Image ${idx + 1}`}
-                        className="w-full h-full object-contain object-center"
-                      />
-                    </div>
+                    <Image
+                      key={idx}
+                      src={image}
+                      alt={`${section.title} - Image ${idx + 1}`}
+                      className="w-full h-auto"
+                      width={1200}
+                      height={1291}
+                    />
                   );
                 }
 
@@ -358,10 +366,12 @@ export default function CustomSection({ section }: CustomSectionProps) {
               {/* Platform flow image */}
               {section.images && section.images.length > 0 && (
                 <div className="h-[200px] sm:h-[250px] lg:h-[319px] relative w-full">
-                  <img
+                  <Image
                     src={section.images[0]}
                     alt="Platform flow diagram"
-                    className="absolute inset-0 w-full h-full object-contain object-center"
+                    className="object-contain object-center"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 800px"
                   />
                 </div>
               )}
@@ -374,10 +384,12 @@ export default function CustomSection({ section }: CustomSectionProps) {
             {section.images && section.images.length > 1 && (
               <div className="w-full">
                 <div className="h-[180px] sm:h-[220px] md:h-[240px] lg:h-[263px] relative w-full">
-                  <img
+                  <Image
                     src={section.images[1]}
                     alt="Fee formula diagram"
-                    className="absolute inset-0 w-full h-full object-contain object-center"
+                    className="object-contain object-center"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 800px"
                   />
                 </div>
               </div>
@@ -420,34 +432,39 @@ export default function CustomSection({ section }: CustomSectionProps) {
                 
                 if (isIterations || isDesignIterations) {
                   return (
-                      <img
+                      <Image
                       key={idx}
                         src={image}
                         alt={`${section.title} - Image ${idx + 1}`}
                       className="w-full h-auto"
+                        width={1200}
+                        height={800}
                       />
                   );
                 }
                 
                 if (isMultiCurrency) {
                   return (
-                    <div key={idx} className="h-[300px] sm:h-[500px] md:h-[900px] lg:h-[1291px] relative w-full">
-                      <img
-                        src={image}
-                        alt={`${section.title} - Image ${idx + 1}`}
-                        className="absolute inset-0 w-full h-full object-contain object-center"
-                      />
-                    </div>
+                    <Image
+                      key={idx}
+                      src={image}
+                      alt={`${section.title} - Image ${idx + 1}`}
+                      className="w-full h-auto"
+                      width={1200}
+                      height={1291}
+                    />
                   );
                 }
                 
                 // Default styling for other images
                 return (
                   <div key={idx} className="relative w-full">
-                    <img
+                    <Image
                       src={image}
                       alt={`${section.title} - Image ${idx + 1}`}
                       className="w-full h-auto"
+                      width={1200}
+                      height={800}
                     />
                   </div>
                 );

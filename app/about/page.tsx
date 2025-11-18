@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import type { Metadata } from "next";
@@ -51,10 +52,13 @@ export default function AboutPage() {
           {/* Photo */}
           <div className="lg:col-span-5">
             <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] rounded-[15px] overflow-hidden">
-              <img
+              <Image
                 src="/images/Prateek_bnw.jpg"
                 alt="Prateek Singh"
                 className="w-full h-auto object-cover"
+                width={800}
+                height={800}
+                priority
               />
             </div>
           </div>

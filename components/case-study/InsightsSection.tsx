@@ -44,6 +44,7 @@ export default function InsightsSection({ section }: InsightsSectionProps) {
                     alt="Fee calculation diagram"
                     fill
                     className="object-contain object-center"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 800px"
                     unoptimized
                   />
                 </div>
@@ -88,6 +89,7 @@ export default function InsightsSection({ section }: InsightsSectionProps) {
                                   alt={item.title}
                                   fill
                                   className="object-contain object-center"
+                                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 800px"
                                   unoptimized
                                 />
                               </div>
@@ -99,6 +101,7 @@ export default function InsightsSection({ section }: InsightsSectionProps) {
                                   alt={item.title}
                                   fill
                                   className="object-contain object-center"
+                                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 800px"
                                   unoptimized
                                 />
                               </div>
@@ -110,6 +113,7 @@ export default function InsightsSection({ section }: InsightsSectionProps) {
                                   alt={item.title}
                                   fill
                                   className="object-contain object-center"
+                                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 800px"
                                   unoptimized
                                 />
                               </div>

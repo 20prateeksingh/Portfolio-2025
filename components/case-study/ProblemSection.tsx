@@ -72,6 +72,7 @@ export default function ProblemSection({ section, caseStudySlug }: ProblemSectio
                           alt={`${section.title} image ${index + 1}`}
                           fill
                           className="object-contain object-center"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 800px"
                           onClick={() =>
                             setModalImage({
                               src: image,

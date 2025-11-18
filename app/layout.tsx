@@ -4,6 +4,7 @@ import Analytics from "@/components/Analytics";
 import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://prateeksingh.in'),
   title: "Prateek Singh - Portfolio",
   description: "Senior Product Designer with 7+ years of experience in B2B fintech. Designing clear, thoughtful interfaces that make complex problems feel simple.",
   keywords: ["Product Designer", "UX Designer", "UI Designer", "Portfolio", "Prateek Singh", "Fintech", "B2B Design"],
