@@ -1,6 +1,8 @@
 "use client";
 
 import Script from "next/script";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const GA_MEASUREMENT_ID = "G-GD4QKS7PSS";
 const GTM_ID = "GTM-M6XLQ33";
@@ -8,6 +10,12 @@ const GTM_ID = "GTM-M6XLQ33";
 export default function Analytics() {
   return (
     <>
+      {/* Vercel Analytics */}
+      <VercelAnalytics />
+      
+      {/* Vercel Speed Insights */}
+      <SpeedInsights />
+
       {/* Google Tag Manager */}
       <Script
         id="gtm-script"
