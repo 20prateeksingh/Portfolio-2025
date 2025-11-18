@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Analytics from "@/components/Analytics";
 import StructuredData from "@/components/StructuredData";
+import NoiseTexture from "@/components/NoiseTexture";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://prateeksingh.in'),
@@ -56,9 +57,10 @@ export default function RootLayout({
       <head>
         <StructuredData />
       </head>
-      <body>
+      <body className="relative">
+        <NoiseTexture />
         <Analytics />
-        <main>{children}</main>
+        <main className="relative z-10">{children}</main>
       </body>
     </html>
   );

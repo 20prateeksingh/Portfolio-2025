@@ -10,7 +10,7 @@ export default function CaseStudyCard({ caseStudy }: CaseStudyCardProps) {
   return (
     <Link
       href={`/case-studies/${caseStudy.slug}`}
-      className="group block bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] rounded-[15px] overflow-hidden hover:bg-[rgba(255,255,255,0.3)] transition-colors h-[505px]"
+      className="group block bg-[rgba(255,255,255,0.2)] border border-white rounded-[15px] overflow-hidden hover:bg-[rgba(255,255,255,0.3)] transition-colors h-[505px] shadow-[0_1px_2px_0_rgba(0,0,0,1)]"
     >
       <div className="h-[505px] overflow-clip relative rounded-[inherit] w-full">
         <div className="flex flex-col gap-[13px] items-start left-[37px] top-8 w-[376px] absolute z-10">

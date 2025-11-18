@@ -370,7 +370,7 @@ export default function Home() {
                 <Link
                   key={study.slug}
                   href={`/case-studies/${study.slug}`}
-                  className="group bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] min-h-[400px] sm:h-[450px] lg:h-[505px] relative rounded-[15px] hover:bg-[rgba(255,255,255,0.3)] transition-colors flex flex-col"
+                  className="group bg-[rgba(255,255,255,0.2)] border border-white min-h-[350px] sm:h-[400px] lg:h-[450px] relative rounded-[15px] hover:bg-[rgba(255,255,255,0.4)] transition-colors flex flex-col"
                 >
                   <div className="flex-1 overflow-clip relative rounded-[inherit] w-full flex flex-col">
                     <div className="flex flex-col gap-3 sm:gap-[13px] items-start p-4 sm:p-0 sm:left-[24px] lg:left-[37px] sm:top-6 lg:top-8 sm:max-w-[calc(100%-48px)] lg:max-w-[376px] sm:absolute relative z-10 sm:pr-4 lg:pr-8">
