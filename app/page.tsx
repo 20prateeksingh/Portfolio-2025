@@ -382,7 +382,7 @@ export default function Home() {
                     </div>
                     <div className="absolute bottom-[-33px] lg:bottom-[-103px] h-[200px] sm:h-[240px] lg:h-[344px] left-[50%] translate-x-[-50%] w-[80%] sm:w-[70%] lg:w-full max-w-full mt-auto transition-transform duration-300 group-hover:-translate-y-[10%]">
                       <img
-                        alt={study.title}
+                        alt={`${study.title} - Case Study Preview`}
                         className="absolute inset-0 max-w-full object-center object-contain pointer-events-none w-full h-full"
                         src={caseStudyImages[index] || imgCaseStudyImage}
                       />
@@ -409,12 +409,12 @@ export default function Home() {
                     {/* Mobile: Icon and Title Row */}
                     <div className="flex flex-row gap-4 items-center w-full sm:contents">
                       <div className="bg-[rgba(255,255,255,0.2)] border border-white relative rounded-[15px] shrink-0 w-[80px] sm:w-[92px] aspect-square flex items-center justify-center p-3 sm:p-4">
-                        <img
-                          alt="Vibecoding Logo"
-                          className="w-full h-auto object-contain"
-                          src="/images/Logo_PS.svg"
-                        />
-                      </div>
+                      <img
+                        alt="Vibecoding Logo - Personal branding project"
+                        className="w-full h-auto object-contain"
+                        src="/images/Logo_PS.svg"
+                      />
+                    </div>
                       <div className="flex flex-col gap-2 justify-center flex-1 sm:hidden">
                         <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
                           Vibecoding
@@ -454,13 +454,13 @@ export default function Home() {
                   <div className="box-border flex flex-col sm:flex-row gap-4 sm:gap-5 lg:gap-6 items-start p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
                     {/* Mobile: Icon and Title Row */}
                     <div className="flex flex-row gap-4 items-center w-full sm:contents">
-                      <div className="bg-[rgba(255,255,255,0.2)] border border-white relative rounded-[15px] shrink-0 w-[80px] sm:w-[92px] aspect-square flex items-center justify-center p-3 sm:p-4">
-                        <img
-                          alt="Frame Cleaner"
-                          className="w-full h-auto object-contain opacity-80"
-                          src={imgProjectImage}
-                        />
-                      </div>
+                    <div className="bg-[rgba(255,255,255,0.2)] border border-white relative rounded-[15px] shrink-0 w-[80px] sm:w-[92px] aspect-square flex items-center justify-center p-3 sm:p-4">
+                      <img
+                        alt="Frame Cleaner - Figma plugin for layer optimization"
+                        className="w-full h-auto object-contain opacity-80"
+                        src={imgProjectImage}
+                      />
+                    </div>
                       <div className="flex flex-col gap-2 justify-center flex-1 sm:hidden">
                         <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
                           Plugin
@@ -500,13 +500,13 @@ export default function Home() {
                   <div className="box-border flex flex-col sm:flex-row gap-4 sm:gap-5 lg:gap-6 items-start p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
                     {/* Mobile: Icon and Title Row */}
                     <div className="flex flex-row gap-4 items-center w-full sm:contents">
-                      <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] shrink-0 w-[80px] sm:w-[92px] aspect-square flex items-center justify-center p-3 sm:p-4">
-                        <img
-                          alt="Design to Code"
-                          className="w-auto h-full object-contain"
-                          src={imgProjectImage1}
-                        />
-                      </div>
+                    <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] shrink-0 w-[80px] sm:w-[92px] aspect-square flex items-center justify-center p-3 sm:p-4">
+                            <img
+                              alt="Design to Code - Xflow at Global Fintech Festival 2025"
+                        className="w-auto h-full object-contain"
+                              src={imgProjectImage1}
+                            />
+                    </div>
                       <div className="flex flex-col gap-2 justify-center flex-1 sm:hidden">
                         <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
                           Design to Code

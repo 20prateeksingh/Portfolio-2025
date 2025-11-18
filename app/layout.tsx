@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Analytics from "@/components/Analytics";
+import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = {
   title: "Prateek Singh - Portfolio",
@@ -29,6 +30,7 @@ export const metadata: Metadata = {
     title: "Prateek Singh - Product Designer",
     description: "Senior Product Designer with 7+ years of experience in B2B fintech. Designing clear, thoughtful interfaces that make complex problems feel simple.",
     images: ["/OG Image.png"],
+    creator: "@prateeksingh20",
   },
   robots: {
     index: true,
@@ -37,6 +39,9 @@ export const metadata: Metadata = {
       index: true,
       follow: true,
     },
+  },
+  alternates: {
+    canonical: "https://prateeksingh.in",
   },
 };
 
@@ -47,6 +52,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <StructuredData />
+      </head>
       <body>
         {/* Google Tag Manager (noscript) */}
         <noscript>

@@ -54,7 +54,7 @@ export default function IntroductionSection({
             {metadata?.impact && metadata.impact.length > 0 && (
               <div>
                 <p className="text-lg font-semibold mb-4">Impact</p>
-                <ul className="space-y-2 list-disc ml-6">
+                <div className="space-y-6 lg:space-y-10">
                   {metadata.impact.map((impact, index) => {
                     // Convert bold spans to styled spans
                     const formattedText = impact
@@ -67,14 +67,14 @@ export default function IntroductionSection({
                         '<span class="font-bold bg-[#CFFFB0]">$1</span>'
                       );
                     return (
-                      <li
+                      <div
                         key={index}
                         className="text-base leading-[180%]"
                         dangerouslySetInnerHTML={{ __html: formattedText }}
                       />
                     );
                   })}
-                </ul>
+                </div>
               </div>
             )}
           </div>

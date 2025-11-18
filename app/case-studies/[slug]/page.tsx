@@ -30,9 +30,22 @@ export async function generateMetadata({ params }: CaseStudyPageProps): Promise<
     };
   }
 
+  const keywords = [
+    caseStudy.title,
+    caseStudy.category,
+    "Case Study",
+    "Product Design",
+    "UX Design",
+    "Portfolio",
+    ...(caseStudy.content.technologies || []),
+  ];
+
   return {
     title: `${caseStudy.title} - Prateek Singh`,
     description: caseStudy.description,
+    keywords: keywords,
+    authors: [{ name: "Prateek Singh" }],
+    creator: "Prateek Singh",
     openGraph: {
       title: `${caseStudy.title} - Prateek Singh`,
       description: caseStudy.description,
@@ -46,12 +59,19 @@ export async function generateMetadata({ params }: CaseStudyPageProps): Promise<
           alt: caseStudy.title,
         },
       ] : undefined,
+      siteName: "Prateek Singh Portfolio",
+      publishedTime: new Date(`${caseStudy.year}-01-01`).toISOString(),
+      authors: ["Prateek Singh"],
     },
     twitter: {
       card: "summary_large_image",
       title: `${caseStudy.title} - Prateek Singh`,
       description: caseStudy.description,
       images: caseStudy.coverImage ? [caseStudy.coverImage] : undefined,
+      creator: "@prateeksingh20",
+    },
+    alternates: {
+      canonical: `https://prateeksingh.in/case-studies/${params.slug}`,
     },
   };
 }

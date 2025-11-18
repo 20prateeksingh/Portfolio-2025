@@ -1,8 +1,41 @@
-"use client";
-
 import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Prateek Singh - Senior Product Designer",
+  description: "Learn about Prateek Singh, a Senior Product Designer with 7+ years of experience in B2B fintech. Explore his journey from architecture to digital product design.",
+  keywords: ["About Prateek Singh", "Product Designer", "UX Designer", "Fintech Designer", "Design Experience", "Portfolio"],
+  authors: [{ name: "Prateek Singh" }],
+  creator: "Prateek Singh",
+  openGraph: {
+    type: "profile",
+    locale: "en_US",
+    url: "https://prateeksingh.in/about",
+    title: "About Prateek Singh",
+    description: "Senior Product Designer with 7+ years of B2B fintech experience",
+    siteName: "Prateek Singh Portfolio",
+    images: [
+      {
+        url: "/images/Prateek_bnw.jpg",
+        width: 800,
+        height: 800,
+        alt: "Prateek Singh",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Prateek Singh",
+    description: "Senior Product Designer with 7+ years of B2B fintech experience",
+    images: ["/images/Prateek_bnw.jpg"],
+    creator: "@prateeksingh20",
+  },
+  alternates: {
+    canonical: "https://prateeksingh.in/about",
+  },
+};
 
 export default function AboutPage() {
   return (

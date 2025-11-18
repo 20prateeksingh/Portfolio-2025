@@ -2,9 +2,27 @@
 User-agent: *
 Allow: /
 
+# Specific AI bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 # Host
 Host: https://prateeksingh.in
 
 # Sitemaps
 Sitemap: https://prateeksingh.in/sitemap.xml
 
+# Crawl delay (in seconds)
+Crawl-delay: 1
