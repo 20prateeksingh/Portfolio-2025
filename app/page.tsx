@@ -405,21 +405,34 @@ export default function Home() {
               <div className="flex flex-col gap-6 sm:gap-7 lg:gap-8 items-start w-full">
                 {/* AI Project 1 - Vibecoding */}
                 <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] w-full">
-                  <div className="box-border flex flex-row gap-4 sm:gap-5 lg:gap-6 items-start p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
-                    <div className="bg-[rgba(255,255,255,0.2)] border border-white relative rounded-[15px] shrink-0 w-[80px] sm:w-[92px] flex items-center justify-center p-3 sm:p-4">
-                      <img
-                        alt="Vibecoding Logo"
-                        className="w-full h-auto object-contain"
-                        src="/images/Logo_PS.svg"
-                      />
+                  <div className="box-border flex flex-col sm:flex-row gap-4 sm:gap-5 lg:gap-6 items-start p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
+                    {/* Mobile: Icon and Title Row */}
+                    <div className="flex flex-row gap-4 items-stretch w-full sm:contents">
+                      <div className="bg-[rgba(255,255,255,0.2)] border border-white relative rounded-[15px] shrink-0 w-[80px] sm:w-[92px] flex items-center justify-center p-3 sm:p-4">
+                        <img
+                          alt="Vibecoding Logo"
+                          className="w-full h-auto object-contain"
+                          src="/images/Logo_PS.svg"
+                        />
+                      </div>
+                      <div className="flex flex-col gap-2 justify-center flex-1 sm:hidden">
+                        <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
+                          Vibecoding
+                        </p>
+                        <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
+                          prateeksingh.in
+                        </p>
+                      </div>
                     </div>
+                    
+                    {/* Desktop: Title and Description Column */}
                     <div className="flex flex-col gap-3 flex-1 items-start w-full">
-                      <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 lg:gap-[14px] items-start sm:items-center w-full">
+                      <div className="hidden sm:flex flex-row gap-2 sm:gap-3 lg:gap-[14px] items-center w-full">
                         <div className="flex gap-2 sm:gap-3 lg:gap-[14px] items-center">
                         <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
                             Vibecoding
                         </p>
-                          <div className="hidden sm:flex h-0 items-center justify-center relative shrink-0 w-0">
+                          <div className="flex h-0 items-center justify-center relative shrink-0 w-0">
                           <div className="flex-none rotate-[270deg]">
                             <div className="bg-gradient-to-l from-transparent h-px opacity-50 to-transparent via-50% via-black/60 w-4" />
                             </div>
@@ -438,21 +451,34 @@ export default function Home() {
 
                 {/* AI Project 2 - Frame Cleaner */}
                 <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] w-full">
-                  <div className="box-border flex flex-row gap-4 sm:gap-5 lg:gap-6 items-start p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
-                    <div className="bg-[rgba(255,255,255,0.2)] border border-white relative rounded-[15px] shrink-0 w-[80px] sm:w-[92px] aspect-square flex items-center justify-center p-3 sm:p-4">
-                      <img
-                        alt="Frame Cleaner"
-                        className="w-full h-auto object-contain opacity-80"
-                        src={imgProjectImage}
-                      />
+                  <div className="box-border flex flex-col sm:flex-row gap-4 sm:gap-5 lg:gap-6 items-start p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
+                    {/* Mobile: Icon and Title Row */}
+                    <div className="flex flex-row gap-4 items-stretch w-full sm:contents">
+                      <div className="bg-[rgba(255,255,255,0.2)] border border-white relative rounded-[15px] shrink-0 w-[80px] sm:w-[92px] aspect-square flex items-center justify-center p-3 sm:p-4">
+                        <img
+                          alt="Frame Cleaner"
+                          className="w-full h-auto object-contain opacity-80"
+                          src={imgProjectImage}
+                        />
+                      </div>
+                      <div className="flex flex-col gap-2 justify-center flex-1 sm:hidden">
+                        <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
+                          Plugin
+                        </p>
+                        <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
+                          Frame Cleaner
+                        </p>
+                      </div>
                     </div>
+                    
+                    {/* Desktop: Title and Description Column */}
                     <div className="flex flex-col gap-3 flex-1 items-start w-full">
-                      <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 lg:gap-[14px] items-start sm:items-center w-full">
+                      <div className="hidden sm:flex flex-row gap-2 sm:gap-3 lg:gap-[14px] items-center w-full">
                         <div className="flex gap-2 sm:gap-3 lg:gap-[14px] items-center">
                         <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
                           Plugin
                         </p>
-                          <div className="hidden sm:flex h-0 items-center justify-center relative shrink-0 w-0">
+                          <div className="flex h-0 items-center justify-center relative shrink-0 w-0">
                           <div className="flex-none rotate-[270deg]">
                             <div className="bg-gradient-to-l from-transparent h-px opacity-50 to-transparent via-50% via-black/60 w-4" />
                             </div>
@@ -471,21 +497,34 @@ export default function Home() {
 
                 {/* AI Project 3 - Design to Code */}
                 <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] w-full">
-                  <div className="box-border flex flex-row gap-4 sm:gap-5 lg:gap-6 items-start p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
-                    <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] shrink-0 w-[80px] sm:w-[92px] aspect-square flex items-center justify-center p-3 sm:p-4">
-                            <img
-                              alt="Design to Code"
-                        className="w-auto h-full object-contain"
-                              src={imgProjectImage1}
-                            />
+                  <div className="box-border flex flex-col sm:flex-row gap-4 sm:gap-5 lg:gap-6 items-start p-4 sm:p-5 lg:p-6 rounded-[inherit] w-full">
+                    {/* Mobile: Icon and Title Row */}
+                    <div className="flex flex-row gap-4 items-stretch w-full sm:contents">
+                      <div className="bg-[rgba(255,255,255,0.2)] border border-[#f0f0f0] relative rounded-[15px] shrink-0 w-[80px] sm:w-[92px] aspect-square flex items-center justify-center p-3 sm:p-4">
+                        <img
+                          alt="Design to Code"
+                          className="w-auto h-full object-contain"
+                          src={imgProjectImage1}
+                        />
+                      </div>
+                      <div className="flex flex-col gap-2 justify-center flex-1 sm:hidden">
+                        <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
+                          Design to Code
+                        </p>
+                        <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
+                          Xflow at GFF 2025
+                        </p>
+                      </div>
                     </div>
+                    
+                    {/* Desktop: Title and Description Column */}
                     <div className="flex flex-col gap-3 flex-1 items-start w-full">
-                      <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 lg:gap-[14px] items-start sm:items-center w-full">
+                      <div className="hidden sm:flex flex-row gap-2 sm:gap-3 lg:gap-[14px] items-center w-full">
                         <div className="flex gap-2 sm:gap-3 lg:gap-[14px] items-center">
                         <p className="font-helvetica leading-normal not-italic text-[24px] text-black/80">
                           Design to Code
                         </p>
-                          <div className="hidden sm:flex h-0 items-center justify-center relative shrink-0 w-0">
+                          <div className="flex h-0 items-center justify-center relative shrink-0 w-0">
                           <div className="flex-none rotate-[270deg]">
                             <div className="bg-gradient-to-l from-transparent h-px opacity-50 to-transparent via-50% via-black/60 w-4" />
                             </div>
